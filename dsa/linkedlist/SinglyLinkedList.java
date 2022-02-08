@@ -22,7 +22,7 @@ public class SinglyLinkedList {
         while (true) {
             System.out.print("Press:\n" +
                     "1 to Insert\n" +
-                    "2 to Traverse\n" +
+                    "2 to Display\n" +
                     "3 to Delete\n" +
                     "4 to Delete All\n" +
                     "5 to exit()\n" +
@@ -33,7 +33,7 @@ public class SinglyLinkedList {
                     ob.insert();
                     break;
                 case 2:
-                    ob.dislpay();
+                    ob.display();
                     break;
                 case 3:
                     ob.delete();
@@ -268,7 +268,7 @@ public class SinglyLinkedList {
         size = 0;
     }
 
-    public void dislpay() {
+    public void display() {
         // If list is Empty
         if (head == null) {
             System.out.println("List is Empty!");

@@ -10,7 +10,7 @@ public class ReverseLinkedList extends SinglyLinkedList {
         while (true) {
             System.out.print("Press:\n" +
                     "1 to Insert\n" +
-                    "2 to Traverse\n" +
+                    "2 to Display\n" +
                     "3 to Delete\n" +
                     "4 to Delete All\n" +
                     "5 to Reverse the List\n" +
@@ -22,7 +22,7 @@ public class ReverseLinkedList extends SinglyLinkedList {
                     ob.insert();
                     break;
                 case 2:
-                    ob.dislpay();
+                    ob.display();
                     break;
                 case 3:
                     ob.delete();
