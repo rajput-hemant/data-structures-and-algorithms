@@ -21,11 +21,11 @@ public class SinglyLinkedList {
         SinglyLinkedList ob = new SinglyLinkedList();
         while (true) {
             System.out.print("Press:\n" +
-                    "1 for Insert\n" +
-                    "2 for Traverse\n" +
-                    "3 for Delete\n" +
-                    "4 for Delete All\n" +
-                    "5 for exit()\n" +
+                    "1 to Insert\n" +
+                    "2 to Traverse\n" +
+                    "3 to Delete\n" +
+                    "4 to Delete All\n" +
+                    "5 to exit()\n" +
                     "Enter your choice -> ");
             int choice = sc.nextInt();
             switch (choice) {
@@ -53,9 +53,9 @@ public class SinglyLinkedList {
     public void insert() {
         while (true) {
             System.out.print("Press:\n" +
-                    "1 for Insertion at Beginning\n" +
-                    "2 for Insertion Inbetween\n" +
-                    "3 for Insertion at Last\n" +
+                    "1 to Insertion at Beginning\n" +
+                    "2 to Insertion Inbetween\n" +
+                    "3 to Insertion at Last\n" +
                     "4 Go Back\n" +
                     "Enter your choice -> ");
             int choice = sc.nextInt();
@@ -80,23 +80,20 @@ public class SinglyLinkedList {
     public void delete() {
         while (true) {
             System.out.print("Press:\n" +
-                    "1 for Deletion at Beginning\n" +
-                    "2 for Deletion Inbetween\n" +
-                    "3 for Deletion at Last\n" +
-                    "4 Go Back\n" +
+                    "1 to Deletion at Beginning\n" +
+                    "2 to Deletion Inbetween\n" +
+                    "3 to Deletion at Last\n" +
                     "Enter your choice -> ");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
                     delBegin();
-                    break;
+                    return;
                 case 2:
                     delInBtw();
-                    break;
+                    return;
                 case 3:
                     delAtLast();
-                    break;
-                case 4:
                     return;
                 default:
                     System.out.println("Wrong Input!");
@@ -128,12 +125,12 @@ public class SinglyLinkedList {
         int i = sc.nextInt();
         // If index is 0
         if (i == 0) {
-            insertBegin();
+            System.out.println("Invalid Input! Index Starts from 1.");
             return;
         }
-        // If index is equal to list size
-        if (i == size) {
-            insertAtLast();
+        // If index is 1
+        if (i == 1) {
+            insertBegin();
             return;
         }
         // If index is greater than the list size
@@ -146,11 +143,12 @@ public class SinglyLinkedList {
         Node newNode = new Node(data);
         Node currentNode = head;
         // traverse till index
-        for (int j = 1; j < i; j++)
+        for (int j = 0; j < i - 2; j++)
             currentNode = currentNode.next;
         // this assign the next of currentNode i.e. address of next element to the next of newNode
         newNode.next = currentNode.next;
-        // this assign the newNode to the next of currentNode i.e. address of newNode is assigned in the next of currentNode
+        // this assign the newNode to the next of currentNode
+        // i.e. address of newNode is assigned in the next of currentNode
         currentNode.next = newNode;
         System.out.println("Data Inserted!");
         size++;
@@ -190,16 +188,32 @@ public class SinglyLinkedList {
     }
 
     public void delInBtw() {
+        // If list is Empty
+        if (head == null) {
+            System.out.println("List is Empty!");
+            return;
+        }
+        // If list has only 1 element
+        else if (head.next == null) {
+            head = null;
+            System.out.println("List Successfully Cleared!");
+            size = 0;
+            return;
+        }
         System.out.print("Enter the Index -> ");
         int i = sc.nextInt();
         // If index is 0
         if (i == 0) {
-            insertBegin();
+            System.out.println("Invalid Input! Index Starts from 1.");
+            return;
+        }
+        if (i == 1) {
+            delBegin();
             return;
         }
         // If index is equal to list size
         if (i == size) {
-            insertAtLast();
+            delAtLast();
             return;
         }
         // If index is greater than the list size
@@ -209,9 +223,10 @@ public class SinglyLinkedList {
         }
         Node currentNode = head;
         // traverse till index
-        for (int j = 0; j < i; j++)
+        for (int j = 0; j < i - 2; j++)
             currentNode = currentNode.next;
-        // this assigns the address of 2nd next element to the currentNode, to the next of currentNode, removing the mid element
+        // this assigns the address of 2nd next element to the currentNode,
+        // to the next of currentNode, removing the mid element
         currentNode.next = currentNode.next.next;
         System.out.println("Successfully Deleted!");
         size--;
@@ -223,9 +238,11 @@ public class SinglyLinkedList {
             System.out.println("List is Empty!");
             return;
         }
-        // If list have two elements
+        // If list have one element
         if (head.next == null) {
             head = null;
+            System.out.println("List Successfully Cleared!");
+            size = 0;
             return;
         }
         Node secLastNode = head;
