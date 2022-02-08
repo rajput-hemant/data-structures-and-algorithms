@@ -9,12 +9,12 @@ public class ReverseLinkedList extends SinglyLinkedList {
         ReverseLinkedList ob = new ReverseLinkedList();
         while (true) {
             System.out.print("Press:\n" +
-                    "1 for Insert\n" +
-                    "2 for Traverse\n" +
-                    "3 for Delete\n" +
-                    "4 for Delete All\n" +
-                    "5 for Reverse the List\n" +
-                    "6 for exit()\n" +
+                    "1 to Insert\n" +
+                    "2 to Traverse\n" +
+                    "3 to Delete\n" +
+                    "4 to Delete All\n" +
+                    "5 to Reverse the List\n" +
+                    "6 to exit()\n" +
                     "Enter your choice -> ");
             int choice = sc.nextInt();
             switch (choice) {
@@ -45,8 +45,8 @@ public class ReverseLinkedList extends SinglyLinkedList {
     public void reverseLinkedList() {
         while (true) {
             System.out.print("Press:\n" +
-                    "1 for Reverse LinkedList by Iterative Method\n" +
-                    "2 for Reverse LinkedList by Recursive Method\n" +
+                    "1 to Reverse LinkedList by Iterative Method\n" +
+                    "2 to Reverse LinkedList by Recursive Method\n" +
                     "3 Print the Reverse without changing/updating the List\n" +
                     "Enter your Choice -> ");
             int choice = sc.nextInt();
