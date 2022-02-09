@@ -1,50 +1,90 @@
 package linkedlist;
 
-public class FloydsAlgorithm {
-    static Node head;
-
-    static class Node {
-        int data;
-        Node next = null;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+public class FloydsAlgorithm extends SinglyLinkedList {
 
     public static void main(String[] args) {
-        FloydsAlgorithm list = new FloydsAlgorithm();
-        list.head = new Node(50);
-        list.head.next = new Node(20);
-        list.head.next.next = new Node(15);
-        list.head.next.next.next = new Node(4);
-        list.head.next.next.next.next = new Node(10);
-        // Creating a loop for testing
-        head.next.next.next.next.next = head.next.next;
-        // list.printList(head);
-        list.removeCycle(head);
-        System.out.print("LinkedList after removing loop -> [");
-        list.printList(head);
-        System.out.println("\b\b]");
-    }
-
-    public void printList(Node head) {
-        while (head != null) {
-            System.out.print(head.data + ", ");
-            head = head.next;
+        FloydsAlgorithm ob = new FloydsAlgorithm();
+        while (true) {
+            System.out.print("Press:\n" +
+                    "1 to Insert\n" +
+                    "2 to Display\n" +
+                    "3 to Creat Loop in List\n" +
+                    "4 to Remove Loop from the List\n" +
+                    "5 to exit()\n" +
+                    "Enter your choice -> ");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    ob.insert();
+                    break;
+                case 2:
+                    ob.printList();
+                    break;
+                case 3:
+                    ob.createCycle();
+                    break;
+                case 4:
+                    ob.removeCycle();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Wrong Choice!");
+            }
         }
     }
+    // This Fn is to create loop in the LinkedList
+    public void createCycle() {
+        if (head == null) {
+            System.out.println("List is Empty!");
+            return;
+        }
+        Node newNode = head;
+        Node lastNode = head;
+        // to create a random integer btw 0 & size of the LinkedList, this will be the index where the loop is formed
+        int randomNode = (int) (Math.random() * size);
+        // traversing newNode from 0 to index, loop will form at the newNode
+        for (int i = 0; i < randomNode; i++)
+            newNode = newNode.next;
+        // traverse till the last element
+        while (lastNode.next != null)
+            lastNode = lastNode.next;
+        // next of lastNode will point to the newNode instead of pointing to null, creating a loop at the newNode
+        lastNode.next = newNode;
+        System.out.println("Loop created at -> " + newNode.data);
+    }
 
-    // Tortoise-Hare-Approach (Floyd's Algorithm) to Find the Middle Node in the
-    // LinkedList
+    // Fn to print the elements int the LinkedList
+    public void printList() {
+        // If list is Empty
+        if (head == null) {
+            System.out.println("List is Empty!");
+            return;
+        }
+        Node currentNode = head;
+        // taking a flag variable to avoid infinte loop if cycle is present in the list
+        int flag = 0;
+        System.out.print("[");
+        while (currentNode != null) {
+            System.out.print(currentNode.data + ", ");
+            currentNode = currentNode.next;
+            // if cycle is present is the list, then loop will stop after printing 100 elements
+            if (flag == 100)
+                break;
+            flag++;
+        }
+        System.out.println("\b\b]\nList size -> " + size);
+        if (flag > size)
+            System.out.println("Stopped Printing after 100 iteration, due to loop present in the List");
+    }
+
+    // Tortoise-Hare-Approach (Floyd's Algorithm) to Find the Middle Node in the LinkedList
     // The Hare pointer leaps 2 elements while turtle pointer leaps one
-    public static Node findMiddle(Node head) {
+    public Node findMiddle() {
         Node hare = head, turtle = head;
-        // In case of odd length, e.g. 1 2 1, turtle will 2 as middle as hare.next &
-        // hare.next.next are null
-        // In case of even length, e.g. 1 2 3 3 2 1, turtle will return the second
-        // middle,
+        // In case of odd length, e.g. 1 2 1, turtle will 2 as middle as hare.next & hare.next.next are null
+        // In case of even length, e.g. 1 2 3 3 2 1, turtle will return the second middle,
         // as the hare will be on null & hare.next & hare.next.next are null
         while (hare.next != null && hare.next.next != null) {
             hare = hare.next.next;
@@ -54,7 +94,7 @@ public class FloydsAlgorithm {
     }
 
     // Fn to check if List has loop/cycle
-    public boolean hasCycle(Node head) {
+    public boolean hasCycle() {
         // If list is empty
         if (head == null)
             return false;
@@ -69,7 +109,7 @@ public class FloydsAlgorithm {
     }
 
     // Fn to remove loop/cycle from the List if any
-    public void removeCycle(Node head) {
+    public void removeCycle() {
         Node slow = head, fast = head;
         boolean isCycle = false;
         while (fast != null && fast.next != null) {
@@ -94,6 +134,7 @@ public class FloydsAlgorithm {
                 fast = fast.next;
             // when the last node is found, the next of last node is set to null to remove the loop/cycle
             fast.next = null;
+            System.out.println("Loop Successfully Removed!");
         }
     }
 }
