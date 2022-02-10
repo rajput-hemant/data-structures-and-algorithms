@@ -39,7 +39,6 @@ public class StackWithLinkedList {
                     break;
                 case 4:
                     ob.display();
-                    ;
                     break;
                 case 5:
                     System.out.println("Exited!");
