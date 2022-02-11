@@ -1,20 +1,12 @@
 package queue;
 
 import java.util.Scanner;
+import java.util.Stack;
 
-public class QueueWithLinkedList {
+public class QueueWithTwoStacks {
     static Scanner sc = new Scanner(System.in);
-    static Node head, tail;
-
-    static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+    static Stack<Integer> s1 = new Stack<>();
+    static Stack<Integer> s2 = new Stack<>();
 
     public static void main(String[] args) {
         while (true) {
@@ -31,7 +23,7 @@ public class QueueWithLinkedList {
                     add();
                     break;
                 case 2:
-                    remove();
+                    pop();
                     break;
                 case 3:
                     peek();
@@ -49,71 +41,61 @@ public class QueueWithLinkedList {
         }
     }
 
-    // Fn to check if Queue is empty
+    // Fn to check if Queue is Empty
     private static boolean isEmpty() {
-        return head == null && tail == null;
+        return s1.isEmpty();
     }
 
-    // Time Complexity -> O(1)
+    // Time Complexity -> O(n)
     // enqueue/add - Fn to add elements in the Queue
     private static void add() {
-        System.out.print("Enter the Data -> ");
+        System.out.print("Enter your Data -> ");
         int data = sc.nextInt();
-        Node newNode = new Node(data);
-        // If queue is Empty
-        if (tail == null) {
-            tail = head = newNode;
-            System.out.println("Data Inserted!");
-            return;
-        }
-        // next of tail will point to newNode
-        tail.next = newNode;
-        // tail is set to newNode
-        tail = newNode;
-        System.out.println("Data inserted!");
+        // remove top element from Stack s1 and add it to Statck s2 until s1 becomes empty
+        while (!s1.isEmpty())
+            s2.push(s1.pop());
+        // add element to Stack s1
+        s1.push(data);
+        // remove top element from Stack s2 and add it to Statck s2 until s1 becomes empty
+        while (!s2.isEmpty())
+            s1.push(s2.pop());
+        System.out.println("Data Inserted!");
     }
 
     // Time Complexity -> O(1)
     // dequeue/remove - Fn to print & remove element from the Queue
-    private static void remove() {
-        // If queue is Empty
+    private static void pop() {
         if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return;
         }
-        System.out.println("SucessFully Removed -> " + head.data);
-        // If Queue has single element
-        if (head == tail)
-            tail = null;
-        // to remoeve first element, head is set to next element
-        head = head.next;
+        System.out.println("Successfully Removed -> " + s1.pop());
     }
 
     // Time Complexity -> O(1)
     // Fn to print the Front element in the Queue
     private static void peek() {
-        // If queue is Empty
         if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return;
         }
-        System.out.print("Element at the head of the Queue is -> " + head.data);
+        System.out.println("Element at the Front of the Queue is  -> " + s1.peek());
     }
 
     // Time Complexity -> O(n)
     // Fn to print all the element in the Queue
-    public static void display() {
-        // If Queue is Empty
+    private static void display() {
         if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return;
         }
-        Node newNode = head;
         System.out.print("Queue Elements :\nFront -> [");
-        while (newNode != null) {
-            System.out.print(newNode.data + ", ");
-            newNode = newNode.next;
-        }
+        // remove & print top element from Stack s1 and add it to Statck s2 until s1 becomes empty
+        while (!s1.isEmpty())
+            System.out.print(s2.push(s1.pop()) + ", ");
+        // remove top element from Stack s3 and add it to Statck s2 until s3 becomes empty
+        while (!s2.isEmpty())
+            s1.push(s2.pop());
         System.out.println("\b\b] <- End");
     }
 }

@@ -76,7 +76,7 @@ public class CircularQueueWithArray {
         System.out.println("Data inserted!");
     }
 
-    // Time Complexity -> O(n)
+    // Time Complexity -> O(1)
     // dequeue/remove - Fn to print & remove element from the Queue
     private void remove() {
         if (isEmpty()) {
