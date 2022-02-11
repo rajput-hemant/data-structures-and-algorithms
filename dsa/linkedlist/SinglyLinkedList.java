@@ -78,7 +78,6 @@ public class SinglyLinkedList {
     }
 
     public void delete() {
-        while (true) {
             System.out.print("Press:\n" +
                     "1 to Deletion at Beginning\n" +
                     "2 to Deletion Inbetween\n" +
@@ -98,7 +97,6 @@ public class SinglyLinkedList {
                 default:
                     System.out.println("Wrong Input!");
             }
-        }
     }
 
     public void insertBegin() {
