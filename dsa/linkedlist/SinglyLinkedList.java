@@ -78,25 +78,30 @@ public class SinglyLinkedList {
     }
 
     public void delete() {
-            System.out.print("Press:\n" +
-                    "1 to Deletion at Beginning\n" +
-                    "2 to Deletion Inbetween\n" +
-                    "3 to Deletion at Last\n" +
-                    "Enter your choice -> ");
-            int choice = sc.nextInt();
-            switch (choice) {
-                case 1:
-                    delBegin();
-                    return;
-                case 2:
-                    delInBtw();
-                    return;
-                case 3:
-                    delAtLast();
-                    return;
-                default:
-                    System.out.println("Wrong Input!");
-            }
+        // If list is Empty
+        if (head == null) {
+            System.out.println("List is Empty!");
+            return;
+        }
+        System.out.print("Press:\n" +
+                "1 to Deletion at Beginning\n" +
+                "2 to Deletion Inbetween\n" +
+                "3 to Deletion at Last\n" +
+                "Enter your choice -> ");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                delBegin();
+                return;
+            case 2:
+                delInBtw();
+                return;
+            case 3:
+                delAtLast();
+                return;
+            default:
+                System.out.println("Wrong Input!");
+        }
     }
 
     public void insertBegin() {
@@ -174,25 +179,15 @@ public class SinglyLinkedList {
     }
 
     public void delBegin() {
-        // If list is Empty
-        if (head == null) {
-            System.out.println("List is Empty!");
-            return;
-        }
-        // head form the firstNode is set to secNode, this removes the firstNode
+        // head from the firstNode is set to secNode, this removes the firstNode
         head = head.next;
         System.out.println("Successfully Deleted!");
         size--;
     }
 
     public void delInBtw() {
-        // If list is Empty
-        if (head == null) {
-            System.out.println("List is Empty!");
-            return;
-        }
         // If list has only 1 element
-        else if (head.next == null) {
+        if (head.next == null) {
             head = null;
             System.out.println("List Successfully Cleared!");
             size = 0;
@@ -231,11 +226,6 @@ public class SinglyLinkedList {
     }
 
     public void delAtLast() {
-        // If list is Empty
-        if (head == null) {
-            System.out.println("List is Empty!");
-            return;
-        }
         // If list have one element
         if (head.next == null) {
             head = null;
@@ -257,10 +247,6 @@ public class SinglyLinkedList {
     }
 
     public void deleteAll() {
-        if (head == null) {
-            System.out.println("List is Empty!");
-            return;
-        }
         System.out.println("List Successfully Cleared!");
         head = null;
         size = 0;
