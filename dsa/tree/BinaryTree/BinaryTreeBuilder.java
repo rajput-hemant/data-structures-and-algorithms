@@ -23,10 +23,10 @@ public class BinaryTreeBuilder {
         System.out.println("Data at Root -> " + root.data);
     }
 
+    // a utiliy fn to take input in Binary Tree
     public static int[] getInput() {
         System.out.print("Enter the numbers of levels in Binary Tree, Levels starts from 0 -> ");
         double n = sc.nextInt();
-        System.out.println(Math.pow(2, n) - 1);
         int size = (int) Math.pow(2, n) - 1;
         int[] nodes = new int[size];
         System.out.print("Enter the nodes, -1 if node is null -> ");
@@ -36,11 +36,14 @@ public class BinaryTreeBuilder {
     }
 
     public static Node buildTree(int[] nodes) {
+        // increament ot set the index to 0
         index++;
         if (nodes[index] == -1)
             return null;
         Node newNode = new Node(nodes[index]);
+        // recursive call to build the left part of the tree, branching will stop when node is null or -1
         newNode.left = buildTree(nodes);
+        // recursive call to build the right part of the tree, branching will stop when node is null or -1
         newNode.right = buildTree(nodes);
         return newNode;
     }
