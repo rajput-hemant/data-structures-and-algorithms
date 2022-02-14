@@ -4,19 +4,11 @@ import java.util.Scanner;
 
 public class CircularQueueWithArray {
     static Scanner sc = new Scanner(System.in);
-    int[] arr;
-    int front;
-    int rear;
-    int size;
-
-    CircularQueueWithArray() {
-        this.size = 5;
-        arr = new int[size];
-        front = rear = -1;
-    }
+    static int size = 100;
+    static int[] arr = new int[size];
+    static int front = -1, rear = -1;
 
     public static void main(String[] args) {
-        CircularQueueWithArray ob = new CircularQueueWithArray();
         while (true) {
             System.out.print("Press:\n" +
                     "1 to Push \n" +
@@ -28,16 +20,16 @@ public class CircularQueueWithArray {
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    ob.add();
+                    add();
                     break;
                 case 2:
-                    ob.remove();
+                    remove();
                     break;
                 case 3:
-                    ob.peek();
+                    peek();
                     break;
                 case 4:
-                    ob.display();
+                    display();
                     break;
                 case 5:
                     System.out.println("Exited!");
@@ -50,18 +42,18 @@ public class CircularQueueWithArray {
     }
 
     // Fn to check if Queue is Empty
-    private boolean isEmpty() {
+    private static boolean isEmpty() {
         return rear == -1;
     }
 
     // Fn to check if Queue is Full
-    private boolean isFull() {
+    private static boolean isFull() {
         return (rear + 1) % size == front;
     }
 
     // Time Complexity -> O(1)
     // enqueue/add - Fn to add elements in the Queue
-    private void add() {
+    private static void add() {
         if (isFull()) {
             System.out.println("Queue is Full!");
             return;
@@ -78,7 +70,7 @@ public class CircularQueueWithArray {
 
     // Time Complexity -> O(1)
     // dequeue/remove - Fn to print & remove element from the Queue
-    private void remove() {
+    private static void remove() {
         if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return;
@@ -92,7 +84,7 @@ public class CircularQueueWithArray {
 
     // Time Complexity -> O(1)
     // Fn to print the Front element in the Queue
-    private void peek() {
+    private static void peek() {
         if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return;
@@ -102,14 +94,15 @@ public class CircularQueueWithArray {
 
     // Time Complexity -> O(n)
     // Fn to print all the element in the Queue
-    private void display() {
+    private static void display() {
         // if queue is Empty
         if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return;
         }
         System.out.print("Queue Elements :\nFront -> [");
-        // If rear has not crossed the max size or queue rear is still greater then front.
+        // If rear has not crossed the max size or queue rear is still greater then
+        // front.
         if (rear >= front) {
             // Loop to print elements from front to rear.
             for (int i = front; i <= rear; i++)
