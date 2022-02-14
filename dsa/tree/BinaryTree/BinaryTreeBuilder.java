@@ -6,9 +6,9 @@ public class BinaryTreeBuilder {
     static Scanner sc = new Scanner(System.in);
     static int index = -1;
 
-    static class Node {
-        int data;
-        Node right, left;
+    public static class Node {
+        public int data;
+        public Node right, left;
 
         Node(int data) {
             this.data = data;
