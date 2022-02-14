@@ -4,16 +4,11 @@ import java.util.Scanner;
 
 public class QueueWithArray {
     static Scanner sc = new Scanner(System.in);
-    static int[] arr;
-    static int rear;
+    static int[] arr = new int[100];
+    static int rear = -1;
 
-    QueueWithArray() {
-        arr = new int[100];
-        rear = -1;
-    }
 
     public static void main(String[] args) {
-        QueueWithArray ob = new QueueWithArray();
         while (true) {
             System.out.print("Press:\n" +
                     "1 to Push \n" +
@@ -25,16 +20,16 @@ public class QueueWithArray {
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    ob.add();
+                    add();
                     break;
                 case 2:
-                    ob.remove();
+                    remove();
                     break;
                 case 3:
-                    ob.peek();
+                    peek();
                     break;
                 case 4:
-                    ob.display();
+                    display();
                     break;
                 case 5:
                     System.out.println("Exited!");
@@ -48,7 +43,7 @@ public class QueueWithArray {
 
     // Time Complexity -> O(1)
     // enqueue/add - Fn to add elements in the Queue
-    private void add() {
+    private static void add() {
         if (rear == arr.length - 1) {
             System.out.println("Queue is Full!");
             return;
@@ -62,7 +57,7 @@ public class QueueWithArray {
 
     // Time Complexity -> O(n)
     // dequeue/remove - Fn to print & remove element from the Queue
-    private void remove() {
+    private static void remove() {
         if (rear == -1) {
             System.out.println("Queue is Empty!");
             return;
@@ -76,7 +71,7 @@ public class QueueWithArray {
 
     // Time Complexity -> O(1)
     // Fn to print the Front element in the Queue
-    private void peek() {
+    private static void peek() {
         if (rear == -1) {
             System.out.println("Queue is Empty!");
             return;
@@ -86,7 +81,7 @@ public class QueueWithArray {
 
     // Time Complexity -> O(n)
     // Fn to print all the element in the Queue
-    private void display() {
+    private static void display() {
         if (rear == -1) {
             System.out.println("Queue is Empty!");
             return;
