@@ -1,6 +1,6 @@
-package tree.BinaryTree;
+package tree.binarytree;
 
-import tree.BinaryTree.BinaryTreeBuilder.Node;
+import tree.binarytree.BinaryTreeBuilder.Node;
 
 public class SumOfNodes {
     public static void main(String[] args) {
