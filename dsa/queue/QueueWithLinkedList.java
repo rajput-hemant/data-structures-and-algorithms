@@ -19,10 +19,10 @@ public class QueueWithLinkedList {
     public static void main(String[] args) {
         while (true) {
             System.out.print("Press:\n" +
-                    "1 to Push \n" +
-                    "2 to Pop \n" +
+                    "1 to Add \n" +
+                    "2 to Remove \n" +
                     "3 to Peek \n" +
-                    "4 to Display\n" +
+                    "4 to Display \n" +
                     "5 to Exit \n" +
                     "Enter your choice -> ");
             int choice = sc.nextInt();
