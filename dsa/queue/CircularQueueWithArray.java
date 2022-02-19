@@ -43,7 +43,7 @@ public class CircularQueueWithArray {
 
     // Fn to check if Queue is Empty
     private static boolean isEmpty() {
-        return rear == -1;
+        return front == - 1 && rear == -1;
     }
 
     // Fn to check if Queue is Full
@@ -77,8 +77,11 @@ public class CircularQueueWithArray {
         }
         System.out.println("Successfully Removed -> " + arr[front]);
         // If single element
-        if (front == rear)
+        if (front == rear) {
             front = rear = -1;
+            System.out.println("Queue Cleared Sucessfully!");
+            return;
+        }
         front = (front + 1) % size;
     }
 
