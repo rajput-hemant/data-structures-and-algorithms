@@ -1,6 +1,6 @@
-package tree.BinaryTree;
+package tree.binarytree;
 
-import tree.BinaryTree.BinaryTreeBuilder.Node;
+import tree.binarytree.BinaryTreeBuilder.Node;
 
 public class IsSubTree {
     public static void main(String[] args) {
@@ -9,9 +9,9 @@ public class IsSubTree {
         int[] nodes2 = { 1, 2, 4 };
         Node root = BinaryTreeBuilder.buildTree(nodes1);
         Node subRoot = BinaryTreeBuilder.buildTree(nodes2);
-        System.out.println("Height Of Tree -> " + isSubTree(root, subRoot));
+        System.out.println("Is SubTree? -> " + isSubTree(root, subRoot));
     }
-
+// Fn to check if a tree is subTree of another tree
     public static boolean isSubTree(Node root, Node subRoot) {
         // base cases
         if (subRoot == null)
