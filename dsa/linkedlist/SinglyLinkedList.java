@@ -233,15 +233,12 @@ public class SinglyLinkedList {
             size = 0;
             return;
         }
-        Node secLastNode = head;
-        Node lastNode = head.next;
-        // traverse till last element
-        while (lastNode.next != null) {
+        Node lastNode = head;
+        // traverse till second last element
+        while (lastNode.next.next != null)
             lastNode = lastNode.next;
-            secLastNode = secLastNode.next;
-        }
-        // secLastNode is set to null, this removes the address, removing the last element
-        secLastNode.next = null;
+        // second Last Node is set to null, this removes the address, removing the last element
+        lastNode.next = null;
         System.out.println("Successfully Deleted!");
         size--;
     }
