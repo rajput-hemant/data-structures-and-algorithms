@@ -87,7 +87,7 @@ public class Basics {
             System.out.println("List is Empty!");
             return;
         }
-        // If list have two elements
+        // If list have one elements
         if(head.next == null) {
             head = null;
             return;
