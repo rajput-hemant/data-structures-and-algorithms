@@ -74,7 +74,10 @@ public class QueueWithArray {
             System.out.println("Queue Cleared Sucessfully!");
             return;
         }
-        front++;
+        // Shifting all the elements to the left
+        for (int i = 0; i < rear; i++)
+            arr[i] = arr[i + 1];
+        rear--;
     }
 
     // Time Complexity -> O(1)
