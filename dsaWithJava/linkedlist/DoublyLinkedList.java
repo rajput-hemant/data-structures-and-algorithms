@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class DoublyLinkedList {
     static Scanner sc = new Scanner(System.in);
-    static Node head;
-    static Node tail;
+    static Node head, tail;
     static int size = 0;
 
     static class Node {
@@ -15,8 +14,7 @@ public class DoublyLinkedList {
 
         Node(int data) {
             this.data = data;
-            this.next = null;
-            this.prev = null;
+            this.next = this.prev = null;
         }
     }
 
@@ -93,8 +91,7 @@ public class DoublyLinkedList {
         Node newNode = new Node(data);
         // If list is Empty
         if (isEmpty()) {
-            head = newNode;
-            tail = newNode;
+            head = tail = newNode;
             size++;
             System.out.println("Data Inserted!");
             return;
@@ -154,8 +151,7 @@ public class DoublyLinkedList {
         Node newNode = new Node(data);
         // If list is Empty
         if (isEmpty()) {
-            head = newNode;
-            tail = newNode;
+            head = tail = newNode;
             System.out.println("Data Inserted!");
             size++;
             return;
@@ -198,29 +194,23 @@ public class DoublyLinkedList {
     }
 
     static void delBegin() {
-        System.out.println("Deleted -> " + head.data);
         // If list has only one element
         if (head.next == null) {
+            System.out.println("Deleted -> " + head.data);
             head = tail = null;
             System.out.println("List Successfully Cleared!");
+            size = 0;
         } else {
+            System.out.println("Deleted -> " + head.data);
             // head from the firstNode is set to secNode, this removes the firstNode
             head = head.next;
             // prev of head is set to null
             head.prev = null;
-            System.out.println("Successfully Deleted!");
         }
         size--;
     }
 
     static void delInBtw() {
-        // If list has only 1 element
-        if (head.next == null) {
-            head = tail = null;
-            System.out.println("List Successfully Cleared!");
-            size = 0;
-            return;
-        }
         System.out.print("Enter the Index -> ");
         int i = sc.nextInt();
         // If index is 0
@@ -246,32 +236,38 @@ public class DoublyLinkedList {
         // traverse till index
         for (int j = 0; j < i - 2; j++)
             currentNode = currentNode.next;
+        System.out.println("Deleted -> " + currentNode.next.data);
         // this assigns the address of 2nd next element to the currentNode,
         // to the next of currentNode, removing the mid element
         currentNode.next = currentNode.next.next;
-        // this assigns the address of currentNode to the prev of 2nd next element to the currentNode,
+        // this assigns the address of currentNode to the prev of 2nd next element to
+        // the currentNode,
         // to the prev of currentNode, removing the mid element
         currentNode.prev = currentNode.next.prev;
-        System.out.println("Successfully Deleted!");
         size--;
     }
 
     static void delAtLast() {
         // If list have one element
         if (head.next == null) {
+            System.out.println("Deleted -> " + tail.data);
             head = tail = null;
             System.out.println("List Successfully Cleared!");
         } else {
+            System.out.println("Deleted -> " + tail.data);
             // tail is set to second last element
             tail = tail.prev;
             // next of tail is set to null
             tail.next = null;
-            System.out.println("List Successfully Cleared!");
         }
         size--;
     }
 
     static void deleteAll() {
+        if(isEmpty()){
+            System.out.println("List is Empty!");
+            return;
+        }
         System.out.println("List Successfully Cleared!");
         head = tail = null;
         size = 0;
