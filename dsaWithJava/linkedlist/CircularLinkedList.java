@@ -13,7 +13,7 @@ public class CircularLinkedList {
 
         Node(int data) {
             this.data = data;
-            // this.next = tail;
+            this.next = null;
         }
     }
 
@@ -77,9 +77,13 @@ public class CircularLinkedList {
         }
     }
 
+    public boolean isEmpty() {
+        return head == null;
+    }
+
     public void delete() {
         // If list is Empty
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
         }
@@ -109,8 +113,8 @@ public class CircularLinkedList {
         int data = sc.nextInt();
         Node newNode = new Node(data);
         // If list is Empty
-        if (head == tail) {
-            head = newNode;
+        if (isEmpty()) {
+            head = tail = newNode;
             System.out.println("Data Inserted!");
             size++;
             return;
@@ -148,10 +152,9 @@ public class CircularLinkedList {
         // traverse till index
         for (int j = 0; j < i - 2; j++)
             currentNode = currentNode.next;
-        // this assign the next of currentNode i.e. address of next element to the next
-        // of newNode
+        // this assign the next of currentNode i.e. address of next element to the next of newNode
         newNode.next = currentNode.next;
-        // this assign the newNode to the next of currentNode
+        // this assign the newNode to the next of currentNode,
         // i.e. address of newNode is assigned in the next of currentNode
         currentNode.next = newNode;
         System.out.println("Data Inserted!");
@@ -163,18 +166,19 @@ public class CircularLinkedList {
         int data = sc.nextInt();
         Node newNode = new Node(data);
         // If list is Empty
-        if (head == tail) {
-            head = newNode;
+        if (isEmpty()) {
+            head = tail = newNode;
             System.out.println("Data Inserted!");
             size++;
             return;
         }
-        Node currentNode = head;
-        // traverse till last element
-        while (currentNode.next != tail)
-            currentNode = currentNode.next;
-        // lastNode next is set to newNode
-        currentNode.next = newNode;
+        // new node is assigned to the next of tail
+        tail.next = newNode;
+        // new node is set as tail
+        tail = newNode;
+        // head is assigned to the next of new node (hence creating the
+        // CircularLinkedList)
+        newNode.next = head;
         System.out.println("Data Inserted!");
         size++;
     }
@@ -182,14 +186,16 @@ public class CircularLinkedList {
     public void delBegin() {
         // head from the firstNode is set to secNode, this removes the firstNode
         head = head.next;
+        // tail is set to the new head
+        tail.next = head;
         System.out.println("Successfully Deleted!");
         size--;
     }
 
     public void delInBtw() {
         // If list has only 1 element
-        if (head.next == tail) {
-            head = tail;
+        if (head == tail) {
+            head = tail = null;
             System.out.println("List Successfully Cleared!");
             size = 0;
             return;
@@ -228,35 +234,34 @@ public class CircularLinkedList {
 
     public void delAtLast() {
         // If list have one element
-        if (head.next == tail) {
-            head = tail;
+        if (head == tail) {
+            head = tail = null;
             System.out.println("List Successfully Cleared!");
             size = 0;
             return;
         }
-        Node secLastNode = head;
-        Node lastNode = head.next;
-        // traverse till last element
-        while (lastNode.next != tail) {
+        Node lastNode = head;
+        // traverse till second last element
+        while (lastNode.next.next != head)
             lastNode = lastNode.next;
-            secLastNode = secLastNode.next;
-        }
-        // secLastNode is set to null, this removes the address, removing the last
-        // element
-        secLastNode.next = tail;
+        // head is set to next of second Last Node, this removes the address, removing
+        // the last element
+        lastNode.next = head;
+        // tail is set the the last node
+        tail = lastNode;
         System.out.println("Successfully Deleted!");
         size--;
     }
 
     public void deleteAll() {
         System.out.println("List Successfully Cleared!");
-        head = null;
+        head = tail = null;
         size = 0;
     }
 
     public void display() {
         // If list is Empty
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
         }
@@ -266,6 +271,6 @@ public class CircularLinkedList {
             System.out.print(currentNode.data + ", ");
             currentNode = currentNode.next;
         }
-        System.out.println("\b\b]" + "\nList Size -> " + size);
+        System.out.println(tail.data + "]\nList Size -> " + size);
     }
 }
