@@ -11,7 +11,7 @@ int main()
     cout << "Fibonacci Series -> ";
     fibonacci(n, 0, 1);
     return 0;
-};
+}
 
 int fibonacci(int n, int a, int b)
 {

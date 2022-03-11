@@ -24,7 +24,7 @@ int main()
     cin >> a >> b;
     printf("String after replacing '%c' with '%c' -> ", a, b);
     charReplace(str, 0, a, b, newStr);
-};
+}
 
 void charReplace(string str, int i, char a, char b, string newStr)
 {
