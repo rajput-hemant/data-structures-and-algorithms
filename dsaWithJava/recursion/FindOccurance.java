@@ -7,7 +7,7 @@ public class FindOccurance {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the String -> ");
         String str = sc.next();
-        System.out.print("Ente the Character you want to track -> ");
+        System.out.print("Enter the Character you want to track -> ");
         char c = sc.next().charAt(0);
         findOccurance(str, 0, c);
         sc.close();

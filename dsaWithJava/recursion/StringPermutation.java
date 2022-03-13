@@ -7,7 +7,7 @@ public class StringPermutation {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the String -> ");
         String str = sc.next();
-        System.out.print("All possibel permutaion of '" + str + "' are -> ");
+        System.out.print("All possible permutations of '" + str + "' are -> ");
         stringPermutation(str, "");
         sc.close();
     }
