@@ -19,6 +19,12 @@ public class BinaryTreeTraversals {
     }
 
     /*
+     * Breadth First Traversal (BFT) -> levelOrderTraversal
+     * Depth First Traversal (DFT) -> preOrderTraversal, inOrderTraversal, and
+     * postOrderTraversal
+     */
+
+    /*
      * Time Complexity -> O(n)
      * Print order:
      * Root -> Left SubTree -> Right SubTree
@@ -29,9 +35,11 @@ public class BinaryTreeTraversals {
             return;
         }
         System.out.print(root.data + " ");
-        // recursive call to build the right part of the tree, branching will stop when node is null or -1
+        // recursive call to build the right part of the tree,
+        // branching will stop when node is null or -1
         preOrderTraversal(root.left);
-        // recursive call to build the right part of the tree, branching will stop when node is null or -1
+        // recursive call to build the right part of the tree,
+        // branching will stop when node is null or -1
         preOrderTraversal(root.right);
     }
 
@@ -45,10 +53,12 @@ public class BinaryTreeTraversals {
             System.out.print(-1 + " ");
             return;
         }
-        // recursive call to build the left part of the tree, branching will stop when node is null or -1
+        // recursive call to build the left part of the tree,
+        // branching will stop when node is null or -1
         preOrderTraversal(root.left);
         System.out.print(root.data + " ");
-        // recursive call to build the right part of the tree, branching will stop when node is null or -1
+        // recursive call to build the right part of the tree,
+        // branching will stop when node is null or -1
         preOrderTraversal(root.right);
     }
 
@@ -62,9 +72,11 @@ public class BinaryTreeTraversals {
             System.out.print(-1 + " ");
             return;
         }
-        // recursive call to build the left part of the tree, branching will stop when node is null or -1
+        // recursive call to build the left part of the tree,
+        // branching will stop when node is null or -1
         postOrderTraversal(root.left);
-        // recursive call to build the right part of the tree, branching will stop when node is null or -1
+        // recursive call to build the right part of the tree,
+        // branching will stop when node is null or -1
         postOrderTraversal(root.right);
         System.out.print(root.data + " ");
     }
@@ -75,6 +87,8 @@ public class BinaryTreeTraversals {
      * NextLine
      */
     public static void levelOrderTraversal(Node root) {
+        if (root == null)
+            return;
         Queue<Node> q = new LinkedList<>();
         // this adds the root node in the Queue as the First element
         q.add(root);
