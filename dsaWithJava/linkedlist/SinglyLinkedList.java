@@ -7,15 +7,6 @@ public class SinglyLinkedList {
     int size = 0;
     Node head;
 
-    class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     public static void main(String[] args) {
         SinglyLinkedList ob = new SinglyLinkedList();

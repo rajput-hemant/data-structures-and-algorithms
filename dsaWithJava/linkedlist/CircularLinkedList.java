@@ -7,15 +7,7 @@ public class CircularLinkedList {
     int size = 0;
     Node head, tail;
 
-    class Node {
-        int data;
-        Node next;
 
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     public static void main(String[] args) {
         CircularLinkedList ob = new CircularLinkedList();

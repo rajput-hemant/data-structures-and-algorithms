@@ -4,21 +4,12 @@ import java.util.Scanner;
 
 public class DoublyLinkedList {
     static Scanner sc = new Scanner(System.in);
-    static Node head, tail;
-    static int size = 0;
+    Node head, tail;
+    int size = 0;
 
-    static class Node {
-        int data;
-        Node next;
-        Node prev;
-
-        Node(int data) {
-            this.data = data;
-            this.next = this.prev = null;
-        }
-    }
 
     public static void main(String[] args) {
+        DoublyLinkedList ob = new DoublyLinkedList();
         while (true) {
             System.out.print("Press:\n" +
                     "1 to Insert\n" +
@@ -31,19 +22,19 @@ public class DoublyLinkedList {
             int Choice = sc.nextInt();
             switch (Choice) {
                 case 1:
-                    insert();
+                    ob.insert();
                     break;
                 case 2:
-                    display();
+                    ob.display();
                     break;
                 case 3:
-                    delete();
+                    ob.delete();
                     break;
                 case 4:
-                    deleteAll();
+                    ob.deleteAll();
                     break;
                 case 5:
-                    printReverse();
+                    ob.printReverse();
                     break;
                 case 6:
                     System.exit(0);
@@ -54,11 +45,11 @@ public class DoublyLinkedList {
     }
 
     // Fn to check if list is Empty
-    static boolean isEmpty() {
+    public boolean isEmpty() {
         return head == null && tail == null;
     }
 
-    static void insert() {
+    public void insert() {
         while (true) {
             System.out.print("Press:\n" +
                     "1 to Insertion at Beginning\n" +
@@ -85,7 +76,7 @@ public class DoublyLinkedList {
         }
     }
 
-    static void insertBegin() {
+    public void insertBegin() {
         System.out.print("Enter your Data -> ");
         int data = sc.nextInt();
         Node newNode = new Node(data);
@@ -106,7 +97,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    static void insertInBtw() {
+    public void insertInBtw() {
         System.out.print("Enter the Index -> ");
         int i = sc.nextInt();
         // If index is 0
@@ -145,7 +136,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    static void insertAtLast() {
+    public void insertAtLast() {
         System.out.print("Enter your Data -> ");
         int data = sc.nextInt();
         Node newNode = new Node(data);
@@ -166,7 +157,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    static void delete() {
+    public void delete() {
         // If list is Empty
         if (isEmpty()) {
             System.out.println("List is Empty!");
@@ -193,7 +184,7 @@ public class DoublyLinkedList {
         }
     }
 
-    static void delBegin() {
+    public void delBegin() {
         // If list has only one element
         if (head.next == null) {
             System.out.println("Deleted -> " + head.data);
@@ -210,7 +201,7 @@ public class DoublyLinkedList {
         size--;
     }
 
-    static void delInBtw() {
+    public void delInBtw() {
         System.out.print("Enter the Index -> ");
         int i = sc.nextInt();
         // If index is 0
@@ -247,7 +238,7 @@ public class DoublyLinkedList {
         size--;
     }
 
-    static void delAtLast() {
+    public void delAtLast() {
         // If list have one element
         if (head.next == null) {
             System.out.println("Deleted -> " + tail.data);
@@ -263,7 +254,7 @@ public class DoublyLinkedList {
         size--;
     }
 
-    static void deleteAll() {
+    public void deleteAll() {
         if(isEmpty()){
             System.out.println("List is Empty!");
             return;
@@ -273,7 +264,7 @@ public class DoublyLinkedList {
         size = 0;
     }
 
-    static void display() {
+    public void display() {
         if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
@@ -286,7 +277,7 @@ public class DoublyLinkedList {
         System.out.println("\b\b]" + "\nList Size -> " + size);
     }
 
-    static void printReverse() {
+    public void printReverse() {
         if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
