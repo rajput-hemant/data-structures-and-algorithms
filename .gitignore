@@ -2,3 +2,4 @@
 /dont-push
 /out
 **/bin
+**/__pycache__
