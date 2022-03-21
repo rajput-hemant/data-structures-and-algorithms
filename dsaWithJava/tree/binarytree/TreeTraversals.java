@@ -2,13 +2,11 @@ package tree.binarytree;
 
 import java.util.*;
 
-import tree.binarytree.BinaryTreeBuilder.Node;
-
-public class BinaryTreeTraversals {
+public class TreeTraversals {
     public static void main(String[] args) {
         // int[] nodes = getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = BinaryTreeBuilder.buildTree(nodes);
+        Node root = TreeBuilder.buildTree(nodes);
         preOrderTraversal(root);
         System.out.println();
         inOrderTraversal(root);
