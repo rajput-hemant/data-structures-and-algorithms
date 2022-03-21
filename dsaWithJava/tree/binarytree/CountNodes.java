@@ -1,12 +1,10 @@
 package tree.binarytree;
 
-import tree.binarytree.BinaryTreeBuilder.Node;
-
 public class CountNodes {
     public static void main(String[] args) {
         // int[] nodes = BinaryTreeHelper.getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = BinaryTreeBuilder.buildTree(nodes);
+        Node root = TreeBuilder.buildTree(nodes);
         System.out.println("Number Of Nodes -> " + countNodes(root));
     }
 
