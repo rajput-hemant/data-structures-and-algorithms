@@ -2,23 +2,13 @@ package tree.binarytree;
 
 import java.util.*;
 
-public class BinaryTreeBuilder {
+public class TreeBuilder {
     static Scanner sc = new Scanner(System.in);
     static int index = -1;
 
-    public static class Node {
-        public int data;
-        public Node right, left;
-
-        Node(int data) {
-            this.data = data;
-            this.right = this.left = null;
-        }
-    }
-
     public static void main(String[] args) {
         // int[] nodes = getInput();
-        int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+        int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         Node root = buildTree(nodes);
         System.out.println("Data at Root -> " + root.data);
     }
@@ -41,9 +31,11 @@ public class BinaryTreeBuilder {
         if (nodes[index] == -1)
             return null;
         Node newNode = new Node(nodes[index]);
-        // recursive call to build the left part of the tree, branching will stop when node is null or -1
+        // recursive call to build the left part of the tree,
+        // branching will stop when node is null or -1
         newNode.left = buildTree(nodes);
-        // recursive call to build the right part of the tree, branching will stop when node is null or -1
+        // recursive call to build the right part of the tree,
+        // branching will stop when node is null or -1
         newNode.right = buildTree(nodes);
         return newNode;
     }
