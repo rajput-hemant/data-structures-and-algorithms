@@ -83,6 +83,7 @@ public class TreeTraversals {
      * Time Complexity -> O(1)
      * Print same level Nodes (Using Queue FIFO)
      * NextLine
+     * Approach 1
      */
     public static void levelOrderTraversal(Node root) {
         if (root == null)
@@ -117,6 +118,33 @@ public class TreeTraversals {
                 if (currentNode.right != null)
                     q.add(currentNode.right);
             }
+        }
+    }
+
+    /* Approach 2 */
+    public static void levelOrderTraversal2(Node root) {
+        if (root == null)
+            return;
+        Queue<Node> q = new LinkedList<>();
+        // this adds the root node in the Queue as the First element
+        q.add(root);
+        // traverse until Queue becomes Empty
+        while (!q.isEmpty()) {
+            int flag = q.size();
+            // traverse till size of the queue to print the nodes at the same level
+            for (int i = 0; i < flag; i++) {
+                // remove element from the Queue and stores it in currentNode
+                Node currentNode = q.remove();
+                // prints the data
+                System.out.print(currentNode.data + " ");
+                // adds left node to the Queue
+                if (currentNode.left != null)
+                    q.add(currentNode.left);
+                // adds right node to the Queue
+                if (currentNode.right != null)
+                    q.add(currentNode.right);
+            }
+            System.out.println();
         }
     }
 }

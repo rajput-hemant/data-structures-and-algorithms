@@ -32,13 +32,34 @@ class Traversals:
             return
         q = []
         q.append(root)
-        while len(q) > 0:
-            print(q[0].data, end=" ")
+        q.append(None)
+        while len(q) > 1:
             node = q.pop(0)
+            if node == None:
+                print()
+                q.append(None)
+                continue
+            print(node.data, end=" ")
             if node.left is not None:
                 q.append(node.left)
             if node.right is not None:
                 q.append(node.right)
+
+    def level_order_2(self, root: Node):
+        if root == None:
+            return
+        q = []
+        q.append(root)
+        while len(q) > 0:
+            flag = len(q)
+            for i in range(flag):
+                node = q.pop(0)
+                print(node.data, end=" ")
+                if node.left is not None:
+                    q.append(node.left)
+                if node.right is not None:
+                    q.append(node.right)
+            print()
 
 
 ob = Traversals()
