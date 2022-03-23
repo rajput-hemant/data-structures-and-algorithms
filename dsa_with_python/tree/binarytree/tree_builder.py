@@ -14,7 +14,7 @@ def build_tree(nodes: list) -> Node:
     return new_node
 
 
-# nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
-# print(nodes)
-# root = build_tree(nodes)
-# print(root.data)
+if __name__ == "__main__":
+    nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
+    root = build_tree(nodes)
+    print(root.data)
