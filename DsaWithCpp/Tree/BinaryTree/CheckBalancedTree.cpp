@@ -1,17 +1,41 @@
 #include <iostream>
 // #include "Node.cpp"
-// #include "TreeBuilder.cpp"  
+// #include "TreeBuilder.cpp"
 // already included in HeightOfTree.cpp
 #include "HeightOfTree.cpp"
 using namespace std;
 
-static bool isBalancedTree(Node *root)
+// Naive Approach
+// Time Complexity -> O(n^2)
+// static bool isBalancedTree(Node *root)
+// {
+//     if (root == NULL)
+//         return true;
+//     int leftHeight = height(root->left);
+//     int rightHeight = height(root->right);
+//     return abs(leftHeight - rightHeight) <= 1 && isBalancedTree(root->left) && isBalancedTree(root->right);
+// }
+
+// Time Complexity -> O(n)
+static int isBalTree(Node *root)
 {
     if (root == NULL)
-        return true;
-    int leftHeight = height(root->left);
-    int rightHeight = height(root->right);
-    return abs(leftHeight - rightHeight) <= 1 && isBalancedTree(root->left) && isBalancedTree(root->right);
+        return 0;
+    int leftHeight = isBalTree(root->left);
+    if (leftHeight == -1)
+        return -1;
+    int rightHeight = isBalTree(root->right);
+    if (rightHeight == -1)
+        return -1;
+    if (abs(leftHeight - rightHeight) > 1)
+        return -1;
+    else
+        return max(leftHeight, rightHeight) + 1;
+}
+
+static bool isBalancedTree(Node *root)
+{
+    return !(isBalTree(root) == -1);
 }
 
 int main()
