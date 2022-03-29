@@ -70,13 +70,19 @@ public:
     void remAtBegin()
     {
         if (isEmpty())
-        {
             cout << "List Is Empty!\n";
-            return;
+        else if (head->next == NULL)
+        {
+            head = NULL;
+            cout << "List Successfully Cleared!\n";
+            size = 0;
         }
-        head = head->next;
-        cout << "Successfully Deleted!\n";
-        size--;
+        else
+        {
+            head = head->next;
+            cout << "Successfully Deleted!\n";
+            size--;
+        }
     }
 
     void remAtPos(int pos)

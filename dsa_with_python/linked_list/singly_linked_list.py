@@ -54,10 +54,14 @@ class SinglyLinkedList:
     def delete_at_begin(self):
         if self.is_empty():
             print("List is Empty!")
-            return
-        print(f"Successfully Deleted '{self.head.data}' from beginning.")
-        self.head = self.head.next
-        self.size -= 1
+        elif self.head.next is None:
+            self.head = None
+            print("List Cleared Successfully!")
+            self.size = 0
+        else:
+            print(f"Successfully Deleted '{self.head.data}' from beginning.")
+            self.head = self.head.next
+            self.size -= 1
 
     def delete_at_pos(self, pos: int):
         if self.is_empty():

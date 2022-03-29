@@ -75,10 +75,17 @@ public class SinglyLinkedList {
         // If List is Empty
         if (isEmpty())
             System.out.println("List is Empty!");
-        // head from the firstNode is set to secNode, this removes the firstNode
-        head = head.next;
-        System.out.println("Successfully Deleted!");
-        size--;
+        // If list have one element
+        else if (head.next == null) {
+            head = null;
+            System.out.println("List Successfully Cleared!");
+            size = 0;
+        } else {
+            // head from the firstNode is set to secNode, this removes the firstNode
+            head = head.next;
+            System.out.println("Successfully Deleted!");
+            size--;
+        }
     }
 
     public void delAtPos(int pos) {
