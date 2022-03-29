@@ -1,106 +1,17 @@
 package linkedlist;
 
-import java.util.Scanner;
-
 public class SinglyLinkedList {
-    static Scanner sc = new Scanner(System.in);
     int size = 0;
     Node head;
 
-
-    public static void main(String[] args) {
-        SinglyLinkedList ob = new SinglyLinkedList();
-        while (true) {
-            System.out.print("Press:\n" +
-                    "1 to Insert\n" +
-                    "2 to Display\n" +
-                    "3 to Delete\n" +
-                    "4 to Delete All\n" +
-                    "5 to exit()\n" +
-                    "Enter your choice -> ");
-            int choice = sc.nextInt();
-            switch (choice) {
-                case 1:
-                    ob.insert();
-                    break;
-                case 2:
-                    ob.display();
-                    break;
-                case 3:
-                    ob.delete();
-                    break;
-                case 4:
-                    ob.deleteAll();
-                    break;
-                case 5:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Wrong Choice!");
-            }
-        }
+    public boolean isEmpty() {
+        return head == null;
     }
 
-    public void insert() {
-        while (true) {
-            System.out.print("Press:\n" +
-                    "1 to Insertion at Beginning\n" +
-                    "2 to Insertion Inbetween\n" +
-                    "3 to Insertion at Last\n" +
-                    "4 Go Back\n" +
-                    "Enter your choice -> ");
-            int choice = sc.nextInt();
-            switch (choice) {
-                case 1:
-                    insertBegin();
-                    break;
-                case 2:
-                    insertInBtw();
-                    break;
-                case 3:
-                    insertAtLast();
-                    break;
-                case 4:
-                    return;
-                default:
-                    System.out.println("Wrong Input!");
-            }
-        }
-    }
-
-    public void delete() {
-        // If list is Empty
-        if (head == null) {
-            System.out.println("List is Empty!");
-            return;
-        }
-        System.out.print("Press:\n" +
-                "1 to Deletion at Beginning\n" +
-                "2 to Deletion Inbetween\n" +
-                "3 to Deletion at Last\n" +
-                "Enter your choice -> ");
-        int choice = sc.nextInt();
-        switch (choice) {
-            case 1:
-                delBegin();
-                return;
-            case 2:
-                delInBtw();
-                return;
-            case 3:
-                delAtLast();
-                return;
-            default:
-                System.out.println("Wrong Input!");
-        }
-    }
-
-    public void insertBegin() {
-        System.out.print("Enter your Data -> ");
-        int data = sc.nextInt();
+    public void insertAtBegin(int data) {
         Node newNode = new Node(data);
         // If list is Empty
-        if (head == null) {
+        if (isEmpty()) {
             head = newNode;
             System.out.println("Data Inserted!");
             size++;
@@ -114,46 +25,37 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public void insertInBtw() {
-        System.out.print("Enter the Index -> ");
-        int i = sc.nextInt();
+    public void insertAtPos(int data, int pos) {
         // If index is 0
-        if (i == 0) {
+        if (pos == 0)
             System.out.println("Invalid Input! Index Starts from 1.");
-            return;
-        }
         // If index is 1
-        if (i == 1) {
-            insertBegin();
-            return;
-        }
+        else if (pos == 1)
+            insertAtBegin(data);
         // If index is greater than the list size
-        if (i > size) {
+        else if (pos > size)
             System.out.println("Invalid Input! List Size is: " + size);
-            return;
+        else {
+            Node newNode = new Node(data);
+            Node currentNode = head;
+            // traverse till index
+            for (int i = 0; i < pos - 2; i++)
+                currentNode = currentNode.next;
+            // this assign the next of currentNode i.e.
+            // address of next element to the next of newNode
+            newNode.next = currentNode.next;
+            // this assign the newNode to the next of currentNode
+            // i.e. address of newNode is assigned in the next of currentNode
+            currentNode.next = newNode;
+            System.out.println("Data Inserted!");
+            size++;
         }
-        System.out.print("Enter your Data -> ");
-        int data = sc.nextInt();
-        Node newNode = new Node(data);
-        Node currentNode = head;
-        // traverse till index
-        for (int j = 0; j < i - 2; j++)
-            currentNode = currentNode.next;
-        // this assign the next of currentNode i.e. address of next element to the next of newNode
-        newNode.next = currentNode.next;
-        // this assign the newNode to the next of currentNode
-        // i.e. address of newNode is assigned in the next of currentNode
-        currentNode.next = newNode;
-        System.out.println("Data Inserted!");
-        size++;
     }
 
-    public void insertAtLast() {
-        System.out.print("Enter your Data -> ");
-        int data = sc.nextInt();
+    public void insertAtLast(int data) {
         Node newNode = new Node(data);
         // If list is Empty
-        if (head == null) {
+        if (isEmpty()) {
             head = newNode;
             System.out.println("Data Inserted!");
             size++;
@@ -169,72 +71,78 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public void delBegin() {
+    public void delAtBegin() {
+        // If List is Empty
+        if (isEmpty())
+            System.out.println("List is Empty!");
         // head from the firstNode is set to secNode, this removes the firstNode
         head = head.next;
         System.out.println("Successfully Deleted!");
         size--;
     }
 
-    public void delInBtw() {
+    public void delAtPos(int pos) {
+        // If List is Empty
+        if (isEmpty())
+            System.out.println("List is Empty!");
         // If list has only 1 element
-        if (head.next == null) {
+        else if (head.next == null) {
             head = null;
             System.out.println("List Successfully Cleared!");
             size = 0;
-            return;
         }
-        System.out.print("Enter the Index -> ");
-        int i = sc.nextInt();
         // If index is 0
-        if (i == 0) {
+        else if (pos == 0)
             System.out.println("Invalid Input! Index Starts from 1.");
-            return;
-        }
-        if (i == 1) {
-            delBegin();
-            return;
-        }
+        else if (pos == 1)
+            delAtBegin();
         // If index is equal to list size
-        if (i == size) {
+        else if (pos == size)
             delAtLast();
-            return;
-        }
         // If index is greater than the list size
-        if (i > size) {
+        else if (pos > size)
             System.out.println("Invalid Input! List Size is: " + size);
-            return;
+        else {
+            Node currentNode = head;
+            // traverse till index
+            for (int j = 0; j < pos - 2; j++)
+                currentNode = currentNode.next;
+            // this assigns the address of 2nd next element to the currentNode,
+            // to the next of currentNode, removing the mid element
+            currentNode.next = currentNode.next.next;
+            System.out.println("Successfully Deleted!");
+            size--;
         }
-        Node currentNode = head;
-        // traverse till index
-        for (int j = 0; j < i - 2; j++)
-            currentNode = currentNode.next;
-        // this assigns the address of 2nd next element to the currentNode,
-        // to the next of currentNode, removing the mid element
-        currentNode.next = currentNode.next.next;
-        System.out.println("Successfully Deleted!");
-        size--;
     }
 
     public void delAtLast() {
+        // If List is Empty
+        if (isEmpty())
+            System.out.println("List is Empty!");
         // If list have one element
-        if (head.next == null) {
+        else if (head.next == null) {
             head = null;
             System.out.println("List Successfully Cleared!");
             size = 0;
-            return;
+        } else {
+            Node lastNode = head;
+            // traverse till second last element
+            while (lastNode.next.next != null)
+                lastNode = lastNode.next;
+            // second Last Node is set to null, this removes the address,
+            // removing the last element
+            lastNode.next = null;
+            System.out.println("Successfully Deleted!");
+            size--;
         }
-        Node lastNode = head;
-        // traverse till second last element
-        while (lastNode.next.next != null)
-            lastNode = lastNode.next;
-        // second Last Node is set to null, this removes the address, removing the last element
-        lastNode.next = null;
-        System.out.println("Successfully Deleted!");
-        size--;
     }
 
     public void deleteAll() {
+        // If List is Empty
+        if (isEmpty()) {
+            System.out.println("List is Empty!");
+            return;
+        }
         System.out.println("List Successfully Cleared!");
         head = null;
         size = 0;
@@ -242,7 +150,7 @@ public class SinglyLinkedList {
 
     public void display() {
         // If list is Empty
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
         }
@@ -252,6 +160,6 @@ public class SinglyLinkedList {
             System.out.print(currentNode.data + ", ");
             currentNode = currentNode.next;
         }
-        System.out.println("\b\b]" + "\nList Size -> " + size);
+        System.out.println("\b\b]\nList Size -> " + size);
     }
 }
