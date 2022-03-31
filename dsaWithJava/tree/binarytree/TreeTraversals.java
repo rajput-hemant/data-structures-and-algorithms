@@ -53,11 +53,11 @@ public class TreeTraversals {
         }
         // recursive call to build the left part of the tree,
         // branching will stop when node is null or -1
-        preOrderTraversal(root.left);
+        inOrderTraversal(root.left);
         System.out.print(root.data + " ");
         // recursive call to build the right part of the tree,
         // branching will stop when node is null or -1
-        preOrderTraversal(root.right);
+        inOrderTraversal(root.right);
     }
 
     /*
