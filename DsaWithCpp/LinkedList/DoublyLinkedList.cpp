@@ -4,7 +4,7 @@ using namespace std;
 
 class DoublyLinkedList
 {
-    Node *head, *tail = NULL;
+    Node *head = NULL, *tail = NULL;
     int size = 0;
 
 public:
