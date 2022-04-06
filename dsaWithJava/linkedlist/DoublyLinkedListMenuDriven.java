@@ -2,10 +2,9 @@ package linkedlist;
 
 import java.util.Scanner;
 
-public class DoublyLinkedListMenuDriven {
+public class DoublyLinkedListMenuDriven extends DoublyLinkedList{
     static Scanner sc = new Scanner(System.in);
-    static DoublyLinkedList dll = new DoublyLinkedList();
-    static DoublyLinkedListMenuDriven ob = new DoublyLinkedListMenuDriven();
+    static DoublyLinkedListMenuDriven dll = new DoublyLinkedListMenuDriven();
 
     public static void main(String[] args) {
         while (true) {
@@ -27,13 +26,13 @@ public class DoublyLinkedListMenuDriven {
             }
             switch (choice) {
                 case 1:
-                    ob.insert();
+                    dll.insert();
                     break;
                 case 2:
                     dll.display();
                     break;
                 case 3:
-                    ob.delete();
+                    dll.delete();
                     break;
                 case 4:
                     dll.deleteAll();
@@ -63,19 +62,19 @@ public class DoublyLinkedListMenuDriven {
                 case 1:
                     System.out.print("Enter your Data -> ");
                     data = sc.nextInt();
-                    dll.insertAtBegin(data);
+                    insertAtBegin(data);
                     break;
                 case 2:
                     System.out.print("Enter your Data -> ");
                     data = sc.nextInt();
                     System.out.print("Enter the Index -> ");
                     int pos = sc.nextInt();
-                    dll.insertAtPos(data, pos);
+                    insertAtPos(data, pos);
                     break;
                 case 3:
                     System.out.print("Enter your Data -> ");
                     data = sc.nextInt();
-                    dll.insertAtLast(data);
+                    insertAtLast(data);
                     break;
                 case 4:
                     return;
@@ -86,7 +85,7 @@ public class DoublyLinkedListMenuDriven {
     }
 
     public void delete() {
-        if (dll.isEmpty()) {
+        if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
         }
@@ -98,15 +97,15 @@ public class DoublyLinkedListMenuDriven {
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
-                dll.delAtBegin();
+                delAtBegin();
                 return;
             case 2:
                 System.out.print("Enter the Index -> ");
                 int pos = sc.nextInt();
-                dll.delAtPos(pos);
+                delAtPos(pos);
                 return;
             case 3:
-                dll.delAtLast();
+                delAtLast();
                 return;
             default:
                 System.out.println("Wrong Input!");
