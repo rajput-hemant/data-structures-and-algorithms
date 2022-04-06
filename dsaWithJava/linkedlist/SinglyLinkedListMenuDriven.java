@@ -2,10 +2,9 @@ package linkedlist;
 
 import java.util.Scanner;
 
-public class SinglyLinkedListMenuDriven {
+public class SinglyLinkedListMenuDriven extends SinglyLinkedList {
     static Scanner sc = new Scanner(System.in);
-    static SinglyLinkedList sll = new SinglyLinkedList();
-    static SinglyLinkedListMenuDriven ob = new SinglyLinkedListMenuDriven();
+    static SinglyLinkedListMenuDriven sll = new SinglyLinkedListMenuDriven();
 
     public static void main(String[] args) {
         while (true) {
@@ -26,13 +25,13 @@ public class SinglyLinkedListMenuDriven {
             }
             switch (choice) {
                 case 1:
-                    ob.insert();
+                    sll.insert();
                     break;
                 case 2:
                     sll.display();
                     break;
                 case 3:
-                    ob.delete();
+                    sll.delete();
                     break;
                 case 4:
                     sll.deleteAll();
@@ -60,19 +59,19 @@ public class SinglyLinkedListMenuDriven {
                 case 1:
                     System.out.print("Enter your Data -> ");
                     data = sc.nextInt();
-                    sll.insertAtBegin(data);
+                    insertAtBegin(data);
                     break;
                 case 2:
                     System.out.print("Enter your Data -> ");
                     data = sc.nextInt();
                     System.out.print("Enter the Index -> ");
                     int pos = sc.nextInt();
-                    sll.insertAtPos(data, pos);
+                    insertAtPos(data, pos);
                     break;
                 case 3:
                     System.out.print("Enter your Data -> ");
                     data = sc.nextInt();
-                    sll.insertAtLast(data);
+                    insertAtLast(data);
                     break;
                 case 4:
                     return;
@@ -83,7 +82,7 @@ public class SinglyLinkedListMenuDriven {
     }
 
     public void delete() {
-        if (sll.isEmpty()) {
+        if (isEmpty()) {
             System.out.println("List is Empty!");
             return;
         }
@@ -95,15 +94,15 @@ public class SinglyLinkedListMenuDriven {
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
-                sll.delAtBegin();
+                delAtBegin();
                 return;
             case 2:
                 System.out.print("Enter the Index -> ");
                 int pos = sc.nextInt();
-                sll.delAtPos(pos);
+                delAtPos(pos);
                 return;
             case 3:
-                sll.delAtLast();
+                delAtLast();
                 return;
             default:
                 System.out.println("Wrong Input!");

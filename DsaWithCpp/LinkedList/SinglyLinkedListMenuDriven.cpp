@@ -2,8 +2,7 @@
 #include "SinglyLinkedList.cpp"
 using namespace std;
 
-SinglyLinkedList sll;
-class SinglyLinkedListMenuDriven
+class SinglyLinkedListMenuDriven : public SinglyLinkedList
 {
 public:
     void insert()
@@ -24,19 +23,19 @@ public:
             case 1:
                 cout << "Enter your Data -> ";
                 cin >> data;
-                sll.insertAtBegin(data);
+                insertAtBegin(data);
                 break;
             case 2:
                 cout << "Enter your Data -> ";
                 cin >> data;
                 cout << "Enter the Index -> ";
                 cin >> pos;
-                sll.insertAtPos(data, pos);
+                insertAtPos(data, pos);
                 break;
             case 3:
                 cout << "Enter your Data -> ";
                 cin >> data;
-                sll.insertAtLast(data);
+                insertAtLast(data);
                 break;
             case 4:
                 return;
@@ -48,7 +47,7 @@ public:
 
     void remove()
     {
-        if (sll.isEmpty())
+        if (isEmpty())
         {
             cout << "List is Empty!\n";
             return;
@@ -64,15 +63,15 @@ public:
         switch (choice)
         {
         case 1:
-            sll.remAtBegin();
+            remAtBegin();
             break;
         case 2:
             cout << "Enter the Index -> ";
             cin >> pos;
-            sll.remAtPos(pos);
+            remAtPos(pos);
             break;
         case 3:
-            sll.remAtLast();
+            remAtLast();
             break;
         default:
             cout << "Wrong Input!\n";
@@ -82,7 +81,7 @@ public:
 
 // int main()
 // {
-//     SinglyLinkedListMenuDriven ob;
+//     SinglyLinkedListMenuDriven sll;
 //     while (true)
 //     {
 //         printf("Press:\n"
@@ -97,13 +96,13 @@ public:
 //         switch (choice)
 //         {
 //         case 1:
-//             ob.insert();
+//             sll.insert();
 //             break;
 //         case 2:
 //             sll.display();
 //             break;
 //         case 3:
-//             ob.remove();
+//             sll.remove();
 //             break;
 //         case 4:
 //             sll.removeAll();
