@@ -22,6 +22,7 @@
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree">tree</a></summary>
     
+    - [binarysearchtree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/binarysearchtree)
     - [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/binarytree)
 
   </details>
@@ -39,6 +40,7 @@
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree">tree</a></summary>
     
+    - [binary_search_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/binary_search_tree)
     - [binary_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/binary_tree)
 
   </details>
@@ -56,6 +58,7 @@
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree">Tree</a></summary>
     
+    - [BinarySearchTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/BinarySearchTree)
     - [BinaryTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/BinaryTree)
 
   </details>
@@ -63,7 +66,7 @@
 ---
 
 ### [`Leetcode`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode)
-[tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree) &nbsp; [binarysearch](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/binarysearch) &nbsp; [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarytree) &nbsp; [backtracking](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/linkedlist) &nbsp; [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion)
+[array](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/array) &nbsp; [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree) &nbsp; [binarysearch](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/binarysearch) &nbsp; [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarytree) &nbsp; [backtracking](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/linkedlist) &nbsp; [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion)
 
 ---
 
