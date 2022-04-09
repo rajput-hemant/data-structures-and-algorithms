@@ -4,21 +4,24 @@ using namespace std;
 
 class BSTRecursive
 {
+public:
     Node *root = NULL;
 
-public:
     void insert(int data)
     {
         root = insert(root, data);
     }
+
     void remove(int data)
     {
         root = remove(root, data);
     }
+
     bool search(int data)
     {
         return search(root, data);
     }
+
     void display()
     {
         display(root);
