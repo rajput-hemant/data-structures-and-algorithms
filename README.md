@@ -22,6 +22,7 @@
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree">tree</a></summary>
     
+    - [avltree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/avltree)
     - [binarysearchtree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/binarysearchtree)
     - [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/binarytree)
 
@@ -40,6 +41,7 @@
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree">tree</a></summary>
     
+    - [avl_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/avl_tree)
     - [binary_search_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/binary_search_tree)
     - [binary_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/binary_tree)
 
@@ -58,6 +60,7 @@
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree">Tree</a></summary>
     
+    - [AVLTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/AVLTree)
     - [BinarySearchTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/BinarySearchTree)
     - [BinaryTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/BinaryTree)
 

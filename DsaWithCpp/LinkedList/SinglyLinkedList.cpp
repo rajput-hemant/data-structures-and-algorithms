@@ -4,10 +4,10 @@ using namespace std;
 
 class SinglyLinkedList
 {
+public:
     Node *head = NULL;
     int size = 0;
 
-public:
     bool isEmpty()
     {
         return head == NULL;
@@ -70,7 +70,7 @@ public:
     void remAtBegin()
     {
         if (isEmpty())
-            cout << "List Is Empty!\n";
+            cout << "List is Empty!\n";
         else if (head->next == NULL)
         {
             head = NULL;
@@ -88,7 +88,7 @@ public:
     void remAtPos(int pos)
     {
         if (isEmpty())
-            cout << "List Is Empty!\n";
+            cout << "List is Empty!\n";
         else if (head->next == NULL)
         {
             head = NULL;
@@ -115,7 +115,7 @@ public:
     void remAtLast()
     {
         if (isEmpty())
-            cout << "List Is Empty!\n";
+            cout << "List is Empty!\n";
         else if (head->next == NULL)
         {
             head = NULL;
@@ -137,7 +137,7 @@ public:
     {
         if (isEmpty())
         {
-            cout << "List Is Empty!\n";
+            cout << "List is Empty!\n";
             return;
         }
         cout << "List Successfully Cleared!\n";
