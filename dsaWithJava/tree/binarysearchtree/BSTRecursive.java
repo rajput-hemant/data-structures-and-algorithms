@@ -48,7 +48,7 @@ public class BSTRecursive {
                 return root.left;
             Node successor = getSuccessor(root);
             root.data = successor.data;
-            root.right = delete(root.right, data);
+            root.right = delete(root.right, root.data);
         }
         return root;
     }

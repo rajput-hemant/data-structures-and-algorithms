@@ -56,7 +56,7 @@ private:
                 return root->left;
             Node *successor = getSuccessor(root);
             root->data = successor->data;
-            root->right = remove(root->right, data);
+            root->right = remove(root->right, root->data);
         }
         return root;
     }

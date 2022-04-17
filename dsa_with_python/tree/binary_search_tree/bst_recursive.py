@@ -1,4 +1,3 @@
-from logging import root
 from node import Node
 
 root = None
@@ -36,7 +35,7 @@ def delete(data):
                 return root.left
             successor = __get_successor(root)
             root.data = successor.data
-            root.right = __delete(root.right, data)
+            root.right = __delete(root.right, root.data)
         return root
 
     def __get_successor(root: Node) -> Node:
@@ -65,6 +64,8 @@ def search(data) -> bool:
 
 
 def display():
+    global root
+
     def __display(root: Node):
         if root is None:
             return
