@@ -9,6 +9,10 @@ public class BSTIterative {
         root = insert(root, x);
     }
 
+    public void delete(int x) {
+        root = delete(root, x);
+    }
+
     public boolean search(int x) {
         return search(root, x);
     }
@@ -42,7 +46,49 @@ public class BSTIterative {
 
     // Time Complexity -> O(h)
     // Auxiliary Space -> O(1)
-    private boolean search(Node root, int x) {
+    private Node delete(Node root, int x) {
+        if (root == null)
+            return null;
+        Node currentNode = root, parentNode = null;
+        while (currentNode != null && currentNode.data != x) {
+            parentNode = currentNode;
+            if (currentNode.data > x)
+                currentNode = currentNode.left;
+            else
+                currentNode = currentNode.right;
+        }
+        if (currentNode == null)
+            return root;
+        if (currentNode.left == null || currentNode.right == null) {
+            Node newNode;
+            if (currentNode.left == null)
+                newNode = currentNode.right;
+            else
+                newNode = currentNode.left;
+            if (parentNode == null)
+                return newNode;
+            if (currentNode == parentNode.left)
+                parentNode.left = newNode;
+            else
+                parentNode.right = newNode;
+        } else {
+            Node inOrderParent = null, successor = currentNode.right;
+            while (successor.left != null) {
+                inOrderParent = successor;
+                successor = successor.left;
+            }
+            if (inOrderParent != null)
+                inOrderParent.left = successor.right;
+            else
+                currentNode.right = successor.right;
+            currentNode.data = successor.data;
+        }
+        return root;
+    }
+
+    // Time Complexity -> O(h)
+    // Auxiliary Space -> O(1)
+    private static boolean search(Node root, int x) {
         while (root != null) {
             if (root.data == x)
                 return true;
@@ -55,6 +101,8 @@ public class BSTIterative {
     }
 
     private void display(Node root) {
+        if (root == null)
+            return;
         Stack<Node> stk = new Stack<>();
         Node currentNode = root;
         System.out.print("[");
