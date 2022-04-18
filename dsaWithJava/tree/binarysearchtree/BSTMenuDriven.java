@@ -4,9 +4,14 @@ import java.util.Scanner;
 
 public class BSTMenuDriven {
     static Scanner sc = new Scanner(System.in);
+    static BSTIterative bst = new BSTIterative();
+    // static BSTRecursive bst = new BSTRecursive();
+
+    static private boolean isEmpty() {
+        return bst.root == null;
+    }
 
     public static void main(String[] args) {
-        BSTRecursive bst = new BSTRecursive();
         while (true) {
             int choice;
             int data;
@@ -25,28 +30,38 @@ public class BSTMenuDriven {
                 continue;
             }
             switch (choice) {
-                case 1:
+                case 1 -> {
                     System.out.print("Enter the Data to Insert -> ");
                     data = sc.nextInt();
                     bst.insert(data);
-                    break;
-                case 2:
-                    System.out.print("Enter the Data to Delete -> ");
-                    data = sc.nextInt();
-                    bst.delete(data);
-                    break;
-                case 3:
-                    System.out.print("Enter the Data to Search -> ");
-                    data = sc.nextInt();
-                    System.out.println((bst.search(data) ? "Element Exists!" : "Element Doesn't Exists!"));
-                    break;
-                case 4:
-                    bst.display();
-                    break;
-                case 5:
+                }
+                case 2 -> {
+                    if (isEmpty())
+                        System.out.println("BST is Empty!");
+                    else {
+                        System.out.print("Enter the Data to Delete -> ");
+                        data = sc.nextInt();
+                        bst.delete(data);
+                    }
+                }
+                case 3 -> {
+                    if (isEmpty())
+                        System.out.println("BST is Empty!");
+                    else {
+                        System.out.print("Enter the Data to Search -> ");
+                        data = sc.nextInt();
+                        System.out.println((bst.search(data) ? "Element Exists!" : "Element Doesn't Exists!"));
+                    }
+                }
+                case 4 -> {
+                    if (isEmpty())
+                        System.out.println("BST is Empty!");
+                    else
+                        bst.display();
+                }
+                case 5 ->
                     System.exit(0);
-                    break;
-                default:
+                default ->
                     System.out.println("Wrong Choice!");
             }
         }

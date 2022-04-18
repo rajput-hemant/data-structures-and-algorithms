@@ -1,4 +1,11 @@
-from bst_recursive import *
+import bst_iterative as bst
+
+# import bst_recursive as bst
+
+
+def __is_empty() -> bool:
+    return bst.root is None
+
 
 while True:
     try:
@@ -19,17 +26,26 @@ while True:
     match choice:
         case 1:
             data = input("Enter the Data to Insert -> ")
-            insert(data)
+            bst.insert(data)
         case 2:
-            data = input("Enter the Data to Delete -> ")
-            delete(data)
+            if __is_empty():
+                print("BST is Empty!")
+            else:
+                data = input("Enter the Data to Delete -> ")
+                bst.delete(data)
         case 3:
-            data = input("Enter the Data to Search -> ")
-            print("Element Exists!") if search(data) else print(
-                "Element Doesn't Exists!"
-            )
+            if __is_empty():
+                print("BST is Empty!")
+            else:
+                data = input("Enter the Data to Search -> ")
+                print("Element Exists!") if bst.search(data) else print(
+                    "Element Doesn't Exists!"
+                )
         case 4:
-            display()
+            if __is_empty():
+                print("BST is Empty!")
+            else:
+                bst.display()
         case 5:
             exit(0)
         case _:

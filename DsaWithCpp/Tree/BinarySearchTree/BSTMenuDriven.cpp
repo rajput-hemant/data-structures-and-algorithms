@@ -1,10 +1,18 @@
 #include <iostream>
-#include "BSTRecursive.cpp"
+// #include "BSTRecursive.cpp"
+#include "BSTIterative.cpp"
 using namespace std;
+
+BSTIterative bst;
+// BSTRecursive bst;
+
+bool isEmpty()
+{
+    return bst.root == NULL;
+}
 
 int main()
 {
-    BSTRecursive bst;
     while (true)
     {
         printf("Press:\n"
@@ -25,17 +33,30 @@ int main()
             bst.insert(data);
             break;
         case 2:
-            cout << "Enter the Data to Delete -> ";
-            cin >> data;
-            bst.remove(data);
+            if (isEmpty())
+                cout << "BST is Empty!" << endl;
+            else
+            {
+                cout << "Enter the Data to Delete -> ";
+                cin >> data;
+                bst.remove(data);
+            }
             break;
         case 3:
-            cout << "Enter the Data to Search -> ";
-            cin >> data;
-            printf("%s\n", bst.search(data) ? "Element Exists!" : "Element Doesn't Exists!");
+            if (isEmpty())
+                cout << "BST is Empty!" << endl;
+            else
+            {
+                cout << "Enter the Data to Search -> ";
+                cin >> data;
+                printf("%s\n", bst.search(data) ? "Element Exists!" : "Element Doesn't Exists!");
+            }
             break;
         case 4:
-            bst.display();
+            if (isEmpty())
+                cout << "BST is Empty!" << endl;
+            else
+                bst.display();
             break;
         case 5:
             exit(0);
