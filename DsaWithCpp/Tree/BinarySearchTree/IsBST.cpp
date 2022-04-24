@@ -17,3 +17,18 @@ bool isBST(Node *root)
 {
     return validBST(root, LONG_MIN, LONG_MAX);
 }
+/*
+int previous = INT_MIN;
+
+bool isBST(Node *root)
+{
+    if (root == NULL)
+        return true;
+    if (isBST(root->left) == false)
+        return false;
+    if (root->data <= previous)
+        return false;
+    previous = root->data;
+    return isBST(root->right);
+}
+*/
