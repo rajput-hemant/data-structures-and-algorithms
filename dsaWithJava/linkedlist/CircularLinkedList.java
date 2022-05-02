@@ -7,8 +7,6 @@ public class CircularLinkedList {
     int size = 0;
     Node head, tail;
 
-
-
     public static void main(String[] args) {
         CircularLinkedList ob = new CircularLinkedList();
         while (true) {
@@ -115,6 +113,8 @@ public class CircularLinkedList {
         newNode.next = head;
         // head is set to newNode
         head = newNode;
+        // tail next is set to head
+        tail.next = head;
         System.out.println("Data Inserted!");
         size++;
     }
