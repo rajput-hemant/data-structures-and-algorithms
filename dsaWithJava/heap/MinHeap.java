@@ -49,13 +49,13 @@ public class MinHeap {
     // Time Complexity -> O(logn)
     // Auxuliary Space -> O(h)
     public void minHeapify(int index) {
+        if (isEmpty())
+            throw new IllegalStateException("Heap is Empty!");
         int lChild = leftChild(index), rChild = rightChild(index), smallest = index;
-        if (lChild < heap.size() && heap.get(lChild) < heap.get(index)) {
+        if (lChild < heap.size() && heap.get(lChild) < heap.get(smallest))
             smallest = lChild;
-        }
-        if (rChild < heap.size() && heap.get(rChild) < heap.get(smallest)) {
+        if (rChild < heap.size() && heap.get(rChild) < heap.get(smallest))
             smallest = rChild;
-        }
         if (smallest != index) {
             swap(index, smallest);
             minHeapify(smallest);
@@ -64,6 +64,8 @@ public class MinHeap {
 
     // Time Complexity -> O(1)
     public int getMin() {
+        if (isEmpty())
+            throw new IllegalStateException("Heap is Empty!");
         return heap.get(0);
     }
 
@@ -75,13 +77,15 @@ public class MinHeap {
         if (heap.size() == 1)
             return heap.remove(0);
         swap(0, heap.size() - 1);
-        heap.remove(heap.size() - 1);
+        int min = heap.remove(heap.size() - 1);
         minHeapify(0);
-        return heap.get(heap.size() - 1);
+        return min;
     }
 
     // Time Complexity -> O(logn)
     public void decreaseKey(int index, int newVal) {
+        if (isEmpty())
+            throw new IllegalStateException("Heap is Empty!");
         if (heap.get(index) < newVal)
             throw new IllegalArgumentException("Key is larger than the original key");
         heap.set(index, newVal);
@@ -109,6 +113,8 @@ public class MinHeap {
     }
 
     public void printHeap() {
+        if (isEmpty())
+            throw new IllegalStateException("Heap is Empty!");
         System.out.print("MinHeap -> [");
         for (Integer item : heap) {
             System.out.print(item + ", ");

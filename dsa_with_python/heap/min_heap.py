@@ -34,6 +34,8 @@ class min_heap:
             i = self.__parent(i)
 
     def min_heapify(self, index):
+        if self.is_empty():
+            raise Exception("Heap is Empty!")
         l_child, r_child, smallest = (
             self.__left_child(index),
             self.__right_child(index),
@@ -48,6 +50,8 @@ class min_heap:
             self.min_heapify(smallest)
 
     def get_min(self):
+        if self.is_empty():
+            raise Exception("Heap is Empty!")
         return self.heap[0]
 
     def extract_min(self):
@@ -56,11 +60,13 @@ class min_heap:
         if len(self.heap) == 1:
             return self.heap.pop(0)
         self.__swap(0, len(self.heap) - 1)
-        self.heap.pop(len(self.heap) - 1)
+        min = self.heap.pop(len(self.heap) - 1)
         self.min_heapify(0)
-        return self.heap[len(self.heap) - 1]
+        return min
 
     def decrease_key(self, index, new_val):
+        if self.is_empty():
+            raise Exception("Heap is Empty!")
         if self.heap[index] < new_val:
             raise Exception("Key is larger than the original key")
         self.heap[index] = new_val
@@ -82,6 +88,8 @@ class min_heap:
             self.min_heapify(i)
 
     def print_heap(self):
+        if self.is_empty():
+            raise Exception("Heap is Empty!")
         print("MinHeap -> [", end="")
         for item in self.heap:
             print(item, end=", ")

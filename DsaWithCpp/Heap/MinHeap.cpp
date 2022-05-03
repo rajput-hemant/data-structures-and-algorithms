@@ -53,15 +53,13 @@ public:
 
     void minHeapify(int index)
     {
+        if (isEmpty())
+            throw out_of_range("Heap is Empty!");
         int lChild = leftChild(index), rChild = rightChild(index), smallest = index;
         if (lChild < heap.size() && heap[lChild] < heap[index])
-        {
             smallest = lChild;
-        }
         if (rChild < heap.size() && heap[rChild] < heap[smallest])
-        {
             smallest = rChild;
-        }
         if (smallest != index)
         {
             swap(heap[index], heap[smallest]);
@@ -71,13 +69,15 @@ public:
 
     int getMin()
     {
+        if (isEmpty())
+            throw out_of_range("Heap is Empty!");
         return heap.at(0);
     }
 
     int extractMin()
     {
         if (isEmpty())
-            ("Heap is Empty!");
+            throw out_of_range("Heap is Empty!");
         if (heap.size() == 1)
         {
             int item = heap.front();
@@ -85,13 +85,16 @@ public:
             return item;
         }
         swap(heap[0], heap[heap.size() - 1]);
+        int min = heap.back();
         heap.pop_back();
         minHeapify(0);
-        return heap[heap.size() - 1];
+        return min;
     }
 
     void decreaseKey(int index, int newVal)
     {
+        if (isEmpty())
+            throw out_of_range("Heap is Empty!");
         if (heap[index] < newVal)
             cout << "Key is larger than the original key" << endl;
         heap[index] = newVal;
@@ -105,8 +108,7 @@ public:
     int remove(int index)
     {
         if (isEmpty())
-            cout << "Heap is Empty!" << endl;
-
+            throw out_of_range("Heap is Empty!");
         if (index > heap.size() - 1)
             cout << "Index is Out of range!" << endl;
         decreaseKey(index, INT_MIN);
@@ -122,6 +124,8 @@ public:
 
     void printHeap()
     {
+        if (isEmpty())
+            throw out_of_range("Heap is Empty!");
         cout << "MinHeap -> [";
         for (int item : heap)
             cout << item << ", ";
@@ -129,17 +133,18 @@ public:
     }
 };
 
-// int main()
-// {
-//     MinHeap ob;
-//     ob.insert(10);
-//     ob.insert(4);
-//     ob.insert(9);
-//     ob.insert(1);
-//     ob.insert(7);
-//     ob.insert(5);
-//     ob.insert(3);
-//     ob.printHeap();
-//     ob.remove(3);
-//     ob.printHeap();
-// }
+int main()
+{
+    MinHeap ob;
+    ob.insert(10);
+    ob.insert(4);
+    ob.insert(9);
+    ob.insert(1);
+    ob.insert(7);
+    ob.insert(5);
+    ob.insert(3);
+    ob.printHeap();
+    // ob.remove(3);
+    cout << ob.extractMin() << endl;
+    ob.printHeap();
+}
