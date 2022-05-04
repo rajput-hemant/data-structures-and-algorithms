@@ -13,12 +13,13 @@
 
 ### [`dsaWithJava`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava)
 
+- [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/heap)
+- [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/linkedlist)
+- [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/queue)
+- [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/recursion)
 - [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/searching)
 - [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/sorting)
-- [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/recursion)
-- [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/linkedlist)
 - [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/stack)
-- [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/queue)
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree">tree</a></summary>
     
@@ -32,12 +33,13 @@
 
 ### [`dsa_with_python`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python)
 
+- [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/heap)
+- [linked_list](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/linked_list)
+- [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/queue)
+- [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/recursion)
 - [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/searching)
 - [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/sorting)
-- [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/recursion)
-- [linked_list](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/linked_list)
 - [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/stack)
-- [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/queue)
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree">tree</a></summary>
     
@@ -51,12 +53,13 @@
 
 ### [`DsaWithCpp`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp)
 
+- [Heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Heap)
+- [LinkedList](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/LinkedList)
+- [Queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Queue)
+- [Recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Recursion)
 - [Searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Searching)
 - [Sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Sorting)
-- [Recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Recursion)
-- [LinkedList](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/LinkedList)
 - [Stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Stack)
-- [Queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Queue)
 - <details>
     <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree">Tree</a></summary>
     
