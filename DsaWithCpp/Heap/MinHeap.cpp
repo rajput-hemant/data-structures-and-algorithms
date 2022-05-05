@@ -54,7 +54,7 @@ public:
     void minHeapify(int index)
     {
         if (isEmpty())
-            throw out_of_range("Heap is Empty!");
+            throw length_error("Heap is Empty!");
         int lChild = leftChild(index), rChild = rightChild(index), smallest = index;
         if (lChild < heap.size() && heap[lChild] < heap[index])
             smallest = lChild;
@@ -70,14 +70,14 @@ public:
     int getMin()
     {
         if (isEmpty())
-            throw out_of_range("Heap is Empty!");
+            throw length_error("Heap is Empty!");
         return heap.at(0);
     }
 
     int extractMin()
     {
         if (isEmpty())
-            throw out_of_range("Heap is Empty!");
+            throw length_error("Heap is Empty!");
         if (heap.size() == 1)
         {
             int item = heap.front();
@@ -94,7 +94,7 @@ public:
     void decreaseKey(int index, int newVal)
     {
         if (isEmpty())
-            throw out_of_range("Heap is Empty!");
+            throw length_error("Heap is Empty!");
         if (heap[index] < newVal)
             cout << "Key is larger than the original key" << endl;
         heap[index] = newVal;
@@ -108,7 +108,7 @@ public:
     int remove(int index)
     {
         if (isEmpty())
-            throw out_of_range("Heap is Empty!");
+            throw length_error("Heap is Empty!");
         if (index > heap.size() - 1)
             cout << "Index is Out of range!" << endl;
         decreaseKey(index, INT_MIN);
@@ -125,7 +125,7 @@ public:
     void printHeap()
     {
         if (isEmpty())
-            throw out_of_range("Heap is Empty!");
+            throw length_error("Heap is Empty!");
         cout << "MinHeap -> [";
         for (int item : heap)
             cout << item << ", ";
