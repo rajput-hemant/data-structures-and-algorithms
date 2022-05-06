@@ -1,15 +1,11 @@
 package sorting;
 
-import java.util.Scanner;
-
 public class SelectionSort {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         int[] arr = SortHelper.takeInput();
         int sort = SortHelper.sort();
         selectionSort(arr, sort);
         SortHelper.printSortedArray(arr);
-        sc.close();
     }
 
     // Time Compelexity = O(n^2)

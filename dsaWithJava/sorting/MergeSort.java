@@ -1,7 +1,5 @@
 package sorting;
 
-import java.util.Scanner;
-
 /*
 * merge sort = recursively divide array in 2, sort, re-combine
 * run-time complexity = O(n Log n)
@@ -9,12 +7,10 @@ import java.util.Scanner;
 */
 public class MergeSort {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         int[] arr = SortHelper.takeInput();
         int sort = SortHelper.sort();
         mergeSort(arr, sort);
         SortHelper.printSortedArray(arr);
-        sc.close();
     }
 
     public static void mergeSort(int[] arr, int sort) {

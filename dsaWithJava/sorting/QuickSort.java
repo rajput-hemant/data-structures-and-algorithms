@@ -1,7 +1,5 @@
 package sorting;
 
-import java.util.Scanner;
-
 /*
 * quick sort = moves smaller elements to left of a pivot recursively * * divide array in 2 partitions
 * run-time complexity = Best case O(n log(n))
@@ -11,12 +9,10 @@ import java.util.Scanner;
 */
 public class QuickSort {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         int[] arr = SortHelper.takeInput();
         int sort = SortHelper.sort();
         quickSort(arr, sort);
         SortHelper.printSortedArray(arr);
-        sc.close();
     }
 
     public static void quickSort(int[] arr, int sort) {
@@ -81,7 +77,7 @@ public class QuickSort {
         }
         // after increasing i, this will be the final index of the pivot
         i++;
-        // after transvering the array i.e. till the pivot, 
+        // after transvering the array i.e. till the pivot,
         // the pivot will be swapped with the value at i
         swap(arr, i, end);
         return i;
