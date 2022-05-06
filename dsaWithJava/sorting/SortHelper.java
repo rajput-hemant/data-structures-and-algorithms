@@ -2,22 +2,21 @@ package sorting;
 
 import java.util.Scanner;
 
-// Function to take create and take input in an array
 public class SortHelper {
     static Scanner sc = new Scanner(System.in);
 
+    // A Utility Fn to take input in an array
     public static int[] takeInput() {
         System.out.print("Enter the length of the Array -> ");
         int len = sc.nextInt();
         int[] arr = new int[len];
-        arr = new int[len];
         System.out.print("Enter the elements -> ");
         for (int i = 0; i < len; i++)
             arr[i] = sc.nextInt();
         return arr;
     }
 
-    // Fn to take input for sort options
+    // A Utility Fn to take input for sort options
     public static int sort() {
         System.out.print("1 for Ascending\n" +
                 "2 for Descending\n" +
@@ -26,7 +25,7 @@ public class SortHelper {
         return sort;
     }
 
-    // Fn to print the Sorted Array
+    // A Utility Fn to print the Sorted Array
     public static void printSortedArray(int[] arr) {
         System.out.print("Array after sorting -> [");
         for (int i : arr)
