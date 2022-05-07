@@ -13,6 +13,7 @@
 
 ### [`dsaWithJava`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava)
 
+- [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/graph)
 - [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/heap)
 - [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/linkedlist)
 - [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/queue)
@@ -33,6 +34,7 @@
 
 ### [`dsa_with_python`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python)
 
+- [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/graph)
 - [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/heap)
 - [linked_list](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/linked_list)
 - [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/queue)
@@ -53,6 +55,7 @@
 
 ### [`DsaWithCpp`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp)
 
+- [Graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Graph)
 - [Heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Heap)
 - [LinkedList](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/LinkedList)
 - [Queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Queue)
