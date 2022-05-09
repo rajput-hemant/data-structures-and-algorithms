@@ -54,18 +54,17 @@ private:
                 return root->right;
             else if (root->right == NULL)
                 return root->left;
-            Node *successor = getSuccessor(root);
-            root->data = successor->data;
+            root->data = getSuccessor(root);
             root->right = remove(root->right, root->data);
         }
         return root;
     }
-    Node *getSuccessor(Node *root)
+    int getSuccessor(Node *root)
     {
         Node *currentNode = root->right;
         while (currentNode != NULL && currentNode->left != NULL)
             currentNode = currentNode->left;
-        return currentNode;
+        return currentNode->data;
     }
 
     bool search(Node *root, int data)

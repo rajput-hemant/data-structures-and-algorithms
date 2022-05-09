@@ -46,18 +46,17 @@ public class BSTRecursive {
                 return root.right;
             else if (root.right == null)
                 return root.left;
-            Node successor = getSuccessor(root);
-            root.data = successor.data;
+            root.data = getSuccessor(root);
             root.right = delete(root.right, root.data);
         }
         return root;
     }
 
-    private Node getSuccessor(Node root) {
+    private int getSuccessor(Node root) {
         Node currentNode = root.right;
         while (currentNode != null && currentNode.left != null)
             currentNode = currentNode.left;
-        return currentNode;
+        return currentNode.data;
     }
 
     // Time Complexity -> O(h)

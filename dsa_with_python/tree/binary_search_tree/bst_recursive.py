@@ -33,16 +33,15 @@ def delete(data):
                 return root.right
             elif root.right is None:
                 return root.left
-            successor = __get_successor(root)
-            root.data = successor.data
+            root.data = __get_successor(root)
             root.right = __delete(root.right, root.data)
         return root
 
-    def __get_successor(root: Node) -> Node:
+    def __get_successor(root: Node) -> int:
         current_node = root.right
         while current_node is not None and current_node.left != None:
             current_node = current_node.left
-        return current_node
+        return current_node.data
 
     root = __delete(root, data)
 
