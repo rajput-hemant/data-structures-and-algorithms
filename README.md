@@ -11,73 +11,25 @@
   <img src="https://camo.githubusercontent.com/1141fa873ae7371cd6b723fef0cd57ca14923123983844571416854b7f5e8fb6/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f63706c7573706c75732e737667" width=40 />
 </p>
 
-### [`dsaWithJava`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava)
+<div align="center">
 
-- [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/graph)
-- [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/heap)
-- [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/linkedlist)
-- [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/queue)
-- [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/recursion)
-- [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/searching)
-- [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/sorting)
-- [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/stack)
-- <details>
-    <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree">tree</a></summary>
-    
-    - [avltree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/avltree)
-    - [binarysearchtree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/binarysearchtree)
-    - [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree/binarytree)
+| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [`DsaWithCpp`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [`dsaWithJava`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [`dsa_with_python`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                  [Graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Graph)                                                   |                                                   [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/graph)                                                   |                                                     [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/graph)                                                     |
+|                                                   [Heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Heap)                                                    |                                                    [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/heap)                                                    |                                                      [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/heap)                                                      |
+|                                             [LinkedList](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/LinkedList)                                              |                                              [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/linkedlist)                                              |                                               [linked_list](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/linked_list)                                               |
+|                                                  [Queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Queue)                                                   |                                                   [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/queue)                                                   |                                                     [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/queue)                                                     |
+|                                              [Recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Recursion)                                               |                                               [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/recursion)                                               |                                                 [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/recursion)                                                 |
+|                                              [Searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Searching)                                               |                                               [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/searching)                                               |                                                 [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/searching)                                                 |
+|                                                [Sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Sorting)                                                 |                                                 [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/sorting)                                                 |                                                   [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/sorting)                                                   |
+|                                                  [Stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Stack)                                                   |                                                 [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/stack)                                                 |                                                     [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/stack)                                                     |
+|                                                   [Tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree)                                                    |                                                    [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree)                                                    |                                                      [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree)                                                      |
 
-  </details>
-
----
-
-### [`dsa_with_python`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python)
-
-- [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/graph)
-- [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/heap)
-- [linked_list](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/linked_list)
-- [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/queue)
-- [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/recursion)
-- [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/searching)
-- [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/sorting)
-- [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/stack)
-- <details>
-    <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree">tree</a></summary>
-    
-    - [avl_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/avl_tree)
-    - [binary_search_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/binary_search_tree)
-    - [binary_tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree/binary_tree)
-
-  </details>
-
----
-
-### [`DsaWithCpp`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp)
-
-- [Graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Graph)
-- [Heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Heap)
-- [LinkedList](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/LinkedList)
-- [Queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Queue)
-- [Recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Recursion)
-- [Searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Searching)
-- [Sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Sorting)
-- [Stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Stack)
-- <details>
-    <summary><a href="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree">Tree</a></summary>
-    
-    - [AVLTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/AVLTree)
-    - [BinarySearchTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/BinarySearchTree)
-    - [BinaryTree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree/BinaryTree)
-
-  </details>
-
----
+</div>
 
 ### [`Leetcode`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode)
-[array](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/array) &nbsp; [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree) &nbsp; [binarysearch](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/binarysearch) &nbsp; [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarytree) &nbsp; [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/stack) &nbsp; [backtracking](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/linkedlist) &nbsp; [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [binarysearchtree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarysearchtree)
 
----
+[array](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/array) &nbsp; [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree) &nbsp; [binarysearch](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/binarysearch) &nbsp; [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarytree) &nbsp; [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/stack) &nbsp; [backtracking](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/linkedlist) &nbsp; [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [binarysearchtree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarysearchtree)
 
 ### [`HackerRank`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/hackerrank)
 
