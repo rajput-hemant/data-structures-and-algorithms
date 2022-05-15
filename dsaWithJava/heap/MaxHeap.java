@@ -26,14 +26,18 @@ public class MaxHeap {
         return (index - 1) / 2;
     }
 
-    public boolean isEmpty() {
-        return heap.size() == 0;
-    }
-
     private void swap(int a, int b) {
         int temp = heap.get(b);
         heap.set(b, heap.get(a));
         heap.set(a, temp);
+    }
+
+    public boolean isEmpty() {
+        return heap.size() == 0;
+    }
+
+    public int size() {
+        return heap.size();
     }
 
     // Time Complexity -> O(h)

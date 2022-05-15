@@ -40,6 +40,11 @@ public:
         return heap.size() == 0;
     }
 
+    int size()
+    {
+        return heap.size();
+    }
+
     void insert(int item)
     {
         heap.push_back(item);
@@ -133,18 +138,18 @@ public:
     }
 };
 
-int main()
-{
-    MinHeap ob;
-    ob.insert(10);
-    ob.insert(4);
-    ob.insert(9);
-    ob.insert(1);
-    ob.insert(7);
-    ob.insert(5);
-    ob.insert(3);
-    ob.printHeap();
-    // ob.remove(3);
-    cout << ob.extractMin() << endl;
-    ob.printHeap();
-}
+// int main()
+// {
+//     MinHeap ob;
+//     ob.insert(10);
+//     ob.insert(4);
+//     ob.insert(9);
+//     ob.insert(1);
+//     ob.insert(7);
+//     ob.insert(5);
+//     ob.insert(3);
+//     ob.printHeap();
+//     // ob.remove(3);
+//     cout << ob.extractMin() << endl;
+//     ob.printHeap();
+// }

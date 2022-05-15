@@ -40,6 +40,11 @@ public:
         return heap.size() == 0;
     }
 
+    int size()
+    {
+        return heap.size();
+    }
+
     void insert(int item)
     {
         heap.push_back(item);

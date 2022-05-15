@@ -26,6 +26,9 @@ class min_heap:
     def is_empty(self):
         return len(self.heap) == 0
 
+    def size(self):
+        return len(self.heap)
+
     def insert(self, item):
         self.heap.append(item)
         i = len(self.heap) - 1
