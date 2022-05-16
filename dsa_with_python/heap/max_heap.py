@@ -39,14 +39,18 @@ class max_heap:
     def max_heapify(self, index):
         if self.is_empty():
             raise Exception("Heap is Empty!")
+        if index > self.heap:
+            raise Exception("Index is Out of range!")
         l_child, r_child, largest = (
             self.__left_child(index),
             self.__right_child(index),
             index,
         )
-        if l_child < len(self.heap) and self.heap[l_child] > self.heap[largest]:
+        if l_child >= len(self.heap) or r_child >= len(self.heap):
+            return
+        if self.heap[l_child] > self.heap[largest]:
             largest = l_child
-        if r_child < len(self.heap) and self.heap[r_child] > self.heap[largest]:
+        if self.heap[r_child] > self.heap[largest]:
             largest = r_child
         if largest != index:
             self.__swap(index, largest)
@@ -70,6 +74,8 @@ class max_heap:
     def increase_key(self, index, new_val):
         if self.is_empty():
             raise Exception("Heap is Empty!")
+        if index > self.heap:
+            raise Exception("Index is Out of range!")
         if self.heap[index] > new_val:
             raise Exception("Key is smaller than the original key")
         self.heap[index] = new_val
@@ -82,8 +88,10 @@ class max_heap:
             raise Exception("Heap is Empty!")
         if index > len(self.heap) - 1:
             raise Exception("Index is Out of range!")
+        item = self.heap[index]
         self.increase_key(index, sys.maxsize)
-        return self.extract_max()
+        self.extract_max()
+        return item
 
     def build_heap(self):
         bmrmin = len(self.heap) - 2 // 2  # bottom most right most internal node
