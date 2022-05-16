@@ -60,10 +60,14 @@ public:
     {
         if (isEmpty())
             throw length_error("Heap is Empty!");
+        if (index > heap.size() - 1)
+            throw length_error("Index is out of range!");
         int lChild = leftChild(index), rChild = rightChild(index), smallest = index;
-        if (lChild < heap.size() && heap[lChild] < heap[index])
+        if (lChild >= heap.size() || rChild >= heap.size())
+            return;
+        if (heap[lChild] < heap[index])
             smallest = lChild;
-        if (rChild < heap.size() && heap[rChild] < heap[smallest])
+        if (heap[rChild] < heap[smallest])
             smallest = rChild;
         if (smallest != index)
         {
@@ -100,6 +104,8 @@ public:
     {
         if (isEmpty())
             throw length_error("Heap is Empty!");
+        if (index > heap.size() - 1)
+            throw length_error("Index is out of range!");
         if (heap[index] < newVal)
             cout << "Key is larger than the original key" << endl;
         heap[index] = newVal;
@@ -115,14 +121,16 @@ public:
         if (isEmpty())
             throw length_error("Heap is Empty!");
         if (index > heap.size() - 1)
-            cout << "Index is Out of range!" << endl;
+            throw length_error("Index is out of range!");
+        int item = heap[index];
         decreaseKey(index, INT_MIN);
-        return extractMin();
+        extractMin();
+        return item;
     }
 
     void buildHeap()
     {
-        int bmrmin = heap.size() - 2 / 2; // bottom most right most internal node
+        int bmrmin = heap.size() / 2 - 1; // index of last non-leaf node
         for (int i = bmrmin; i >= 0; i--)
             minHeapify(i);
     }

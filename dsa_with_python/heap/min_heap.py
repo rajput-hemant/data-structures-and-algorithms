@@ -39,14 +39,18 @@ class min_heap:
     def min_heapify(self, index):
         if self.is_empty():
             raise Exception("Heap is Empty!")
+        if index > len(self.heap) - 1:
+            raise Exception("Index is Out of range!")
         l_child, r_child, smallest = (
             self.__left_child(index),
             self.__right_child(index),
             index,
         )
-        if l_child < len(self.heap) and self.heap[l_child] < self.heap[index]:
+        if l_child >= len(self.heap) or r_child >= len(self.heap):
+            return
+        if self.heap[l_child] < self.heap[index]:
             smallest = l_child
-        if r_child < len(self.heap) and self.heap[r_child] < self.heap[smallest]:
+        if self.heap[r_child] < self.heap[smallest]:
             smallest = r_child
         if smallest != index:
             self.__swap(index, smallest)
@@ -70,6 +74,8 @@ class min_heap:
     def decrease_key(self, index, new_val):
         if self.is_empty():
             raise Exception("Heap is Empty!")
+        if index > len(self.heap) - 1:
+            raise Exception("Index is Out of range!")
         if self.heap[index] < new_val:
             raise Exception("Key is larger than the original key")
         self.heap[index] = new_val
@@ -82,8 +88,10 @@ class min_heap:
             raise Exception("Heap is Empty!")
         if index > len(self.heap) - 1:
             raise Exception("Index is Out of range!")
+        item = self.heap[index]
         self.decrease_key(index, -sys.maxsize)
-        return self.extract_min()
+        self.extract_min()
+        return item
 
     def build_heap(self):
         bmrmin = len(self.heap) - 2 // 2  # bottom most right most internal node
