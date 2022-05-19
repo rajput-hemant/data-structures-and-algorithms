@@ -63,11 +63,9 @@ public:
         if (index > heap.size() - 1)
             throw length_error("Index is out of range!");
         int lChild = leftChild(index), rChild = rightChild(index), largest = index;
-        if (lChild >= heap.size() || rChild >= heap.size())
-            return;
-        if (heap[lChild] > heap[largest])
+        if (lChild < heap.size() && heap[lChild] > heap[largest])
             largest = lChild;
-        if (heap[rChild] > heap[largest])
+        if (rChild < heap.size() && heap[rChild] > heap[largest])
             largest = rChild;
         if (largest != index)
         {

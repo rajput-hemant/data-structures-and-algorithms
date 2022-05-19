@@ -39,18 +39,16 @@ class max_heap:
     def max_heapify(self, index):
         if self.is_empty():
             raise Exception("Heap is Empty!")
-        if index > self.heap:
+        if index > len(self.heap) - 1:
             raise Exception("Index is Out of range!")
         l_child, r_child, largest = (
             self.__left_child(index),
             self.__right_child(index),
             index,
         )
-        if l_child >= len(self.heap) or r_child >= len(self.heap):
-            return
-        if self.heap[l_child] > self.heap[largest]:
+        if l_child < len(self.heap) and self.heap[l_child] > self.heap[largest]:
             largest = l_child
-        if self.heap[r_child] > self.heap[largest]:
+        if r_child < len(self.heap) and self.heap[r_child] > self.heap[largest]:
             largest = r_child
         if largest != index:
             self.__swap(index, largest)
@@ -74,7 +72,7 @@ class max_heap:
     def increase_key(self, index, new_val):
         if self.is_empty():
             raise Exception("Heap is Empty!")
-        if index > self.heap:
+        if index > len(self.heap) - 1:
             raise Exception("Index is Out of range!")
         if self.heap[index] > new_val:
             raise Exception("Key is smaller than the original key")

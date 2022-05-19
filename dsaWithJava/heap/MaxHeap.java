@@ -98,16 +98,14 @@ public class MaxHeap {
         // initializing the indexes of the leftChild, rightChild & node to be heapify
         int lChild = leftChild(index), rChild = rightChild(index), largest = index;
 
-        // return if indexes of leftChild or rightChild is out of range of MaxHeap
-        if (lChild >= heap.size() || rChild >= heap.size())
-            return;
-
-        // if value at lChild > largest, set the index of lChild to largest
-        if (heap.get(lChild) > heap.get(largest))
+        // if left child exists & the value at lChild > largest,
+        // set the index of lChild to largest
+        if (lChild < heap.size() && heap.get(lChild) > heap.get(largest))
             largest = lChild;
 
-        // if value at rChild > largest, set the index of rChild to largest
-        if (heap.get(rChild) > heap.get(largest))
+        // if right child exists & the value at rChild > largest,
+        // set the index of rChild to largest
+        if (rChild < heap.size() && heap.get(rChild) > heap.get(largest))
             largest = rChild;
 
         // if the largest was updated with the index of the max node
