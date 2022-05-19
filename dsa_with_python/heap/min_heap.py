@@ -46,11 +46,9 @@ class min_heap:
             self.__right_child(index),
             index,
         )
-        if l_child >= len(self.heap) or r_child >= len(self.heap):
-            return
-        if self.heap[l_child] < self.heap[index]:
+        if l_child < len(self.heap) and self.heap[l_child] < self.heap[index]:
             smallest = l_child
-        if self.heap[r_child] < self.heap[smallest]:
+        if r_child < len(self.heap) and self.heap[r_child] < self.heap[smallest]:
             smallest = r_child
         if smallest != index:
             self.__swap(index, smallest)

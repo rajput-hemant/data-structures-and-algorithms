@@ -98,16 +98,14 @@ public class MinHeap {
         // initializing the indexes of the leftChild, rightChild & node to be heapify
         int lChild = leftChild(index), rChild = rightChild(index), smallest = index;
 
-        // return if indexes of leftChild or rightChild is out of range of MinHeap
-        if (lChild >= heap.size() || rChild >= heap.size())
-            return;
-
-        // if value at lChild < smallest, set the index of lChild to smallest
-        if (heap.get(lChild) < heap.get(smallest))
+        // if left child exists & the value at lChild < smallest,
+        // set the index of lChild to smallest
+        if (lChild < heap.size() && heap.get(lChild) < heap.get(smallest))
             smallest = lChild;
 
-        // if value at rChild < smallest, set the index of rChild to smallest
-        if (heap.get(rChild) < heap.get(smallest))
+        // if right child exists & the value at rChild < smallest ,
+        // set the index of rChild to smallest
+        if (rChild < heap.size() && heap.get(rChild) < heap.get(smallest))
             smallest = rChild;
 
         // if the smallest was updated with the index of the min node
@@ -146,7 +144,7 @@ public class MinHeap {
     public int extractMin() {
         if (isEmpty())
             throw new IndexOutOfBoundsException("Heap is Empty!");
-            
+
         // if there's only one element
         if (heap.size() == 1)
             return heap.remove(0);
@@ -246,7 +244,6 @@ public class MinHeap {
 
     public static void main(String[] args) {
         MinHeap ob = new MinHeap();
-        // ob.heap.add();
         ob.insert(10);
         ob.insert(4);
         ob.insert(9);
