@@ -2,6 +2,8 @@ package tree.binarytree;
 
 import java.util.*;
 
+import definitions.TreeNode;
+
 public class TreeBuilder {
     static Scanner sc = new Scanner(System.in);
     static int index = -1;
@@ -9,7 +11,7 @@ public class TreeBuilder {
     public static void main(String[] args) {
         // int[] nodes = getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = buildTree(nodes);
+        TreeNode root = buildTree(nodes);
         System.out.println("Data at Root -> " + root.data);
     }
 
@@ -25,12 +27,12 @@ public class TreeBuilder {
         return nodes;
     }
 
-    public static Node buildTree(int[] nodes) {
+    public static TreeNode buildTree(int[] nodes) {
         // increament ot set the index to 0
         index++;
         if (nodes[index] == -1)
             return null;
-        Node newNode = new Node(nodes[index]);
+        TreeNode newNode = new TreeNode(nodes[index]);
         // recursive call to build the left part of the tree,
         // branching will stop when node is null or -1
         newNode.left = buildTree(nodes);

@@ -2,11 +2,13 @@ package tree.binarytree;
 
 import java.util.*;
 
+import definitions.TreeNode;
+
 public class TreeTraversals {
     public static void main(String[] args) {
         // int[] nodes = getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         preOrderTraversal(root);
         System.out.println();
         inOrderTraversal(root);
@@ -27,7 +29,7 @@ public class TreeTraversals {
      * Print order:
      * Root -> Left SubTree -> Right SubTree
      */
-    public static void preOrderTraversal(Node root) {
+    public static void preOrderTraversal(TreeNode root) {
         if (root == null) {
             System.out.print(-1 + " ");
             return;
@@ -46,7 +48,7 @@ public class TreeTraversals {
      * Print order:
      * Left SubTree -> Root -> Right SubTree
      */
-    public static void inOrderTraversal(Node root) {
+    public static void inOrderTraversal(TreeNode root) {
         if (root == null) {
             System.out.print(-1 + " ");
             return;
@@ -65,7 +67,7 @@ public class TreeTraversals {
      * Print order:
      * Left SubTree -> Right SubTree -> Root
      */
-    public static void postOrderTraversal(Node root) {
+    public static void postOrderTraversal(TreeNode root) {
         if (root == null) {
             System.out.print(-1 + " ");
             return;
@@ -85,10 +87,10 @@ public class TreeTraversals {
      * NextLine
      * Approach 1
      */
-    public static void levelOrderTraversal(Node root) {
+    public static void levelOrderTraversal(TreeNode root) {
         if (root == null)
             return;
-        Queue<Node> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         // this adds the root node in the Queue as the First element
         q.add(root);
         // this add null in the Queue as the Second Element
@@ -96,7 +98,7 @@ public class TreeTraversals {
         // traverse until Queue becomes Empty
         while (!q.isEmpty()) {
             // remove element from the Queue and stores it in currentNode
-            Node currentNode = q.remove();
+            TreeNode currentNode = q.remove();
             // if currentNode is null, prints the nextline
             if (currentNode == null) {
                 System.out.println();
@@ -122,10 +124,10 @@ public class TreeTraversals {
     }
 
     /* Approach 2 */
-    public static void levelOrderTraversal2(Node root) {
+    public static void levelOrderTraversal2(TreeNode root) {
         if (root == null)
             return;
-        Queue<Node> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         // this adds the root node in the Queue as the First element
         q.add(root);
         // traverse until Queue becomes Empty
@@ -134,7 +136,7 @@ public class TreeTraversals {
             // traverse till size of the queue to print the nodes at the same level
             for (int i = 0; i < flag; i++) {
                 // remove element from the Queue and stores it in currentNode
-                Node currentNode = q.remove();
+                TreeNode currentNode = q.remove();
                 // prints the data
                 System.out.print(currentNode.data + " ");
                 // adds left node to the Queue

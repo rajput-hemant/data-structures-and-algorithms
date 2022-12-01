@@ -1,15 +1,17 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class HeightOfTree {
     public static void main(String[] args) {
         // int[] nodes = BinaryTreeHelper.getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         System.out.println("Height Of Tree -> " + heightOfTree(root));
     }
 
     // Fn to get the height/deapth of BinaryTree
-    public static int heightOfTree(Node root) {
+    public static int heightOfTree(TreeNode root) {
         // base case
         // If node is null
         if (root == null)

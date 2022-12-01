@@ -1,5 +1,7 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class DiameterOfTree {
     int height, diameter;
 
@@ -11,13 +13,13 @@ public class DiameterOfTree {
     public static void main(String[] args) {
         // int[] nodes = BinaryTreeHelper.getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         System.out.println("Height Of Tree -> " + diameterOfTree(root));
     }
 
     // Approach 1
     // Time Complexity -> O(n^2)
-    public static int diameterOfTree3(Node root) {
+    public static int diameterOfTree3(TreeNode root) {
         // base case
         if (root == null)
             return 0;
@@ -34,7 +36,7 @@ public class DiameterOfTree {
     // Approach 2
     // Time Complexity -> O(n)
     // this fn will return both height & diameter
-    public static DiameterOfTree diameterOfTree2(Node root) {
+    public static DiameterOfTree diameterOfTree2(TreeNode root) {
         if (root == null)
             return new DiameterOfTree(0, 0);
         // recursive call to get height & diameter of left nodes
@@ -60,12 +62,12 @@ public class DiameterOfTree {
     // Time Complexity -> O(n)
     private static int maxDia = 0;
 
-    public static int diameterOfTree(Node root) {
+    public static int diameterOfTree(TreeNode root) {
         diameterOfTreeHelper(root);
         return maxDia;
     }
 
-    private static int diameterOfTreeHelper(Node root) {
+    private static int diameterOfTreeHelper(TreeNode root) {
         if (root == null)
             return 0;
         int leftHeight = diameterOfTreeHelper(root.left);

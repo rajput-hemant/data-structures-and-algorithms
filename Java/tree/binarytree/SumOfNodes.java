@@ -1,17 +1,17 @@
 package tree.binarytree;
 
-import tree.binarytree.BinaryTreeBuilder.Node;
+import definitions.TreeNode;
 
 public class SumOfNodes {
     public static void main(String[] args) {
         // int[] nodes = BinaryTreeHelper.getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = BinaryTreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         System.out.println("Sum Of Nodes -> " + sumOfNodes(root));
     }
 
     // Fn to print the sum of the nodes
-    public static int sumOfNodes(Node root) {
+    public static int sumOfNodes(TreeNode root) {
         // base case
         // if node is null
         if (root == null)

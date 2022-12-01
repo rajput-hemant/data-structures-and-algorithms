@@ -1,7 +1,9 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class MaxNode {
-    public static int getMax(Node root) {
+    public static int getMax(TreeNode root) {
         if (root == null)
             return Integer.MIN_VALUE;
         return Math.max(root.data, Math.max(getMax(root.left), getMax(root.right)));
@@ -9,7 +11,7 @@ public class MaxNode {
 
     public static void main(String[] args) {
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         System.out.println(getMax(root));
     }
 }

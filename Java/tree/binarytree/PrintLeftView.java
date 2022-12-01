@@ -1,13 +1,15 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class PrintLeftView {
-    public static void printLeftView(Node root) {
+    public static void printLeftView(TreeNode root) {
         printLeftView(root, 1);
     }
 
     static int maxLevel = 0;
 
-    static private void printLeftView(Node root, int level) {
+    static private void printLeftView(TreeNode root, int level) {
         if (root == null)
             return;
         if (maxLevel < level) {
@@ -20,7 +22,7 @@ public class PrintLeftView {
 
     public static void main(String[] args) {
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         printLeftView(root);
     }
 }

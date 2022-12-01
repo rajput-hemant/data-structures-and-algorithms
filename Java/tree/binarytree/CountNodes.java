@@ -1,15 +1,17 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class CountNodes {
     public static void main(String[] args) {
         // int[] nodes = BinaryTreeHelper.getInput();
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         System.out.println("Number Of Nodes -> " + countNodes(root));
     }
 
     // Fn to count nodes in the BinaryTree
-    public static int countNodes(Node root) {
+    public static int countNodes(TreeNode root) {
         // base case
         // if node is null
         if (root == null)

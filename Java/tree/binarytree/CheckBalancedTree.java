@@ -1,10 +1,12 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class CheckBalancedTree {
 
     // Naive Approach
     // Time Complexity -> O(n^2)
-    // public static boolean isBalancedTree(Node root) {
+    // public static boolean isBalancedTree(TreeNode root) {
     // if (root == null)
     // return true;
     // int leftHeight = HeightOfTree.heightOfTree(root.left);
@@ -14,11 +16,11 @@ public class CheckBalancedTree {
     // }
 
     // Time Complexity -> O(n)
-    public static boolean isBalancedTree(Node root) {
+    public static boolean isBalancedTree(TreeNode root) {
         return !(isBalTree(root) == -1);
     }
 
-    private static int isBalTree(Node root) {
+    private static int isBalTree(TreeNode root) {
         if (root == null)
             return 0;
         int leftHeight = isBalTree(root.left);
@@ -35,7 +37,7 @@ public class CheckBalancedTree {
 
     public static void main(String[] args) {
         int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, 9, -1, -1, 8, -1, -1 };
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         System.out.println("Is Balanced Tree -> " + isBalancedTree(root));
     }
 }

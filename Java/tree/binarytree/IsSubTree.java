@@ -1,18 +1,19 @@
 package tree.binarytree;
 
-import tree.binarytree.BinaryTreeBuilder.Node;
+import definitions.TreeNode;
 
 public class IsSubTree {
     public static void main(String[] args) {
         // int[] nodes = BinaryTreeHelper.getInput();
         int[] nodes1 = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         int[] nodes2 = { 1, 2, 4 };
-        Node root = BinaryTreeBuilder.buildTree(nodes1);
-        Node subRoot = BinaryTreeBuilder.buildTree(nodes2);
+        TreeNode root = TreeBuilder.buildTree(nodes1);
+        TreeNode subRoot = TreeBuilder.buildTree(nodes2);
         System.out.println("Is SubTree? -> " + isSubTree(root, subRoot));
     }
-// Fn to check if a tree is subTree of another tree
-    public static boolean isSubTree(Node root, Node subRoot) {
+
+    // Fn to check if a tree is subTree of another tree
+    public static boolean isSubTree(TreeNode root, TreeNode subRoot) {
         // base cases
         if (subRoot == null)
             return true;
@@ -27,7 +28,7 @@ public class IsSubTree {
         return false;
     }
 
-    static boolean isIdentical(Node root, Node subRoot) {
+    static boolean isIdentical(TreeNode root, TreeNode subRoot) {
         if (root == null && subRoot == null)
             return true;
         if (root == null || subRoot == null)

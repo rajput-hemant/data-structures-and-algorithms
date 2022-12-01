@@ -1,7 +1,9 @@
 package tree.binarytree;
 
+import definitions.TreeNode;
+
 public class PrintNodesAtDistanceK {
-    public static void printAtK(Node root, int k) {
+    public static void printAtK(TreeNode root, int k) {
         if (root == null)
             return;
         if (k == 0) {
@@ -14,7 +16,7 @@ public class PrintNodesAtDistanceK {
 
     public static void main(String[] args) {
         int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
-        Node root = TreeBuilder.buildTree(nodes);
+        TreeNode root = TreeBuilder.buildTree(nodes);
         printAtK(root, 2);
     }
 }
