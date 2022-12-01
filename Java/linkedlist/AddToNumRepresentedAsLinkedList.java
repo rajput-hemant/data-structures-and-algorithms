@@ -2,9 +2,11 @@ package linkedlist;
 
 import java.util.Scanner;
 
+import definitions.ListNode;
+
 public class AddToNumRepresentedAsLinkedList {
     static Scanner sc = new Scanner(System.in);
-    static Node head;
+    static ListNode head;
 
     public static void main(String[] args) {
         AddToNumRepresentedAsLinkedList ob = new AddToNumRepresentedAsLinkedList();
@@ -51,11 +53,11 @@ public class AddToNumRepresentedAsLinkedList {
         }
     }
 
-    public Node addToNum(Node head) {
+    public ListNode addToNum(ListNode head) {
         System.out.print("Enter the Number to add -> ");
         int sum = 0, carry = sc.nextInt();
-        Node newHead = reverse(head);
-        Node currentNode = newHead, prevNode = newHead;
+        ListNode newHead = reverse(head);
+        ListNode currentNode = newHead, prevNode = newHead;
         while (currentNode != null) {
             sum = carry + currentNode.data;
             currentNode.data = sum % 10;
@@ -64,15 +66,15 @@ public class AddToNumRepresentedAsLinkedList {
             currentNode = currentNode.next;
         }
         if (carry > 0)
-            prevNode.next = new Node(carry);
+            prevNode.next = new ListNode(carry);
         head = reverse(newHead);
         return head;
     }
 
-    private Node reverse(Node head) {
+    private ListNode reverse(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        Node newHead = reverse(head.next);
+        ListNode newHead = reverse(head.next);
         head.next.next = head;
         head.next = null;
         return newHead;
@@ -83,13 +85,13 @@ public class AddToNumRepresentedAsLinkedList {
     }
 
     private void insert(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         if (isEmpty()) {
             head = newNode;
             System.out.println("Digit Inserted!");
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         while (currentNode.next != null)
             currentNode = currentNode.next;
         currentNode.next = newNode;
@@ -111,7 +113,7 @@ public class AddToNumRepresentedAsLinkedList {
             return;
         }
         System.out.print("Number -> ");
-        Node currentNode = head;
+        ListNode currentNode = head;
         while (currentNode != null) {
             System.out.print(currentNode.data + " ");
             currentNode = currentNode.next;

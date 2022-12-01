@@ -2,12 +2,14 @@ package linkedlist;
 
 import java.util.Scanner;
 
+import definitions.ListNode;
+
 public class MoveZeroesToFront extends SinglyLinkedList {
     static Scanner sc = new Scanner(System.in);
 
-    public static Node moveZeroes(Node head) {
-        Node prevNode = head;
-        Node currentNode = head.next;
+    public static ListNode moveZeroes(ListNode head) {
+        ListNode prevNode = head;
+        ListNode currentNode = head.next;
         while (currentNode != null) {
             if (currentNode.data == 0) {
                 prevNode.next = currentNode.next;

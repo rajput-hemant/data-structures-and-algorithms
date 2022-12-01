@@ -1,7 +1,9 @@
 package linkedlist;
 
+import definitions.ListNode;
+
 public class DoublyLinkedList {
-    Node head, tail;
+    ListNode head, tail;
     int size = 0;
 
     // Fn to check if list is Empty
@@ -10,7 +12,7 @@ public class DoublyLinkedList {
     }
 
     public void insertAtBegin(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
         if (isEmpty())
             head = tail = newNode;
@@ -37,15 +39,15 @@ public class DoublyLinkedList {
         else if (pos > size)
             System.out.println("Invalid Input! List Size is: " + size);
         else {
-            Node newNode = new Node(data);
-            Node currentNode = head;
+            ListNode newNode = new ListNode(data);
+            ListNode currentNode = head;
             // traverse till index
             for (int i = 0; i < pos - 2; i++)
                 currentNode = currentNode.next;
             // this assign the next of currentNode i.e. address of next element to the next
             // of newNode
             newNode.next = currentNode.next;
-            // this assigns the newNode to prev of next Node to currentNode
+            // this assigns the newNode to prev of next ListNode to currentNode
             currentNode.next.prev = newNode;
             // this assign the newNode to the next of currentNode
             // i.e. address of newNode is assigned in the next of currentNode
@@ -58,7 +60,7 @@ public class DoublyLinkedList {
     }
 
     public void insertAtLast(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
         if (isEmpty())
             head = tail = newNode;
@@ -106,7 +108,7 @@ public class DoublyLinkedList {
         else if (pos > size)
             System.out.println("Invalid Input! List Size is: " + size);
         else {
-            Node currentNode = head;
+            ListNode currentNode = head;
             // traverse till index
             for (int i = 0; i < pos - 2; i++)
                 currentNode = currentNode.next;
@@ -157,7 +159,7 @@ public class DoublyLinkedList {
             return;
         }
         System.out.print("[");
-        for (Node currentNode = head; currentNode != null; currentNode = currentNode.next)
+        for (ListNode currentNode = head; currentNode != null; currentNode = currentNode.next)
             System.out.print(currentNode.data + ", ");
         System.out.println("\b\b]\nList Size -> " + size);
     }
@@ -168,7 +170,7 @@ public class DoublyLinkedList {
             return;
         }
         System.out.print("[");
-        for (Node currentNode = tail; currentNode != null; currentNode = currentNode.prev)
+        for (ListNode currentNode = tail; currentNode != null; currentNode = currentNode.prev)
             System.out.print(currentNode.data + ", ");
         System.out.println("\b\b]" + "\nList Size -> " + size);
     }

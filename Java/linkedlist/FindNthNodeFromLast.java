@@ -2,6 +2,8 @@ package linkedlist;
 
 import java.util.Scanner;
 
+import definitions.ListNode;
+
 public class FindNthNodeFromLast extends ReverseLinkedList {
     static Scanner sc = new Scanner(System.in);
 
@@ -87,7 +89,7 @@ public class FindNthNodeFromLast extends ReverseLinkedList {
             System.out.println("Invalid Input! List Size is: " + size);
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         // Traverse till the index, index from last = size - index from the front
         for (int j = 0; j < size - i; j++)
             currentNode = currentNode.next;
@@ -119,7 +121,7 @@ public class FindNthNodeFromLast extends ReverseLinkedList {
             System.out.println("Invalid Input! List Size is: " + size);
             return;
         }
-        Node curreNode = head;
+        ListNode curreNode = head;
         for (int j = 0; j < size - i - 1; j++)
             curreNode = curreNode.next;
         curreNode.next = curreNode.next.next;

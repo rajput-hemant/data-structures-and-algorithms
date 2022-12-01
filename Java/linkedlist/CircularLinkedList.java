@@ -2,10 +2,12 @@ package linkedlist;
 
 import java.util.Scanner;
 
+import definitions.ListNode;
+
 public class CircularLinkedList {
     static Scanner sc = new Scanner(System.in);
     int size = 0;
-    Node head, tail;
+    ListNode head, tail;
 
     public static void main(String[] args) {
         CircularLinkedList ob = new CircularLinkedList();
@@ -101,7 +103,7 @@ public class CircularLinkedList {
     public void insertBegin() {
         System.out.print("Enter your Data -> ");
         int data = sc.nextInt();
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
         if (isEmpty()) {
             head = tail = newNode;
@@ -139,12 +141,13 @@ public class CircularLinkedList {
         }
         System.out.print("Enter your Data -> ");
         int data = sc.nextInt();
-        Node newNode = new Node(data);
-        Node currentNode = head;
+        ListNode newNode = new ListNode(data);
+        ListNode currentNode = head;
         // traverse till index
         for (int j = 0; j < i - 2; j++)
             currentNode = currentNode.next;
-        // this assign the next of currentNode i.e. address of next element to the next of newNode
+        // this assign the next of currentNode i.e. address of next element to the next
+        // of newNode
         newNode.next = currentNode.next;
         // this assign the newNode to the next of currentNode,
         // i.e. address of newNode is assigned in the next of currentNode
@@ -156,7 +159,7 @@ public class CircularLinkedList {
     public void insertAtLast() {
         System.out.print("Enter your Data -> ");
         int data = sc.nextInt();
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
         if (isEmpty()) {
             head = tail = newNode;
@@ -213,7 +216,7 @@ public class CircularLinkedList {
             System.out.println("Invalid Input! List Size is: " + size);
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         // traverse till index
         for (int j = 0; j < i - 2; j++)
             currentNode = currentNode.next;
@@ -232,11 +235,12 @@ public class CircularLinkedList {
             size = 0;
             return;
         }
-        Node lastNode = head;
+        ListNode lastNode = head;
         // traverse till second last element
         while (lastNode.next.next != head)
             lastNode = lastNode.next;
-        // head is set to next of second Last Node, this removes the address, removing
+        // head is set to next of second Last ListNode, this removes the address,
+        // removing
         // the last element
         lastNode.next = head;
         // tail is set the the last node
@@ -257,7 +261,7 @@ public class CircularLinkedList {
             System.out.println("List is Empty!");
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         System.out.print("[");
         while (currentNode != tail) {
             System.out.print(currentNode.data + ", ");

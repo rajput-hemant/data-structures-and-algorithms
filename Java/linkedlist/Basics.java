@@ -1,7 +1,10 @@
 package linkedlist;
 
+import definitions.ListNode;
+
 public class Basics {
-    Node head;
+    ListNode head;
+
     public static void main(String[] args) {
         Basics ob = new Basics();
         ob.addBegin(2);
@@ -17,43 +20,43 @@ public class Basics {
 
     // Add in the Beginning
     public void addBegin(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
-        if(head == null) {
+        if (head == null) {
             head = newNode;
             return;
         }
         // newNode next will point to firstNode
         newNode.next = head;
         // head is set to newNode
-        head = newNode;          
+        head = newNode;
     }
 
     // Add at last
     public void addLast(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
-        if(head == null) {
+        if (head == null) {
             head = newNode;
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         // traverse till last element
         while (currentNode.next != null)
             currentNode = currentNode.next;
-        // lastNode next is set to newNode 
+        // lastNode next is set to newNode
         currentNode.next = newNode;
     }
 
     // To Dislpay
     public void dislpay() {
         // If list is Empty
-        if(head == null) {
+        if (head == null) {
             System.out.println("List is Empty!");
             return;
         }
-        Node currentNode = head;
-        while(currentNode != null) {
+        ListNode currentNode = head;
+        while (currentNode != null) {
             System.out.print(currentNode.data + " -> ");
             currentNode = currentNode.next;
         }
@@ -63,7 +66,7 @@ public class Basics {
     // To delete from the beginning
     public void delBegin() {
         // If list is Empty
-        if(head == null) {
+        if (head == null) {
             System.out.println("List is Empty!");
             return;
         }
@@ -74,18 +77,18 @@ public class Basics {
     // To delete from the Last
     public void delLast() {
         // If list is Empty
-        if(head == null) {
+        if (head == null) {
             System.out.println("List is Empty!");
             return;
         }
         // If list have one elements
-        if(head.next == null) {
+        if (head.next == null) {
             head = null;
             return;
         }
-        Node secLastNode = head;
-        Node lastNode = head.next;
-        while(lastNode.next != null) {
+        ListNode secLastNode = head;
+        ListNode lastNode = head.next;
+        while (lastNode.next != null) {
             lastNode = lastNode.next;
             secLastNode = secLastNode.next;
         }

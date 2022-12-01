@@ -2,7 +2,9 @@ package linkedlist;
 
 import java.util.Scanner;
 
-public class ReverseLinkedList extends SinglyLinkedList {
+import definitions.ListNode;
+
+public class ReverseLinkedList extends SinglyLinkedListMenuDriven {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -81,12 +83,12 @@ public class ReverseLinkedList extends SinglyLinkedList {
         // If there one or no element 
         if (head == null || head.next == null)
             return;
-        Node prevNode = head;
-        Node currentNode = head.next;
+        ListNode prevNode = head;
+        ListNode currentNode = head.next;
         // Traverse from 2nd element to last element
         while (currentNode != null) {
             // next of currentNode i.e. the address/link of next element is stored in nextNode
-            Node nextNode = currentNode.next;
+            ListNode nextNode = currentNode.next;
             // next of currentNode points to prevNode
             currentNode.next = prevNode;
             // update all nodes
@@ -100,17 +102,17 @@ public class ReverseLinkedList extends SinglyLinkedList {
         System.out.println("List Successfully Reversed!");
     }
 
-    public Node reverseRecurssive(Node head) {
+    public ListNode reverseRecurssive(ListNode head) {
         // base case
         if (head == null || head.next == null)
             return head;
-        Node newHead = reverseRecurssive(head.next);
+        ListNode newHead = reverseRecurssive(head.next);
         head.next.next = head;
         head.next = null;
         return newHead;
     }
 
-    public void printReverseLinkedList(Node head) {
+    public void printReverseLinkedList(ListNode head) {
         // base case
         if (head == null)
             return;

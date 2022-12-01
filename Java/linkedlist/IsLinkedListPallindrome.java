@@ -2,6 +2,8 @@ package linkedlist;
 
 import java.util.Scanner;
 
+import definitions.ListNode;
+
 public class IsLinkedListPallindrome extends ReverseLinkedList {
     static Scanner sc = new Scanner(System.in);
 
@@ -46,9 +48,9 @@ public class IsLinkedListPallindrome extends ReverseLinkedList {
         if (head == null || head.next == null)
             return true;
         // this gives the last element of First Half of the LinkedList
-        Node middle = findMiddle(head);
-        Node firstHalfHead = head;
-        Node secondHalfHead = reverseRecurssive(middle.next);
+        ListNode middle = findMiddle(head);
+        ListNode firstHalfHead = head;
+        ListNode secondHalfHead = reverseRecurssive(middle.next);
         // traverse from start to null of Second Half of the LinkedList
         while (secondHalfHead.next != null) {
             if (firstHalfHead.data != secondHalfHead.data)
@@ -58,12 +60,15 @@ public class IsLinkedListPallindrome extends ReverseLinkedList {
         }
         return true;
     }
+
     // here, Tortoise-Hare-Approach (Floyd's Algorithm) is used
-    // the hare pointer leaps 2 elements while turtle pointer leaps one 
-    public Node findMiddle(Node head) {
-        Node hare = head, turtle = head;
-        // In case of odd length, e.g. 1 2 1, turtle will 2 as middle as hare.next & hare.next.next are null
-        // In case of even length, e.g. 1 2 3 3 2 1, turtle will return the second middle,
+    // the hare pointer leaps 2 elements while turtle pointer leaps one
+    public ListNode findMiddle(ListNode head) {
+        ListNode hare = head, turtle = head;
+        // In case of odd length, e.g. 1 2 1, turtle will 2 as middle as hare.next &
+        // hare.next.next are null
+        // In case of even length, e.g. 1 2 3 3 2 1, turtle will return the second
+        // middle,
         // as the hare will be on null & hare.next & hare.next.next are null
         while (hare.next != null && hare.next.next != null) {
             hare = hare.next.next;

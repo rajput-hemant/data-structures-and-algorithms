@@ -2,6 +2,8 @@ package linkedlist;
 
 import java.util.Scanner;
 
+import definitions.ListNode;
+
 public class CountOddEvenNodes {
     static Scanner sc = new Scanner(System.in);
     int oddNodes, evenNodes;
@@ -11,15 +13,15 @@ public class CountOddEvenNodes {
         this.evenNodes = evenNodes;
     }
 
-    static boolean isEmpty(Node head) {
+    static boolean isEmpty(ListNode head) {
         return head == null;
     }
 
-    static CountOddEvenNodes countOddEveNodes(Node head) {
+    static CountOddEvenNodes countOddEveNodes(ListNode head) {
         return countOddEveNodes(head, 0, 0);
     }
 
-    private static CountOddEvenNodes countOddEveNodes(Node head, int oddNodes, int evenNodes) {
+    private static CountOddEvenNodes countOddEveNodes(ListNode head, int oddNodes, int evenNodes) {
         if (isEmpty(head))
             return new CountOddEvenNodes(0, 0);
         while (head != null) {

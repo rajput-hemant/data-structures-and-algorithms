@@ -1,6 +1,8 @@
 package linkedlist;
 
-public class FloydsAlgorithm extends SinglyLinkedList {
+import definitions.ListNode;
+
+public class FloydsAlgorithm extends SinglyLinkedListMenuDriven {
 
     public static void main(String[] args) {
         FloydsAlgorithm ob = new FloydsAlgorithm();
@@ -40,8 +42,8 @@ public class FloydsAlgorithm extends SinglyLinkedList {
             System.out.println("List is Empty!");
             return;
         }
-        Node newNode = head;
-        Node lastNode = head;
+        ListNode newNode = head;
+        ListNode lastNode = head;
         // to create a random integer btw 0 & size of the LinkedList, this will be the index where the loop is formed
         int randomNode = (int) (Math.random() * size);
         // traversing newNode from 0 to index, loop will form at the newNode
@@ -62,7 +64,7 @@ public class FloydsAlgorithm extends SinglyLinkedList {
             System.out.println("List is Empty!");
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         // taking a flag variable to avoid infinte loop if cycle is present in the list
         int flag = 0;
         System.out.print("[");
@@ -79,10 +81,10 @@ public class FloydsAlgorithm extends SinglyLinkedList {
             System.out.println("Stopped Printing after 100 iteration, due to loop present in the List");
     }
 
-    // Tortoise-Hare-Approach (Floyd's Algorithm) to Find the Middle Node in the LinkedList
+    // Tortoise-Hare-Approach (Floyd's Algorithm) to Find the Middle ListNode in the LinkedList
     // The Hare pointer leaps 2 elements while turtle pointer leaps one
-    public Node findMiddle() {
-        Node hare = head, turtle = head;
+    public ListNode findMiddle() {
+        ListNode hare = head, turtle = head;
         // In case of odd length, e.g. 1 2 1, turtle will 2 as middle as hare.next & hare.next.next are null
         // In case of even length, e.g. 1 2 3 3 2 1, turtle will return the second middle,
         // as the hare will be on null & hare.next & hare.next.next are null
@@ -98,7 +100,7 @@ public class FloydsAlgorithm extends SinglyLinkedList {
         // If list is empty
         if (head == null)
             return false;
-        Node fast = head, slow = head;
+        ListNode fast = head, slow = head;
         while (fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
             slow = slow.next;
@@ -110,7 +112,7 @@ public class FloydsAlgorithm extends SinglyLinkedList {
 
     // Fn to remove loop/cycle from the List if any
     public void removeCycle() {
-        Node slow = head, fast = head;
+        ListNode slow = head, fast = head;
         boolean isCycle = false;
         while (fast != null && fast.next != null) {
             slow = slow.next;

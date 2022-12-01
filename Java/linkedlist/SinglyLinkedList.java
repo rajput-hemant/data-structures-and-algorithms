@@ -1,15 +1,16 @@
 package linkedlist;
 
+import definitions.ListNode;
 public class SinglyLinkedList {
     int size = 0;
-    Node head;
+    ListNode head;
 
     public boolean isEmpty() {
         return head == null;
     }
 
     public void insertAtBegin(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
         if (isEmpty()) {
             head = newNode;
@@ -36,8 +37,8 @@ public class SinglyLinkedList {
         else if (pos > size)
             System.out.println("Invalid Input! List Size is: " + size);
         else {
-            Node newNode = new Node(data);
-            Node currentNode = head;
+            ListNode newNode = new ListNode(data);
+            ListNode currentNode = head;
             // traverse till index
             for (int i = 0; i < pos - 2; i++)
                 currentNode = currentNode.next;
@@ -53,7 +54,7 @@ public class SinglyLinkedList {
     }
 
     public void insertAtLast(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         // If list is Empty
         if (isEmpty()) {
             head = newNode;
@@ -61,7 +62,7 @@ public class SinglyLinkedList {
             size++;
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         // traverse till last element
         while (currentNode.next != null)
             currentNode = currentNode.next;
@@ -110,7 +111,7 @@ public class SinglyLinkedList {
         else if (pos > size)
             System.out.println("Invalid Input! List Size is: " + size);
         else {
-            Node currentNode = head;
+            ListNode currentNode = head;
             // traverse till index
             for (int j = 0; j < pos - 2; j++)
                 currentNode = currentNode.next;
@@ -132,11 +133,11 @@ public class SinglyLinkedList {
             System.out.println("List Successfully Cleared!");
             size = 0;
         } else {
-            Node lastNode = head;
+            ListNode lastNode = head;
             // traverse till second last element
             while (lastNode.next.next != null)
                 lastNode = lastNode.next;
-            // second Last Node is set to null, this removes the address,
+            // second Last ListNode is set to null, this removes the address,
             // removing the last element
             lastNode.next = null;
             System.out.println("Successfully Deleted!");
@@ -161,7 +162,7 @@ public class SinglyLinkedList {
             System.out.println("List is Empty!");
             return;
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         System.out.print("[");
         while (currentNode != null) {
             System.out.print(currentNode.data + ", ");
