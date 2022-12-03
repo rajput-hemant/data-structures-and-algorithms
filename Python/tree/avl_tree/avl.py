@@ -82,7 +82,7 @@ def delete(data):
 
     def __get_successor(root: Node) -> Node:
         current_node = root.right
-        while current_node.left != None:
+        while current_node.left is not None:
             current_node = current_node.left
         return current_node
 
