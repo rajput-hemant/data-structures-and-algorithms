@@ -1,5 +1,6 @@
 from node import Node
 from singly_linked_list import SinglyLinkedList
+import sys
 
 
 def move_zeroes(head: Node) -> Node:
@@ -49,6 +50,6 @@ if __name__ == "__main__":
                 else:
                     print("List is Empty!")
             case 5:
-                exit(0)
+                sys.exit(0)
             case _:
                 print("Wrong Input!")

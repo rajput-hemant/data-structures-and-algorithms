@@ -1,4 +1,5 @@
 import bst_iterative as bst
+import sys
 
 # import bst_recursive as bst
 
@@ -47,6 +48,6 @@ while True:
             else:
                 bst.display()
         case 5:
-            exit(0)
+            sys.exit(0)
         case _:
             print("Wrong Input!")

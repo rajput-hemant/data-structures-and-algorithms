@@ -1,4 +1,5 @@
 from doubly_linked_list import DoublyLinkedList
+import sys
 
 dll = DoublyLinkedList()
 
@@ -90,6 +91,6 @@ if __name__ == "__main__":
             case 5:
                 dll.display_reverse()
             case 6:
-                exit(0)
+                sys.exit(0)
             case _:
                 print("Wrong Input!")
