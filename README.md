@@ -1,40 +1,51 @@
-![View Counter](https://komarev.com/ghpvc/?username=Data-Structure-and-Algorithm&label=View%20Counter&color=red&style=flat) &nbsp; ![Repo Size](https://img.shields.io/github/repo-size/rajput-hemant/Data-Structure-and-Algorithm?color=blue)
-
-# **`Data Structure and Algorithm`**
-
-<p align="center">
-  <img src="https://github.com/rajput-hemant/Data-Structure-and-Algorithm/blob/master/logo.jpg" width=700 />
-</p>
-<p align="center">
-  <img src="https://camo.githubusercontent.com/a870803f30db1d15495072fa9e946a7fa6a6fc1a47fe12324aaf7509c410fc4a/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6a6176612e737667" width=40 />
-  <img src="https://camo.githubusercontent.com/aa96ee3a3352c9c3c2161d3e95698d0885a277ab85d617fe77912627d37a3959/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f707974686f6e2e737667" width=40 />
-  <img src="https://camo.githubusercontent.com/1141fa873ae7371cd6b723fef0cd57ca14923123983844571416854b7f5e8fb6/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f63706c7573706c75732e737667" width=40 />
-</p>
-
 <div align="center">
 
-| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [`DsaWithCpp`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [`dsaWithJava`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [`dsa_with_python`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                  [Graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Graph)                                                   |                                                   [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/graph)                                                   |                                                     [graph](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/graph)                                                     |
-|                                                   [Heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Heap)                                                    |                                                    [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/heap)                                                    |                                                      [heap](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/heap)                                                      |
-|                                             [LinkedList](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/LinkedList)                                              |                                              [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/linkedlist)                                              |                                               [linked_list](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/linked_list)                                               |
-|                                                  [Queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Queue)                                                   |                                                   [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/queue)                                                   |                                                     [queue](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/queue)                                                     |
-|                                              [Recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Recursion)                                               |                                               [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/recursion)                                               |                                                 [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/recursion)                                                 |
-|                                              [Searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Searching)                                               |                                               [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/searching)                                               |                                                 [searching](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/searching)                                                 |
-|                                                [Sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Sorting)                                                 |                                                 [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/sorting)                                                 |                                                   [sorting](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/sorting)                                                   |
-|                                                  [Stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Stack)                                                   |                                                 [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/stack)                                                 |                                                     [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/stack)                                                     |
-|                                                   [Tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/DsaWithCpp/Tree)                                                    |                                                    [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsaWithJava/tree)                                                    |                                                      [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/dsa_with_python/tree)                                                      |
+<!-- labels -->
+
+[![][code-quality]][codacy] [![][active-issues]][deepsource] [![][resolved-issues]][deepsource]
+
+![][views] ![][stars] ![][forks] ![][issues] ![][license] ![][code-size] ![][commit-activity]
+
+# Data Structure and Algorithm
+
+### Implementation and Problems of various Data Structures and Algorithms in
+
+### JAVA, Python and C++.
+
+<img src="https://techstack-generator.vercel.app/java-icon.svg" alt="java" width="67" />
+<img src="https://techstack-generator.vercel.app/python-icon.svg" alt="python" width="67" />
+<img src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="c++" width="67" />
+
+## Contributors
+
+[![][contributors]][contributors-graph]
+
+### Show Some ❤️ by giving ⭐ to the Repository
 
 </div>
 
-### [`Leetcode`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode)
+<!----------------------------------{ Images }--------------------------------->
 
-[array](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/array) &nbsp; [tree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree) &nbsp; [binarysearch](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/binarysearch) &nbsp; [binarytree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarytree) &nbsp; [stack](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/stack) &nbsp; [backtracking](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [linkedlist](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/linkedlist) &nbsp; [recursion](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/recursion) &nbsp; [binarysearchtree](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/leetcode/tree/binarysearchtree)
+[contributors]: https://contrib.rocks/image?repo=rajput-hemant/data-structures-and-algorithms&max=500
+[contributors-graph]: https://github.com/rajput-hemant/data-structures-and-algorithms/graphs/contributors
 
-### [`HackerRank`](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/hackerrank)
+<!--------------------------------{ DeepSource }------------------------------->
 
-- [questions](https://github.com/rajput-hemant/Data-Structure-and-Algorithm/tree/master/hackerrank/questions)
+[deepsource]: https://deepsource.io/gh/rajput-hemant/data-structures-and-algorithms/?ref=repository-badge
+[active-issues]: https://deepsource.io/gh/rajput-hemant/data-structures-and-algorithms.svg/?label=active+issues&showtrend=true&token=IPVIQX-cSuQSVeVl8cb5PLt
+[resolved-issues]: https://deepsource.io/gh/rajput-hemant/data-structures-and-algorithms.svg/?label=resolved+issues&showtrend=true&token=IPVIQX-cSuQSVeVl8cb5PLt
 
----
+<!----------------------------------{ Codacy }--------------------------------->
 
-<h4 align= "center">Show Some ❤ by giving ⭐ to the Repository
+[codacy]: https://www.codacy.com/gh/rajput-hemant/data-structures-and-algorithms/dashboard?utmsource=github.com&utmmedium=referral&utmcontent=rajput-hemant/data-structures-and-algorithms&utmcampaign=BadgeGrade
+[code-quality]: https://app.codacy.com/project/badge/Grade/97e3ea868f9344a5aa6e4d874f83db14
+
+<!----------------------------------{ Labels }--------------------------------->
+
+[views]: https://komarev.com/ghpvc/?username=data-structures-and-algorithms&label=view%20counter&color=red&style=flat
+[code-size]: https://img.shields.io/github/languages/code-size/rajput-hemant/data-structures-and-algorithms
+[issues]: https://img.shields.io/github/issues-raw/rajput-hemant/data-structures-and-algorithms
+[license]: https://img.shields.io/github/license/rajput-hemant/data-structures-and-algorithms
+[commit-activity]: https://img.shields.io/github/commit-activity/w/rajput-hemant/data-structures-and-algorithms
+[forks]: https://img.shields.io/github/forks/rajput-hemant/data-structures-and-algorithms?style=flat
+[stars]: https://img.shields.io/github/stars/rajput-hemant/data-structures-and-algorithms
