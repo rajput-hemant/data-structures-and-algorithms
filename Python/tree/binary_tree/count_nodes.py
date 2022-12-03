@@ -8,7 +8,11 @@ def count_node(root: Node) -> int:
     return count_node(root.left) + count_node(root.right) + 1
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     print(count_node(root))
+
+
+if __name__ == "__main__":
+    main()

@@ -13,6 +13,10 @@ def k_largest_elements(arr, k):
     print()
 
 
-if __name__ == "__main__":
+def main():
     arr = [5, 15, 10, 20, 8, 25, 18]
     k_largest_elements(arr, 3)
+
+
+if __name__ == "__main__":
+    main()

@@ -19,7 +19,11 @@ def k_closest_elements(arr, x, k):
     print()
 
 
-if __name__ == "__main__":
+def main():
     arr = [30, 40, 32, 33, 36, 37]
     x, k = 38, 3
     k_closest_elements(arr, x, k)
+
+
+if __name__ == "__main__":
+    main()

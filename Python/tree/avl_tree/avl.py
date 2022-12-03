@@ -42,6 +42,12 @@ def delete(data):
     global root
 
     def __delete(root: Node, data) -> Node:
+        def __get_successor(root_: Node) -> Node:
+            current_node = root_.right
+            while current_node.left is not None:
+                current_node = current_node.left
+            return current_node
+
         if not root:
             return root
         if root.data > data:
@@ -79,12 +85,6 @@ def delete(data):
             root.right = __right_rotate(root.right)
             return __left_rotate(root)
         return root
-
-    def __get_successor(root: Node) -> Node:
-        current_node = root.right
-        while current_node.left is not None:
-            current_node = current_node.left
-        return current_node
 
     root = __delete(root, data)
 
@@ -131,8 +131,7 @@ def search(data):
             return True
         if root.data > data:
             return __search(root.left, data)
-        else:
-            return __search(root.right, data)
+        return __search(root.right, data)
 
     return __search(root, data)
 

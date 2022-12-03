@@ -31,8 +31,12 @@ def __display(root: Node):
     print("\b\b]")
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     new_node = convert_binary_tree_to_doubly_linked_list(root)
     __display(new_node)
+
+
+if __name__ == "__main__":
+    main()

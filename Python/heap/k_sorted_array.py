@@ -14,7 +14,11 @@ def k_sort(arr: list, k):
         idx += 1
 
 
-if __name__ == "__main__":
+def main():
     arr = [9, 8, 7, 19, 18]
     k_sort(arr, 3)
     print(arr)
+
+
+if __name__ == "__main__":
+    main()

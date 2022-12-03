@@ -53,7 +53,7 @@ def level_order_2(root: Node):
     q = [root]
     while len(q) > 0:
         flag = len(q)
-        for i in range(flag):
+        for _ in range(flag):
             node = q.pop(0)
             print(node.data, end=" ")
             if node.left is not None:
@@ -63,7 +63,7 @@ def level_order_2(root: Node):
         print()
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     pre_order(root)
@@ -73,3 +73,7 @@ if __name__ == "__main__":
     post_order(root)
     print()
     level_order(root)
+
+
+if __name__ == "__main__":
+    main()

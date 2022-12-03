@@ -30,7 +30,7 @@ class DoublyLinkedList:
         else:
             new_node = Node(data)
             current_node = self.head
-            for i in range(0, pos - 2):
+            for _ in range(0, pos - 2):
                 current_node = current_node.next
             new_node.next = current_node.next
             current_node.next.prev = new_node
@@ -73,7 +73,7 @@ class DoublyLinkedList:
             print(f"Invalid Input! List size is: {self.size}")
         else:
             current_node = self.head
-            for i in range(0, pos - 2):
+            for _ in range(0, pos - 2):
                 current_node = current_node.next
             print(
                 f"Successfully Deleted '{current_node.next.data}' from position '{pos}'."
@@ -112,7 +112,7 @@ class DoublyLinkedList:
             while current_node is not None:
                 print(current_node.data, end=", ")
                 current_node = current_node.next
-            print(f"\b\b]")
+            print("\b\b]")
             print(f"List size is -> {self.size}")
 
     def display_reverse(self):
@@ -124,5 +124,5 @@ class DoublyLinkedList:
             while current_node is not None:
                 print(current_node.data, end=", ")
                 current_node = current_node.prev
-            print(f"\b\b]")
+            print("\b\b]")
             print(f"List size is -> {self.size}")

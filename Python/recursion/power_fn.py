@@ -16,6 +16,11 @@ def power2(n: int, p: int) -> int:
     )
 
 
-n = int(input("Enter the Numbr -> "))
-p = int(input("Enter the Power -> "))
-print(f"{n} raise to power {p} is -> {power2(n, p)}")
+def main():
+    n = int(input("Enter the Numbr -> "))
+    p = int(input("Enter the Power -> "))
+    print(f"{n} raise to power {p} is -> {power2(n, p)}")
+
+
+if __name__ == "__main__":
+    main()

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ReverseString {
     static Scanner sc = new Scanner(System.in);
-    static Node top;
+    static Node top = null;
 
     class Node {
         char ch;

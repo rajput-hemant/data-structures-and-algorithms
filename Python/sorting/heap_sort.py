@@ -52,7 +52,11 @@ def __min_heapify(arr, n, index):
         __min_heapify(arr, n, smallest)
 
 
-if __name__ == "__main__":
+def main():
     arr = take_input()
     heap_sort(arr, sort())
     print_sorted_array(arr)
+
+
+if __name__ == "__main__":
+    main()

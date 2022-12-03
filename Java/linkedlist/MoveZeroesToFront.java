@@ -7,7 +7,7 @@ import definitions.ListNode;
 public class MoveZeroesToFront extends SinglyLinkedList {
     static Scanner sc = new Scanner(System.in);
 
-    public static ListNode moveZeroes(ListNode head) {
+    public ListNode moveZeroes(ListNode head) {
         ListNode prevNode = head;
         ListNode currentNode = head.next;
         while (currentNode != null) {
@@ -54,7 +54,7 @@ public class MoveZeroesToFront extends SinglyLinkedList {
                     ob.deleteAll();
                 case 4 -> {
                     if (!ob.isEmpty())
-                        ob.head = moveZeroes(ob.head);
+                        ob.head = ob.moveZeroes(ob.head);
                     else
                         System.out.println("List is Empty!");
                 }

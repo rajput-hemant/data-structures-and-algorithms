@@ -8,7 +8,7 @@ public class Traversals {
     // Time Complexity -> O(V+E)
     // Space Complexity -> O(V+E)
     public static void BFS(ArrayList<ArrayList<Integer>> adj) {
-        boolean visited[] = new boolean[adj.size()];
+        boolean[] visited = new boolean[adj.size()];
         for (int i = 0; i < adj.size(); i++)
             if (!visited[i])
                 BFS(adj, i, visited);
@@ -33,7 +33,7 @@ public class Traversals {
     // Time Complexity -> O(V+E)
     // Space Complexity -> O(V+E)
     public static void DFS(ArrayList<ArrayList<Integer>> adj) {
-        boolean visited[] = new boolean[adj.size()];
+        boolean[] visited = new boolean[adj.size()];
         for (int i = 0; i < adj.size(); i++)
             if (!visited[i])
                 DFSRec(adj, i, visited);

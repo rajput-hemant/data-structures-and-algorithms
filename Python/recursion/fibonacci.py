@@ -5,6 +5,11 @@ def fibonacci(n: int, a: int, b: int):
     return fibonacci(n - 1, b, a + b)
 
 
-n = int(input("Enter the Number -> "))
-print("Fibonacci Series-> ", end=" ")
-fibonacci(n, 0, 1)
+def main():
+    n = int(input("Enter the Number -> "))
+    print("Fibonacci Series-> ", end=" ")
+    fibonacci(n, 0, 1)
+
+
+if __name__ == "__main__":
+    main()

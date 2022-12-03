@@ -29,7 +29,7 @@ def deserialize(arr: list) -> Node:
     return root
 
 
-if __name__ == "__main__":
+def main():
     arr = []
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
@@ -40,3 +40,7 @@ if __name__ == "__main__":
     new_root = deserialize(arr)
     pre_order(new_root)
     print()
+
+
+if __name__ == "__main__":
+    main()

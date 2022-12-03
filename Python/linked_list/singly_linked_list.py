@@ -25,13 +25,13 @@ class SinglyLinkedList:
         if pos == 0:
             print("Invalid Input! Index Starts from 1.")
         elif pos == 1:
-            self.insert_begin()
+            self.insert_begin(data)
         elif pos > self.size:
             print(f"Invalid Input! List Size is: '{self.size}'")
         else:
             new_node = Node(data)
             current_node = self.head
-            for i in range(0, pos - 2):
+            for _ in range(0, pos - 2):
                 current_node = current_node.next
             new_node.next = current_node.next
             current_node.next = new_node
@@ -80,7 +80,7 @@ class SinglyLinkedList:
             print(f"Invalid Input! List Size is: '{self.size}'")
         else:
             current_node = self.head
-            for i in range(0, pos - 2):
+            for _ in range(0, pos - 2):
                 current_node = current_node.next
             print(
                 f"Successfully Deleted '{current_node.next.data}' from position '{pos}'."
@@ -120,5 +120,5 @@ class SinglyLinkedList:
             while current_node is not None:
                 print(current_node.data, end=", ")
                 current_node = current_node.next
-            print(f"\b\b]")
+            print("\b\b]")
             print(f"List size is -> {self.size}")

@@ -47,7 +47,7 @@ public class FloorAndCeil extends BSTRecursive {
                     System.out.print("Enter the Number -> ");
                     int floor = sc.nextInt();
                     try {
-                        System.out.println(getFloorIterative(ob.root, floor).data);
+                        System.out.println(ob.getFloorIterative(ob.root, floor).data);
                     } catch (Exception e) {
                         System.out.println("null");
                     }
@@ -56,7 +56,7 @@ public class FloorAndCeil extends BSTRecursive {
                     System.out.print("Enter the Number -> ");
                     int ceil = sc.nextInt();
                     try {
-                        System.out.println(getCeilIterative(ob.root, ceil).data);
+                        System.out.println(ob.getCeilIterative(ob.root, ceil).data);
                     } catch (Exception e) {
                         System.out.println("null");
                     }
@@ -71,7 +71,7 @@ public class FloorAndCeil extends BSTRecursive {
 
     // Time Complexity -> O(h)
     // Auxiliary Space -> O(1)
-    public static Node getFloorIterative(Node root, int num) {
+    public Node getFloorIterative(Node root, int num) {
         Node floor = null;
         while (root != null) {
             if (root.data == num)
@@ -88,11 +88,11 @@ public class FloorAndCeil extends BSTRecursive {
 
     // Time Complexity -> O(h)
     // Auxiliary Space -> O(h)
-    public static Node getFloorRecursive(Node root, int num) {
+    public Node getFloorRecursive(Node root, int num) {
         return getFloorRecursive(root, num, null);
     }
 
-    private static Node getFloorRecursive(Node root, int num, Node floor) {
+    private Node getFloorRecursive(Node root, int num, Node floor) {
         if (root == null)
             return floor;
         if (root.data == num)
@@ -105,7 +105,7 @@ public class FloorAndCeil extends BSTRecursive {
 
     // Time Complexity -> O(h)
     // Auxiliary Space -> O(1)
-    public static Node getCeilIterative(Node root, int num) {
+    public Node getCeilIterative(Node root, int num) {
         Node ceil = null;
         while (root != null) {
             if (root.data == num)
@@ -122,11 +122,11 @@ public class FloorAndCeil extends BSTRecursive {
 
     // Time Complexity -> O(h)
     // Auxiliary Space -> O(h)
-    public static Node getCeilRecursive(Node root, int num) {
+    public Node getCeilRecursive(Node root, int num) {
         return getCeilRecursive(root, num, null);
     }
 
-    private static Node getCeilRecursive(Node root, int num, Node ceil) {
+    private Node getCeilRecursive(Node root, int num, Node ceil) {
         if (root == null)
             return ceil;
         if (root.data == num)

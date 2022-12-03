@@ -1,7 +1,7 @@
-import bst_iterative as bst
+# import bst_iterative as bst
 import sys
 
-# import bst_recursive as bst
+import bst_recursive as bst
 
 
 def __is_empty() -> bool:
@@ -21,8 +21,8 @@ while True:
                 "Enter your choice -> "
             )
         )
-    except Exception:
-        print(f"Wrong Input! Only Integer value is allowed.")
+    except BaseException:
+        print("Wrong Input! Only Integer value is allowed.")
         continue
     match choice:
         case 1:

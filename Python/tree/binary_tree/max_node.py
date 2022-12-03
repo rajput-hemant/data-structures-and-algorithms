@@ -9,7 +9,11 @@ def get_max(root: Node) -> int:
     return max(root.data, get_max(root.left), get_max(root.right))
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     print(get_max(root))
+
+
+if __name__ == "__main__":
+    main()

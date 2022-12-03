@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class QueueWithLinkedList {
     static Scanner sc = new Scanner(System.in);
-    static Node head, tail;
+    static Node head = null,
+            tail = null;
 
     static class Node {
         int data;

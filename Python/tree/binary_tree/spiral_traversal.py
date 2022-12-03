@@ -26,7 +26,11 @@ def spiral_traversal(root: Node):
         print()
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     spiral_traversal(root)
+
+
+if __name__ == "__main__":
+    main()

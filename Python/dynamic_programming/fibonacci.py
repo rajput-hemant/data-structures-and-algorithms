@@ -6,7 +6,7 @@ def fibonacci_memoization(n: int) -> int:
 def __fib_memo(n: int, memo: list) -> int:
     if memo[n] == -1:
         res = 0
-        if n == 0 or n == 1:
+        if n in (0, 1):
             res = n
         else:
             res = __fib_memo(n - 1, memo) + __fib_memo(n - 2, memo)

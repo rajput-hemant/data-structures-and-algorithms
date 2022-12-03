@@ -37,8 +37,7 @@ def get_floor_recursive(root: Node, num: int) -> Node:
             return root
         if root.data > num:
             return __get_floor_recursive(root.left, num, floor)
-        else:
-            return __get_floor_recursive(root.right, num, root)
+        return __get_floor_recursive(root.right, num, root)
 
     return __get_floor_recursive(root, num, None)
 
@@ -51,8 +50,7 @@ def get_ceil_recursive(root: Node, num: int) -> Node:
             return root
         if root.data < num:
             return __get_ceil_recursive(root.right, num, floor)
-        else:
-            return __get_ceil_recursive(root.left, num, root)
+        return __get_ceil_recursive(root.left, num, root)
 
     return __get_ceil_recursive(root, num, None)
 
@@ -73,8 +71,8 @@ if __name__ == "__main__":
                     "Enter your choice -> "
                 )
             )
-        except Exception:
-            print(f"Wrong Input! Only Integer value is allowed.")
+        except BaseException:
+            print("Wrong Input! Only Integer value is allowed.")
             continue
         match choice:
             case 1:
@@ -94,13 +92,13 @@ if __name__ == "__main__":
                 floor = input("Enter the Number -> ")
                 try:
                     print(get_floor_iterarive(bst.root, floor).data)
-                except Exception:
+                except BaseException:
                     print("NONE")
             case 6:
                 ceil = input("Enter the Number -> ")
                 try:
                     print(get_ceil_iterative(bst.root, ceil).data)
-                except Exception:
+                except BaseException:
                     print("NONE")
             case 7:
                 sys.exit(0)

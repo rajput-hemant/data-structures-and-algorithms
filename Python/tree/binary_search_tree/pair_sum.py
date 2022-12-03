@@ -1,8 +1,8 @@
-from node import TreeNode
+from node import Node
 
 
-def findTarget(self, root: TreeNode, k: int) -> bool:
-    def __is_pair_sum(root: TreeNode, lst: list, k: int) -> list:
+def findTarget(root: Node, k: int) -> bool:
+    def __is_pair_sum(root: Node, lst: list, k: int) -> list:
         if root:
             __is_pair_sum(root.left, lst, k)
             lst.append(root.data)
@@ -15,7 +15,7 @@ def findTarget(self, root: TreeNode, k: int) -> bool:
     while head < tail:
         if lst[head] + lst[tail] == k:
             return True
-        elif lst[head] + lst[tail] < k:
+        if lst[head] + lst[tail] < k:
             head += 1
         elif lst[head] + lst[tail] > k:
             tail += 1

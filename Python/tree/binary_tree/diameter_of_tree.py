@@ -33,7 +33,11 @@ def diameter_of_tree(root: Node) -> int:
     return __max_dia
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     print(diameter_of_tree(root))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,6 @@
 class Node:
     def __init__(self) -> None:
-        pass
+        pass  # empty constructor
 
     def __init__(self, data):
         self.data = data

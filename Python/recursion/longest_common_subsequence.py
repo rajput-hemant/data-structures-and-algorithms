@@ -7,8 +7,7 @@ def __lcs(s1, s2, m, n):
         return 0
     if s1[m - 1] == s2[n - 1]:
         return 1 + __lcs(s1, s2, m - 1, n - 1)
-    else:
-        return max(__lcs(s1, s2, m - 1, n), __lcs(s1, s2, m, n - 1))
+    return max(__lcs(s1, s2, m - 1, n), __lcs(s1, s2, m, n - 1))
 
 
 if __name__ == "__main__":

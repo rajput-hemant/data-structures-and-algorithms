@@ -3,13 +3,13 @@ from node import Node
 
 
 def is_bst(root: Node) -> bool:
-    def __is_bst(root: Node, min, max):
+    def __is_bst(root: Node, min_, max_):
         if not root:
             return True
-        if root.data <= min or root.data >= max:
+        if root.data <= min_ or root.data >= max_:
             return False
-        return __is_bst(root.left, min, root.data) and __is_bst(
-            root.right, root.data, max
+        return __is_bst(root.left, min_, root.data) and __is_bst(
+            root.right, root.data, max_
         )
 
     return __is_bst(root, -sys.maxsize, sys.maxsize)

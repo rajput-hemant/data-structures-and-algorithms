@@ -10,7 +10,7 @@ def max_width(root: Node) -> int:
     while len(q) > 0:
         flag = len(q)
         width = max(width, flag)
-        for i in range(flag):
+        for _ in range(flag):
             node = q.pop(0)
             if node.left is not None:
                 q.append(node.left)
@@ -19,7 +19,11 @@ def max_width(root: Node) -> int:
     return width
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, 9, -1, -1, 8, -1, -1]
     root = build_tree(nodes)
     print(f"Max Width of Binary Tree is -> {max_width(root)}")
+
+
+if __name__ == "__main__":
+    main()

@@ -9,13 +9,16 @@ class max_heap:
     #     self.heap = items
     #     self.build_heap()
 
-    def __left_child(self, index):
+    @staticmethod
+    def __left_child(index):
         return 2 * index + 1
 
-    def __right_child(self, index):
+    @staticmethod
+    def __right_child(index):
         return 2 * index + 2
 
-    def __parent(self, index):
+    @staticmethod
+    def __parent(index):
         return (index - 1) // 2
 
     def __swap(self, a, b):
@@ -65,9 +68,9 @@ class max_heap:
         if len(self.heap) == 1:
             return self.heap.pop(0)
         self.__swap(0, len(self.heap) - 1)
-        max = self.heap.pop(len(self.heap) - 1)
+        max_ = self.heap.pop(len(self.heap) - 1)
         self.max_heapify(0)
-        return max
+        return max_
 
     def increase_key(self, index, new_val):
         if self.is_empty():

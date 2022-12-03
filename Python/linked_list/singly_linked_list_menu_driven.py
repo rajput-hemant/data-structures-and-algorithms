@@ -62,7 +62,7 @@ def delete():
             print("Wrong Input!")
 
 
-if __name__ == "__main__":
+def main():
     while True:
         try:
             choice = int(
@@ -76,8 +76,8 @@ if __name__ == "__main__":
                     "Enter your choice -> "
                 )
             )
-        except Exception:
-            print(f"Wrong Input! Only Integer value is allowed.")
+        except BaseException:
+            print("Wrong Input! Only Integer value is allowed.")
             continue
         match choice:
             case 1:
@@ -92,3 +92,7 @@ if __name__ == "__main__":
                 sys.exit(0)
             case _:
                 print("Wrong Input!")
+
+
+if __name__ == "__main__":
+    main()

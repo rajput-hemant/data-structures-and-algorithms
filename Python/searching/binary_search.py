@@ -13,8 +13,7 @@ def __binary_search_iterate(arr: list, num: int, begin: int, end: int) -> int:
             begin = mid + 1
         elif arr[mid] > num:
             end = mid - 1
-        else:
-            return mid
+        return mid
     return -1
 
 
@@ -26,5 +25,4 @@ def __binary_search_rec(arr: list, num: int, begin: int, end: int) -> int:
         return mid
     if arr[mid] > num:
         return __binary_search_rec(arr, num, begin, mid - 1)
-    else:
-        return __binary_search_rec(arr, num, mid + 1, end)
+    return __binary_search_rec(arr, num, mid + 1, end)

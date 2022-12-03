@@ -14,8 +14,8 @@ while True:
                 "Enter your choice -> "
             )
         )
-    except Exception:
-        print(f"Wrong Input! Only Integer value is allowed.")
+    except BaseException:
+        print("Wrong Input! Only Integer value is allowed.")
         continue
     match choice:
         case 1:

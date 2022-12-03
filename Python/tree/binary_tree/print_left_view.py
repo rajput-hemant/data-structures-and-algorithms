@@ -19,7 +19,11 @@ def print_left_view(root):
     __print_left_view(root, 1)
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
     root = build_tree(nodes)
     print_left_view(root)
+
+
+if __name__ == "__main__":
+    main()

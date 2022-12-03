@@ -22,6 +22,12 @@ def delete(data):
     global root
 
     def __delete(root: Node, data) -> Node:
+        def __get_successor(root_: Node) -> int:
+            current_node = root_.right
+            while current_node is not None and current_node.left is not None:
+                current_node = current_node.left
+            return current_node.data
+
         if root is None:
             return None
         if root.data > data:
@@ -31,17 +37,11 @@ def delete(data):
         else:
             if root.left is None:
                 return root.right
-            elif root.right is None:
+            if root.right is None:
                 return root.left
             root.data = __get_successor(root)
             root.right = __delete(root.right, root.data)
         return root
-
-    def __get_successor(root: Node) -> int:
-        current_node = root.right
-        while current_node is not None and current_node.left is not None:
-            current_node = current_node.left
-        return current_node.data
 
     root = __delete(root, data)
 
@@ -56,8 +56,7 @@ def search(data) -> bool:
             return True
         if root.data > data:
             return __search(root.left, data)
-        else:
-            return __search(root.right, data)
+        return __search(root.right, data)
 
     return __search(root, data)
 

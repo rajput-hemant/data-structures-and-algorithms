@@ -79,7 +79,7 @@ def search(data) -> bool:
         while root is not None:
             if root.data == data:
                 return True
-            elif root.data > data:
+            if root.data > data:
                 root = root.left
             else:
                 root = root.right

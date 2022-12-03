@@ -16,6 +16,7 @@ from tree_builder import build_tree
 #         and is_balanced_tree(root.right)
 #     )
 
+
 # Time Complexity -> O(n)
 def is_balanced_tree(root: Node) -> bool:
     return not __is_balanced_tree(root) == -1
@@ -32,11 +33,14 @@ def __is_balanced_tree(root: Node) -> int:
         return -1
     if abs(left_height - right_height) > 1:
         return -1
-    else:
-        return max(left_height, right_height) + 1
+    return max(left_height, right_height) + 1
 
 
-if __name__ == "__main__":
+def main():
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, 9, -1, -1, 8, -1, -1]
     root = build_tree(nodes)
     print(f"Is Balanced Tree -> {is_balanced_tree(root)}")
+
+
+if __name__ == "__main__":
+    main()

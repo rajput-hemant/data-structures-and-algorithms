@@ -37,6 +37,10 @@ def merge_k_sorted_arrays(arr):
     return res
 
 
-if __name__ == "__main__":
+def main():
     arr = [[5, 10], [4, 9], [5, 6]]
     print(merge_k_sorted_arrays(arr))
+
+
+if __name__ == "__main__":
+    main()
