@@ -5,8 +5,7 @@ from tree_builder import build_tree
 def max_width(root: Node) -> int:
     if root is None:
         return
-    q = []
-    q.append(root)
+    q = [root]
     width = 0
     while len(q) > 0:
         flag = len(q)

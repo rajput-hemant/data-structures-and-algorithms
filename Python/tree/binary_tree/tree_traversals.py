@@ -32,9 +32,7 @@ def post_order(root: Node):
 def level_order(root: Node):
     if root is None:
         return
-    q = []
-    q.append(root)
-    q.append(None)
+    q = [root, None]
     while len(q) > 1:
         node = q.pop(0)
         if node is None:
@@ -52,8 +50,7 @@ def level_order(root: Node):
 def level_order_2(root: Node):
     if root is None:
         return
-    q = []
-    q.append(root)
+    q = [root]
     while len(q) > 0:
         flag = len(q)
         for i in range(flag):
