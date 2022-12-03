@@ -23,5 +23,5 @@ new_str = ""
 print(len(str))
 a = input("Enter the two characters -> ")
 b = input()
-print(f"String after replacing '{a}' with '{b}' -> ", end='')
+print(f"String after replacing '{a}' with '{b}' -> ", end="")
 char_replace(str, 0, a, b, new_str)
