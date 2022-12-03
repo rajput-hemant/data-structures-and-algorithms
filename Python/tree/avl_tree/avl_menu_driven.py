@@ -1,4 +1,5 @@
 from avl import *
+import sys
 
 while True:
     try:
@@ -31,6 +32,6 @@ while True:
                 "Element Doesn't Exists!"
             )
         case 5:
-            exit(0)
+            sys.exit(0)
         case _:
             print("Wrong Input!")

@@ -1,5 +1,6 @@
 from node import Node
 import bst_recursive as bst
+import sys
 
 
 def get_floor_iterarive(root: Node, num: int) -> Node:
@@ -102,6 +103,6 @@ if __name__ == "__main__":
                 except Exception:
                     print("NONE")
             case 7:
-                exit(0)
+                sys.exit(0)
             case _:
                 print("Wrong Input!")

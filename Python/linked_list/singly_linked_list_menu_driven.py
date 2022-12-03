@@ -1,4 +1,5 @@
 from singly_linked_list import SinglyLinkedList
+import sys
 
 
 sll = SinglyLinkedList()
@@ -88,6 +89,6 @@ if __name__ == "__main__":
             case 4:
                 sll.delete_all()
             case 5:
-                exit(0)
+                sys.exit(0)
             case _:
                 print("Wrong Input!")
