@@ -5,19 +5,18 @@ def fibonacci_memoization(n: int) -> int:
 
 def __fib_memo(n: int, memo: list) -> int:
     if memo[n] == -1:
-        res = 0
         if n in (0, 1):
-            res = n
-        else:
-            res = __fib_memo(n - 1, memo) + __fib_memo(n - 2, memo)
+            return n
+        res = __fib_memo(n - 1, memo) + __fib_memo(n - 2, memo)
         memo[n] = res
     return memo[n]
 
 
 def fibonacci_tabulation(n: int) -> int:
+    if n in (0, 1):
+        return n
     dp = [-1] * (n + 1)
-    dp[0] = 0
-    dp[1] = 1
+    dp[0], dp[1] = 0, 1
     for i in range(2, n + 1):
         dp[i] = dp[i - 1] + dp[i - 2]
     return dp[n]

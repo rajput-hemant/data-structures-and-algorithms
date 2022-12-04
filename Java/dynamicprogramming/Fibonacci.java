@@ -22,11 +22,9 @@ public class Fibonacci {
 
   private int fibMemo(int n, int[] memo) {
     if (memo[n] == -1) {
-      int res = 0;
       if (n == 0 || n == 1)
-        res = n;
-      else
-        res = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+        return n;
+      int res = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
       memo[n] = res;
     }
     return memo[n];
@@ -43,6 +41,8 @@ public class Fibonacci {
    * @return the nth fibonacci number
    */
   public int fibonacciTabulation(int n) {
+    if (n == 0 || n == 1)
+      return n;
     int[] dp = new int[n + 1];
     dp[0] = 0;
     dp[1] = 1;

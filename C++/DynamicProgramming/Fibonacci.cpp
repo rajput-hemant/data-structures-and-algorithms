@@ -14,6 +14,8 @@ public:
 
   int fibonacciTabulation(int n)
   {
+    if (n == 0 || n == 1)
+      return n;
     int dp[n + 1];
     dp[0] = 0;
     dp[1] = 1;
@@ -27,21 +29,19 @@ private:
   {
     if (memo[n] == -1)
     {
-      int res;
       if (n == 0 || n == 1)
-        res = n;
-      else
-        res = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+        return n;
+      int res = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
       memo[n] = res;
     }
     return memo[n];
   }
 };
 
-// int main()
-// {
-//   Fibonacci ob;
-//   cout << ob.fibonacciMemoization(5) << endl;
-//   cout << ob.fibonacciTabulation(5) << endl;
-//   return 0;
-// }
+int main()
+{
+  Fibonacci ob;
+  cout << ob.fibonacciMemoization(5) << endl;
+  cout << ob.fibonacciTabulation(5) << endl;
+  return 0;
+}
