@@ -1,23 +1,10 @@
 version = 1
 
 [[analyzers]]
-name = "python"
-enabled = true
+name = "rust"
 
   [analyzers.meta]
-  runtime_version = "3.x.x"
-
-[[analyzers]]
-name = "java"
-enabled = true
-
-  [analyzers.meta]
-  runtime_version = "17"
-
-[[analyzers]]
-name = "cxx"
-enabled = true
+  msrv = "stable"
 
 [[transformers]]
-name = "black"
-enabled = true
+name = "rustfmt"
