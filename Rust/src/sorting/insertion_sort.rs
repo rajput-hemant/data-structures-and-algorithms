@@ -11,8 +11,8 @@ use super::SortOrder;
 /// use rust::sorting::{insertion_sort, SortOrder};
 ///
 /// let mut arr = vec![5, 4, 3, 2, 1];
-/// let sorted = insertion_sort(&mut arr, SortOrder::Asc);
-/// assert_eq!(sorted, &[1, 2, 3, 4, 5]);
+/// insertion_sort(&mut arr, SortOrder::Asc);
+/// assert_eq!(arr, &[1, 2, 3, 4, 5]);
 /// ```
 /// ### Time Complexity
 /// * Best case: O(n)
@@ -20,7 +20,7 @@ use super::SortOrder;
 /// * Worst case: O(n^2)
 /// ### Space Complexity
 /// * O(1)
-pub fn insertion_sort<T: PartialOrd + Copy>(arr: &mut Vec<T>, order: SortOrder) -> &mut Vec<T> {
+pub fn insertion_sort<T: PartialOrd + Copy>(arr: &mut Vec<T>, order: SortOrder) {
     for i in 1..arr.len() {
         let mut j = i;
 
@@ -39,8 +39,6 @@ pub fn insertion_sort<T: PartialOrd + Copy>(arr: &mut Vec<T>, order: SortOrder) 
             }
         }
     }
-
-    arr
 }
 
 #[cfg(test)]
@@ -50,14 +48,14 @@ mod tests {
     #[test]
     fn test_insertion_sort_asc() {
         let mut arr = vec![5, 4, 3, 2, 1];
-        let sorted = insertion_sort(&mut arr, SortOrder::Asc);
-        assert_eq!(sorted, &[1, 2, 3, 4, 5]);
+        insertion_sort(&mut arr, SortOrder::Asc);
+        assert_eq!(arr, &[1, 2, 3, 4, 5]);
     }
 
     #[test]
     fn test_insertion_sort_des() {
         let mut arr = vec![1, 2, 3, 4, 5];
-        let sorted = insertion_sort(&mut arr, SortOrder::Des);
-        assert_eq!(sorted, &[5, 4, 3, 2, 1]);
+        insertion_sort(&mut arr, SortOrder::Des);
+        assert_eq!(arr, &[5, 4, 3, 2, 1]);
     }
 }

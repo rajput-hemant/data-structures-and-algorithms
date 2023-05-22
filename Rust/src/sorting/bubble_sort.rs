@@ -4,8 +4,6 @@ pub use super::SortOrder;
 /// ### Arguments
 /// * `arr` - A mutable reference to a vector of type T.
 /// * `order` - A SortOrder enum value.
-/// ### Returns
-/// * A mutable reference to a vector of type T.
 /// ### Examples
 /// ```
 /// use rust::sorting::bubble_sort::{bubble_sort, SortOrder};
@@ -24,7 +22,7 @@ pub use super::SortOrder;
 /// * Average-case - O(n^2)
 /// ### Space Complexity
 /// * O(1)
-pub fn bubble_sort<T: Ord>(arr: &mut Vec<T>, order: SortOrder) -> &mut Vec<T> {
+pub fn bubble_sort<T: Ord>(arr: &mut Vec<T>, order: SortOrder) {
     for i in 0..arr.len() {
         for j in 0..arr.len() - 1 - i {
             match order {
@@ -42,8 +40,6 @@ pub fn bubble_sort<T: Ord>(arr: &mut Vec<T>, order: SortOrder) -> &mut Vec<T> {
             }
         }
     }
-
-    arr
 }
 
 #[cfg(test)]
