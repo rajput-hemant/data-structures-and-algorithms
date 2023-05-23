@@ -59,11 +59,11 @@ where
             SortOrder::Des => left[i] >= right[j],
         } {
             // assign left[i] to arr[k] if left[i] <= right[j]
-            arr[k] = left[i].clone();
+            arr[k].clone_from(&left[i]);
             i += 1; // increment the index of left array
         } else {
             // assign right[j] to arr[k] if left[i] > right[j]
-            arr[k] = right[j].clone();
+            arr[k].clone_from(&right[j]);
             j += 1; // increment the index of right array
         }
         k += 1; // increment the index of arr
@@ -71,14 +71,14 @@ where
 
     // copy the remaining elements of left to arr
     while i < left.len() {
-        arr[k] = left[i].clone();
+        arr[k].clone_from(&left[i]);
         i += 1;
         k += 1;
     }
 
     // copy the remaining elements of right to arr
     while j < right.len() {
-        arr[k] = right[j].clone();
+        arr[k].clone_from(&right[j]);
         j += 1;
         k += 1;
     }
