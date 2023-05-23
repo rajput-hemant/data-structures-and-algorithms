@@ -1,9 +1,12 @@
+use std::fmt::{Debug, Display, Formatter, Result};
+
 /// A node in a singly linked list
 struct Node<T> {
     element: T,
     next: Option<Box<Node<T>>>, // Box is a smart pointer, that knows its size and how to clean up after itself
 }
 
+#[derive(Default)]
 pub struct SinglyLinkedList<T> {
     head: Option<Box<Node<T>>>,
     length: usize,
@@ -223,8 +226,10 @@ impl<T> SinglyLinkedList<T> {
                 .next; // next is a mutable reference to the next field of the Node<T>
         }
 
-        let mut node = current.take(); // take the reference out of the current node, and leave None in its place
-        *current = node.as_mut().unwrap().next.take(); // put the reference to the next node in the current node, making it the new current node
+        // take the reference out of the current node, and leave None in its place
+        let mut node = current.take();
+        // put the reference to the next node in the current node, making it the new current node
+        *current = node.as_mut().unwrap().next.take();
         self.length -= 1;
 
         Some(node.unwrap().element)
@@ -264,12 +269,65 @@ impl<T> SinglyLinkedList<T> {
                     .next; // next is a mutable reference to the next field of the Node<T>
             }
 
-            let mut node = current.take(); // take the reference out of the current node, and leave None in its place
-            *current = node.as_mut().unwrap().next.take(); // put the reference to the next node in the current node, making it the new current node
+            // take the reference out of the current node, and leave None in its place
+            let mut node = current.take();
+            // put the reference to the next node in the current node, making it the new current node
+            *current = node.as_mut().unwrap().next.take();
             self.length -= 1;
 
             Some(node.unwrap().element)
         }
+    }
+}
+
+impl<T> Drop for SinglyLinkedList<T> {
+    fn drop(&mut self) {
+        // take the head of the list, leaving None in its place
+        let mut current = self.head.take();
+
+        // iterate through the list, dropping each node
+        while let Some(mut node) = current {
+            // take the next node, assign it to the current leaving None in its place
+            current = node.next.take();
+        }
+    }
+}
+
+impl<T: Display> Display for SinglyLinkedList<T> {
+    fn fmt(&self, f: &mut Formatter) -> Result {
+        // we need to use a reference to the head, because we don't want to take ownership of the list
+        let mut current = &self.head;
+
+        // iterate through the list, printing each element
+        while let Some(node) = current {
+            write!(f, "{}", node.element)?;
+
+            if node.next.is_some() {
+                write!(f, " -> ")?;
+            }
+
+            current = &node.next;
+        }
+
+        Ok(())
+    }
+}
+
+impl<T: Debug> Debug for SinglyLinkedList<T> {
+    fn fmt(&self, f: &mut Formatter) -> Result {
+        let mut current = &self.head;
+
+        while let Some(node) = current {
+            write!(f, "{:?}", node.element)?;
+
+            if node.next.is_some() {
+                write!(f, " -> ")?;
+            }
+
+            current = &node.next;
+        }
+
+        Ok(())
     }
 }
 
