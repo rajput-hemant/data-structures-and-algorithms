@@ -8,7 +8,7 @@ pub use super::SortOrder;
 ///
 /// # Examples
 /// ```
-/// use rust::sorting::merge_sort::{merge_sort, SortOrder};
+/// use rust::sorting::{merge_sort, SortOrder};
 ///
 /// let mut arr = [1, 3, 2, 5, 4];
 /// merge_sort(&mut arr, SortOrder::Asc);
