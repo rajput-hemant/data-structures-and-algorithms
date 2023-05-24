@@ -1,9 +1,44 @@
 use std::fmt::{Debug, Display, Formatter, Result};
 
-/// A node in a singly linked list
-struct Node<T> {
+pub struct Node<T> {
     element: T,
     next: Option<Box<Node<T>>>, // Box is a smart pointer, that knows its size and how to clean up after itself
+}
+
+impl<T> Node<T> {
+    /// Create a new Node
+    ///
+    /// # Arguments
+    /// * `element` - The element to store in the node
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::singly_linked_list::Node;
+    ///
+    /// let node = Node::new(1);
+    /// ```
+    pub fn new(element: T) -> Self {
+        Node {
+            element,
+            next: None,
+        }
+    }
+
+    /// Create a new Node with a next node
+    ///
+    /// # Arguments
+    /// * `element` - The element to store in the node
+    /// * `next` - The next node in the list
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::singly_linked_list::Node;
+    ///
+    /// let node = Node::new_with_next(1, None);
+    /// ```
+    pub fn new_with_next(element: T, next: Option<Box<Node<T>>>) -> Self {
+        Node { element, next }
+    }
 }
 
 #[derive(Default)]
@@ -49,10 +84,14 @@ impl<T> SinglyLinkedList<T> {
     /// assert_eq!(list.len(), 3);
     /// ```
     pub fn push_front(&mut self, element: T) {
-        let node = Box::new(Node {
-            element,
-            next: self.head.take(), // take the reference out of the head, and leave None in its place
-        });
+        let mut node = Box::new(Node::new(element));
+        node.next = self.head.take(); // take the reference out of the head, and leave None in its place
+
+        /* w/ new_with_next associated function */
+        // let node = Box::new(Node::new_with_next(
+        //     element,
+        //     self.head.take(), // take the reference out of the head, and leave None in its place
+        // ));
 
         self.head = Some(node); // put the node in the head, making it the new head
         self.length += 1;
@@ -99,10 +138,14 @@ impl<T> SinglyLinkedList<T> {
                 .next; // next is a mutable reference to the next field of the Node<T>
         }
 
-        let node = Box::new(Node {
-            element,
-            next: current.take(), // take the reference out of the current node, and leave None in its place
-        });
+        let mut node = Box::new(Node::new(element));
+        node.next = current.take(); // take the reference out of the current node, and leave None in its place
+
+        /* w/ new_with_next associated function */
+        // let node = Box::new(Node::new_with_next(
+        //     element,
+        //     current.take(), // take the reference out of the current node, and leave None in its place
+        // ));
 
         *current = Some(node); // put the node in the current node, making it the new current node
         self.length += 1;
@@ -126,10 +169,7 @@ impl<T> SinglyLinkedList<T> {
     /// assert_eq!(list.len(), 3);
     /// ```
     pub fn push_back(&mut self, element: T) {
-        let node = Box::new(Node {
-            element,
-            next: None,
-        });
+        let node = Box::new(Node::new(element));
 
         // if the list is empty, put the node in the head
         if self.is_empty() {
