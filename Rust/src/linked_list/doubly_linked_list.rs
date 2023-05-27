@@ -49,7 +49,7 @@ impl<T> DoublyLinkedList<T> {
             self.tail = Some(node.clone());
         } else {
             // node next will point to first node
-            node.borrow_mut().next = self.head.clone();
+            node.borrow_mut().next.clone_from(&self.head);
             // prev of head will point to node
             self.head.as_ref().unwrap().borrow_mut().prev = Some(node.clone());
             // head will point to node
@@ -76,9 +76,11 @@ impl<T> DoublyLinkedList<T> {
             let node = Rc::new(RefCell::new(Node::new(item)));
 
             // node next will point to next node
-            node.borrow_mut().next = current.as_ref().unwrap().borrow().next.clone();
+            node.borrow_mut()
+                .next
+                .clone_from(&current.as_ref().unwrap().borrow().next);
             // node prev will point to current node
-            node.borrow_mut().prev = current.clone();
+            node.borrow_mut().prev.clone_from(&current);
             // next of current node will point to node
             current.as_ref().unwrap().borrow_mut().next = Some(node.clone());
             // prev of next node will point to node
@@ -96,7 +98,7 @@ impl<T> DoublyLinkedList<T> {
             self.tail = Some(node.clone());
         } else {
             // node prev will point to last node
-            node.borrow_mut().prev = self.tail.clone();
+            node.borrow_mut().prev.clone_from(&self.tail);
             // next of tail will point to node
             self.tail.as_ref().unwrap().borrow_mut().next = Some(node.clone());
             // tail will point to node
@@ -143,8 +145,11 @@ impl<T> DoublyLinkedList<T> {
             // get the reference of next node of current node
             let next = current.as_ref().unwrap().borrow().next.clone();
             // next node prev will point to current node
-            next.as_ref().unwrap().borrow_mut().prev =
-                current.as_ref().unwrap().borrow().prev.clone();
+            next.as_ref()
+                .unwrap()
+                .borrow_mut()
+                .prev
+                .clone_from(&current.as_ref().unwrap().borrow().prev);
             // prev node next will point to next node
             current.as_ref().unwrap().borrow_mut().next = next.clone();
 
