@@ -1,15 +1,35 @@
+#![allow(dead_code)]
+
+use std::fmt::{Debug, Display, Formatter, Result};
 use std::{cell::RefCell, rc::Rc};
 
 // associated type
+// It uses an Rc (Reference Counted) pointer to give ownership of the next node to the current node.
+// RefCell is used to get interior mutability, i.e. to mutate the value even if it is immutable.
 type Link<T> = Option<Rc<RefCell<Node<T>>>>;
-struct Node<T> {
+
+pub struct Node<T> {
     el: T,
     next: Link<T>,
     prev: Link<T>,
 }
 
 impl<T> Node<T> {
-    fn new(el: T) -> Self {
+    /// Create a new node
+    ///
+    /// # Arguments
+    /// * `el` - Element of the node
+    ///
+    /// # Returns
+    /// * `Node<T>` - New node
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::Node;
+    ///
+    /// let node = Node::new(1);
+    /// ```
+    pub fn new(el: T) -> Self {
         Node {
             el,
             next: None,
@@ -18,6 +38,7 @@ impl<T> Node<T> {
     }
 }
 
+#[derive(Default)]
 pub struct DoublyLinkedList<T> {
     head: Link<T>,
     tail: Link<T>,
@@ -25,6 +46,17 @@ pub struct DoublyLinkedList<T> {
 }
 
 impl<T> DoublyLinkedList<T> {
+    /// Create a new doubly linked list
+    ///
+    /// # Returns
+    /// * `DoublyLinkedList<T>` - New doubly linked list
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let list: DoublyLinkedList<i32> = DoublyLinkedList::new();
+    /// ```
     pub fn new() -> Self {
         DoublyLinkedList {
             head: None,
@@ -33,14 +65,63 @@ impl<T> DoublyLinkedList<T> {
         }
     }
 
+    /// Get the length of the list
+    ///
+    /// # Returns
+    /// * `usize` - Length of the list
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// assert_eq!(list.len(), 0);
+    ///
+    /// list.push_front(1);
+    /// assert_eq!(list.len(), 1);
+    ///
+    /// list.push_front(2);
+    /// assert_eq!(list.len(), 2);
+    /// ```
     pub fn len(&self) -> usize {
         self.len
     }
 
+    /// Check if the list is empty
+    ///
+    /// # Returns
+    /// * `bool` - True if the list is empty, false otherwise
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// assert!(list.is_empty());
+    ///
+    /// list.push_front(1);
+    /// assert!(!list.is_empty());
+    /// ```
     pub fn is_empty(&self) -> bool {
         self.len() == 0
     }
 
+    /// Push an item to the front of the list
+    ///
+    /// # Arguments
+    /// * `item` - Item to be pushed
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// list.push_front(1);
+    /// list.push_front(2);
+    /// list.push_front(3);
+    ///
+    /// assert_eq!(list.len(), 3);
+    /// ```
     pub fn push_front(&mut self, item: T) {
         let node = Rc::new(RefCell::new(Node::new(item)));
 
@@ -59,6 +140,23 @@ impl<T> DoublyLinkedList<T> {
         self.len += 1;
     }
 
+    /// Push an item at a specific index
+    ///
+    /// # Arguments
+    /// * `item` - Item to be pushed
+    /// * `index` - Index at which the item will be pushed
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// list.push_at(1, 0);
+    /// list.push_at(2, 1);
+    /// list.push_at(3, 1);
+    ///
+    /// assert_eq!(list.len(), 3);
+    /// ```
     pub fn push_at(&mut self, item: T, index: usize) {
         if index == 0 {
             self.push_front(item);
@@ -90,6 +188,22 @@ impl<T> DoublyLinkedList<T> {
         }
     }
 
+    /// Push an item to the back of the list
+    ///
+    /// # Arguments
+    /// * `item` - Item to be pushed
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// list.push_back(1);
+    /// list.push_back(2);
+    /// list.push_back(3);
+    ///
+    /// assert_eq!(list.len(), 3);
+    /// ```
     pub fn push_back(&mut self, item: T) {
         let node = Rc::new(RefCell::new(Node::new(item)));
 
@@ -108,6 +222,30 @@ impl<T> DoublyLinkedList<T> {
         self.len += 1;
     }
 
+    /// Pop an item from the front of the list
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// list.push_back(1);
+    /// list.push_back(2);
+    /// list.push_back(3);
+    ///
+    /// assert_eq!(list.len(), 3);
+    ///
+    /// list.pop_front();
+    /// assert_eq!(list.len(), 2);
+    ///
+    /// list.pop_front();
+    /// assert_eq!(list.len(), 1);
+    ///
+    /// list.pop_front();
+    /// assert_eq!(list.len(), 0);
+    ///
+    /// assert!(list.is_empty());
+    /// ```
     pub fn pop_front(&mut self) {
         if self.is_empty() {
             panic!("List is empty");
@@ -126,6 +264,33 @@ impl<T> DoublyLinkedList<T> {
         self.len -= 1;
     }
 
+    /// Pop an item at a specific index
+    ///
+    /// # Arguments
+    /// * `index` - Index at which the item will be popped
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// list.push_back(1);
+    /// list.push_back(2);
+    /// list.push_back(3);
+    ///
+    /// assert_eq!(list.len(), 3);
+    ///
+    /// list.pop_at(1);
+    /// assert_eq!(list.len(), 2);
+    ///
+    /// list.pop_at(1);
+    /// assert_eq!(list.len(), 1);
+    ///
+    /// list.pop_at(0);
+    /// assert_eq!(list.len(), 0);
+    ///
+    /// assert!(list.is_empty());
+    /// ```
     pub fn pop_at(&mut self, index: usize) {
         if self.is_empty() {
             panic!("List is empty");
@@ -157,6 +322,30 @@ impl<T> DoublyLinkedList<T> {
         }
     }
 
+    /// Pop an item from the back of the list
+    ///
+    /// # Example
+    /// ```
+    /// use rust::linked_list::doubly_linked_list::DoublyLinkedList;
+    ///
+    /// let mut list = DoublyLinkedList::new();
+    /// list.push_back(1);
+    /// list.push_back(2);
+    /// list.push_back(3);
+    ///
+    /// assert_eq!(list.len(), 3);
+    ///
+    /// list.pop_back();
+    /// assert_eq!(list.len(), 2);
+    ///
+    /// list.pop_back();
+    /// assert_eq!(list.len(), 1);
+    ///
+    /// list.pop_back();
+    /// assert_eq!(list.len(), 0);
+    ///
+    /// assert!(list.is_empty());
+    /// ```
     pub fn pop_back(&mut self) {
         if self.is_empty() {
             panic!("List is empty");
@@ -173,6 +362,44 @@ impl<T> DoublyLinkedList<T> {
         }
 
         self.len -= 1;
+    }
+}
+
+impl<T: Debug> Display for DoublyLinkedList<T> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        let mut current = self.head.clone();
+
+        while let Some(node) = current {
+            write!(f, "{:?}", node.borrow().el)?;
+
+            if node.borrow().next.is_some() {
+                write!(f, " <-> ")?;
+            }
+
+            current = node.borrow().next.clone();
+        }
+
+        Ok(())
+    }
+}
+
+impl<T: Debug> Debug for DoublyLinkedList<T> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        let mut current = self.head.clone();
+
+        write!(f, "{{ doubly_linked_list: [")?;
+
+        while let Some(node) = current {
+            write!(f, "{:?}", node.borrow().el)?;
+
+            if node.borrow().next.is_some() {
+                write!(f, " <-> ")?;
+            }
+
+            current = node.borrow().next.clone();
+        }
+
+        write!(f, "] }}")
     }
 }
 

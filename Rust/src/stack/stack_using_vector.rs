@@ -1,12 +1,17 @@
+use std::fmt::{Debug, Display, Formatter, Result};
+
+#[derive(Default, Debug)]
 pub struct StackUsingVector<T> {
-    stack: Vec<T>,
+    pub stack: Vec<T>,
 }
 
 impl<T> StackUsingVector<T> {
     /// Creates an empty stack.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `StackUsingVector<T>` - An empty stack.
     ///
+    /// # Examples
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -18,8 +23,10 @@ impl<T> StackUsingVector<T> {
 
     /// Returns the number of elements in the stack.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `usize` - The number of elements in the stack.
     ///
+    /// # Examples
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -35,8 +42,10 @@ impl<T> StackUsingVector<T> {
 
     /// Returns `true` if the stack contains no elements.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `bool` - `true` if the stack contains no elements.
     ///
+    /// # Examples
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -53,11 +62,9 @@ impl<T> StackUsingVector<T> {
     /// Pushes an element onto the top of the stack.
     ///
     /// # Arguments
-    ///
     /// * `item` - The element to be pushed onto the stack.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -72,8 +79,10 @@ impl<T> StackUsingVector<T> {
 
     /// Removes the element from the top of the stack and returns it.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `Some(T)` - The element at the top of the stack.
     ///
+    /// # Examples
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -93,8 +102,10 @@ impl<T> StackUsingVector<T> {
 
     /// Returns a reference to the element on the top of the stack.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `Option<&T>` - A reference to the element on the top of the stack.
     ///
+    /// # Examples
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -112,7 +123,6 @@ impl<T> StackUsingVector<T> {
     /// Removes all elements from the stack.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::stack::StackUsingVector;
     ///
@@ -126,6 +136,22 @@ impl<T> StackUsingVector<T> {
     /// ```
     pub fn clear(&mut self) {
         self.stack.clear();
+    }
+}
+
+impl<T: Display> Display for StackUsingVector<T> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        write!(
+            f,
+            "{}",
+            String::from_iter(self.stack.iter().enumerate().map(|(i, x)| {
+                if i == self.stack.len() - 1 {
+                    format!("{}", x)
+                } else {
+                    format!("{}, ", x)
+                }
+            }))
+        )
     }
 }
 

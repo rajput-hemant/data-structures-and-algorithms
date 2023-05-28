@@ -1,3 +1,6 @@
+use std::fmt::{Debug, Display, Formatter, Result};
+
+#[derive(Default, Debug)]
 pub struct QueueUsingVector<T> {
     queue: Vec<T>,
 }
@@ -5,8 +8,10 @@ pub struct QueueUsingVector<T> {
 impl<T> QueueUsingVector<T> {
     /// Creates an empty queue.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `QueueUsingVector<T>` - An empty queue.
     ///
+    /// # Examples
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -18,8 +23,10 @@ impl<T> QueueUsingVector<T> {
 
     /// Returns the number of elements in the queue.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `usize` - The number of elements in the queue.
     ///
+    /// # Examples
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -35,8 +42,10 @@ impl<T> QueueUsingVector<T> {
 
     /// Returns `true` if the queue contains no elements.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `bool` - `true` if the queue contains no elements.
     ///
+    /// # Examples
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -53,11 +62,9 @@ impl<T> QueueUsingVector<T> {
     /// Adds an element to the back of the queue.
     ///
     /// # Arguments
-    ///
     /// * `item` - The element to be added to the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -75,10 +82,9 @@ impl<T> QueueUsingVector<T> {
     /// Removes the element from the front of the queue and returns it.
     ///
     /// # Returns
-    /// The element at the front of the queue.
+    /// * `Option<T>` - The element at the front of the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -100,10 +106,9 @@ impl<T> QueueUsingVector<T> {
     /// Returns a refrence to the element at the front of the queue without removing it.
     ///
     /// # Returns
-    /// The element at the front of the queue.
+    /// * `Option<&T>` - A refrence to the element at the front of the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -121,7 +126,6 @@ impl<T> QueueUsingVector<T> {
     /// Removes all elements from the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingVector;
     ///
@@ -136,6 +140,22 @@ impl<T> QueueUsingVector<T> {
     /// ```
     pub fn clear(&mut self) {
         self.queue.clear();
+    }
+}
+
+impl<T: Display> Display for QueueUsingVector<T> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        write!(
+            f,
+            "{}",
+            String::from_iter(self.queue.iter().enumerate().map(|(i, x)| {
+                if i == self.queue.len() - 1 {
+                    format!("{}", x)
+                } else {
+                    format!("{}, ", x)
+                }
+            }))
+        )
     }
 }
 

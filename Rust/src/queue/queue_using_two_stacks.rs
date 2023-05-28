@@ -1,5 +1,8 @@
+use std::fmt::{Debug, Display, Formatter, Result};
+
 use crate::stack::StackUsingVector;
 
+#[derive(Default, Debug)]
 pub struct QueueUsingTwoStacks<T> {
     stack1: StackUsingVector<T>,
     stack2: StackUsingVector<T>,
@@ -8,8 +11,10 @@ pub struct QueueUsingTwoStacks<T> {
 impl<T> QueueUsingTwoStacks<T> {
     /// Creates an empty queue.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `QueueUsingTwoStacks<T>` - An empty queue.
     ///
+    /// # Examples
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -24,8 +29,10 @@ impl<T> QueueUsingTwoStacks<T> {
 
     /// Returns the number of elements in the queue.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `usize` - The number of elements in the queue.
     ///
+    /// # Examples
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -41,8 +48,10 @@ impl<T> QueueUsingTwoStacks<T> {
 
     /// Returns `true` if the queue contains no elements.
     ///
-    /// # Examples
+    /// # Returns
+    /// * `bool` - `true` if the queue contains no elements.
     ///
+    /// # Examples
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -59,11 +68,9 @@ impl<T> QueueUsingTwoStacks<T> {
     /// Adds an element to the back of the queue.
     ///
     /// # Arguments
-    ///
     /// * `item` - The element to be added to the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -92,10 +99,9 @@ impl<T> QueueUsingTwoStacks<T> {
     /// Removes the element from the front of the queue and returns it.
     ///
     /// # Returns
-    /// The element at the front of the queue.
+    /// * `Option<T>` - The element at the front of the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -113,10 +119,8 @@ impl<T> QueueUsingTwoStacks<T> {
     /// Returns a refrence to the element at the front of the queue without removing it.
     ///
     /// # Returns
-    /// The element at the front of the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -134,7 +138,6 @@ impl<T> QueueUsingTwoStacks<T> {
     /// Removes all elements from the queue.
     ///
     /// # Examples
-    ///
     /// ```
     /// use rust::queue::QueueUsingTwoStacks;
     ///
@@ -149,6 +152,21 @@ impl<T> QueueUsingTwoStacks<T> {
     /// ```
     pub fn clear(&mut self) {
         self.stack1.clear();
+    }
+}
+
+impl<T: Display> Display for QueueUsingTwoStacks<T> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        write!(f, "[ Top: ")?;
+
+        for i in 0..self.len() {
+            write!(f, "{}", self.stack1.stack[i])?;
+            if i != self.len() - 1 {
+                write!(f, " -> ")?;
+            }
+        }
+
+        write!(f, "]")
     }
 }
 
