@@ -42,10 +42,10 @@ impl<T: Ord> PriorityQueue<T> {
     ///
     /// let mut pq = PriorityQueue::new();
     ///
-    /// assert_eq!(pq.is_empty(), true);
+    /// assert!(pq.is_empty());
     ///
     /// pq.enqueue(1);
-    /// assert_eq!(pq.is_empty(), false);
+    /// assert!(!pq.is_empty());
     /// ```
     pub fn is_empty(&self) -> bool {
         self.mh.is_empty()
@@ -67,7 +67,7 @@ impl<T: Ord> PriorityQueue<T> {
     /// pq.enqueue(3);
     ///
     /// assert_eq!(pq.len(), 3);
-    /// assert_eq!(pq.is_empty(), false);
+    /// assert!(!pq.is_empty());
     /// assert_eq!(pq.peek(), Some(&1));
     /// ```
     pub fn enqueue(&mut self, item: T) {
@@ -126,41 +126,41 @@ mod tests {
     fn test_priority_queue() {
         let mut pq = PriorityQueue::new();
         assert_eq!(pq.len(), 0);
-        assert_eq!(pq.is_empty(), true);
+        assert!(pq.is_empty());
 
         pq.enqueue(1);
         assert_eq!(pq.len(), 1);
-        assert_eq!(pq.is_empty(), false);
+        assert!(!pq.is_empty());
         assert_eq!(pq.peek(), Some(&1));
 
         pq.enqueue(2);
         assert_eq!(pq.len(), 2);
-        assert_eq!(pq.is_empty(), false);
+        assert!(!pq.is_empty());
         assert_eq!(pq.peek(), Some(&1));
 
         pq.enqueue(3);
         assert_eq!(pq.len(), 3);
-        assert_eq!(pq.is_empty(), false);
+        assert!(!pq.is_empty());
         assert_eq!(pq.peek(), Some(&1));
 
         assert_eq!(pq.dequeue(), Some(1));
         assert_eq!(pq.len(), 2);
-        assert_eq!(pq.is_empty(), false);
+        assert!(!pq.is_empty());
         assert_eq!(pq.peek(), Some(&2));
 
         assert_eq!(pq.dequeue(), Some(2));
         assert_eq!(pq.len(), 1);
-        assert_eq!(pq.is_empty(), false);
+        assert!(!pq.is_empty());
         assert_eq!(pq.peek(), Some(&3));
 
         assert_eq!(pq.dequeue(), Some(3));
         assert_eq!(pq.len(), 0);
-        assert_eq!(pq.is_empty(), true);
+        assert!(pq.is_empty());
         assert_eq!(pq.peek(), None);
 
         assert_eq!(pq.dequeue(), None);
         assert_eq!(pq.len(), 0);
-        assert_eq!(pq.is_empty(), true);
+        assert!(pq.is_empty());
         assert_eq!(pq.peek(), None);
     }
 }

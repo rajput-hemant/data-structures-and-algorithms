@@ -237,7 +237,7 @@ impl<T: Ord> MaxHeap<T> {
     /// assert_eq!(heap.get_max(), Some(&3));
     /// ```
     pub fn get_max(&self) -> Option<&T> {
-        self.heap.get(0)
+        self.heap.first()
     }
 
     /// Remove the element at the given index from the `MaxHeap`.
